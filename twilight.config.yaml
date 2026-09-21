@@ -90,7 +90,7 @@ site:
                     # Aktifkan efek mesin tik subjudul
                     enable: true
                     # Kecepatan mengetik (milidetik)
-                    speed: 111
+                    speed: 350
                     # Kecepatan menghapus (milidetik)
                     deleteSpeed: 51
                     # Waktu jeda setelah tampil penuh (milidetik)

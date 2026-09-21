@@ -397,7 +397,7 @@ export type PostConfig = {
         url: string;
     };
     // 评论配置
-    comment: { }; // tidak ada provider komentar
+    comment?: undefined; // tidak ada provider komentar
     
 };
 

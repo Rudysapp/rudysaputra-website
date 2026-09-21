@@ -70,25 +70,8 @@ const normalizeNavbarLinks = (links: Array<NavbarLink | LinkPreset | string>) =>
     links.map(normalizeNavbarLink);
 
 const resolvedPostConfig: PostConfig = {
-    ...config.post,
-    comment: {
-        ...config.post.comment,
-        provider: config.post.comment.provider
-            ?? (config.post.comment.waline ? "waline" : undefined)
-            ?? (config.post.comment.twikoo ? "twikoo" : undefined),
-        waline: config.post.comment.waline
-            ? {
-                ...config.post.comment.waline,
-                lang: config.post.comment.waline.lang ?? config.site.lang,
-            }
-            : undefined,
-        twikoo: config.post.comment.twikoo
-            ? {
-                ...config.post.comment.twikoo,
-                lang: config.post.comment.twikoo.lang ?? config.site.lang,
-            }
-            : undefined,
-    },
+  ...config.post,
+  comment: undefined,
 };
 
 // 站点配置
