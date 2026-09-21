@@ -1,0 +1,474 @@
+/*
+ * Gaya Komponen Banner
+ * Banner Component Styles
+ * Berisi semua gaya responsif dan efek animasi dalam mode Banner
+ */
+
+/**
+ * Gaya Dasar
+ */
+
+/* Animasi Fade-In dan Geser ke Atas */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        translate: 0 30px;
+    }
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+/* Saat pemuatan awal dan belum mulai dipulihkan, tinggi diatur ke nol; saat keluar dari mode Banner, tinggi diatur ke nol */
+html.is-loading:not(.banner-restoring) #banner-wrapper,
+html.banner-transitioning #banner-wrapper,
+html.banner-hiding #banner-wrapper {
+    height: 0 !important;
+}
+
+/* Gaya Judul */
+.banner-title {
+    font-family: "Outfit", sans-serif !important;
+    text-shadow: 0px 3px 12px rgba(0, 0, 0, 0.36), 0 0 24px color-mix(in srgb, var(--primary), transparent 48%);
+    font-weight: normal;
+    opacity: 0;
+}
+.banner-subtitle {
+    text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.36), 0 0 12px color-mix(in srgb, var(--primary), transparent 48%);
+    opacity: 0;
+}
+/* Animasi Judul */
+.show-initial-animation .banner-title,
+.show-banner-animation .banner-title {
+    animation: fadeInUp var(--transition-duration-long) ease-out forwards;
+}
+.show-initial-animation .banner-subtitle,
+.show-banner-animation .banner-subtitle {
+    animation: fadeInUp var(--transition-duration-long) ease-out var(--transition-duration-medium) both;
+}
+/* Status Setelah Animasi Selesai */
+html:not(.is-loading):not(.show-initial-animation):not(.show-banner-animation) .banner-title,
+html:not(.is-loading):not(.show-initial-animation):not(.show-banner-animation) .banner-subtitle {
+    opacity: 1;
+}
+/* Fade-in dan Fade-out Judul saat Pengalihan Halaman */
+.banner-text-overlay {
+    transition: opacity var(--transition-duration-medium) ease;
+}
+.banner-text-overlay.fade-out {
+    opacity: 0;
+}
+
+/* Transisi Halus Latar Belakang Halaman (Saat beralih antara mode Fullscreen dan Banner) */
+body {
+    transition: background-color var(--transition-duration-slower) ease, background-image var(--transition-duration-slower) ease;
+}
+html.is-wallpaper-transitioning body {
+    transition: background-color var(--transition-duration-slower) ease, background-image var(--transition-duration-slower) ease !important;
+}
+
+/**
+ *
+ */
+
+ /* Efek Ken Burns */
+@keyframes ken-burns {
+    from {
+        scale: 1.0;
+        translate: 0 0 0;
+    }
+    to {
+        scale: 1.2;
+        translate: 0 0 0;
+    }
+}
+
+/* Perangkat Desktop */
+@media (min-width: 1280px) {
+    .banner-text-overlay {
+        align-items: center !important; /* Rata tengah vertikal */
+        justify-content: center !important; /* Rata tengah horizontal */
+        padding: 2rem !important;
+        text-align: center !important; /* Teks rata tengah */
+    }
+    .banner-text-overlay > div {
+        margin-bottom: 0 !important;
+        width: 75% !important;
+        text-align: center !important; /* Memastikan teks rata tengah */
+    }
+
+    /* Memastikan kontainer komedi putar/carousel memiliki pengaturan overflow yang benar */
+    #banner-carousel {
+        overflow: hidden !important;
+    }
+    /* Kontainer Gambar */
+    .carousel-item img,
+    #banner img {
+        object-position: center center !important; /* Memastikan gambar ditampilkan rata tengah */
+        transition: transform var(--transition-duration-very-slow) ease-out !important;
+    }
+    /* Transisi Gambar Carousel */
+    .carousel-item {
+        transition: opacity var(--transition-duration-very-slow) ease-in-out !important;
+    }
+    .carousel-item.ken-burns-enabled {
+        transform-origin: center center !important; /* Memastikan pembesaran dimulai dari pusat */
+        scale: 1.0;
+        translate: 0 0 0;
+    }
+    .carousel-item.ken-burns-enabled.is-animating {
+        animation: ken-burns 12s linear forwards !important;
+    }
+    .carousel-item:not(.ken-burns-enabled) {
+        scale: 1.0;
+        translate: 0 0 0; /* Membatalkan pembesaran bawaan/default */
+    }
+    /* Efek Pembesaran Gambar Saat Ini */
+    .carousel-item.opacity-100 {
+        opacity: 1 !important;
+    }
+    /* Efek Pembesaran Gambar yang Tidak Aktif */
+    .carousel-item.opacity-0 {
+        opacity: 0 !important;
+    }
+}
+
+
+/* Gambar Carousel Perangkat Seluler (Mobile) */
+@media (max-width: 1279px) {
+    /* Memastikan kontainer carousel memiliki pengaturan overflow yang benar */
+    #banner-carousel {
+        overflow: hidden !important;
+    }
+    /* Kontainer Gambar */
+    .carousel-item img,
+    #banner img {
+        object-position: center center !important; /* Memastikan gambar ditampilkan rata tengah */
+        transition: transform var(--transition-duration-very-slow) ease-out !important;
+    }
+    /* Transisi Gambar Carousel */
+    .carousel-item {
+        transition: opacity var(--transition-duration-very-slow) ease-in-out !important;
+    }
+    .carousel-item.ken-burns-enabled {
+        transform-origin: center center !important; /* Memastikan pembesaran dimulai dari pusat */
+        scale: 1.0;
+    }
+    .carousel-item.ken-burns-enabled.is-animating {
+        animation: ken-burns 12s linear forwards !important;
+    }
+    .carousel-item:not(.ken-burns-enabled) {
+        scale: 1.0; /* Membatalkan pembesaran bawaan/default */
+    }
+    /* Efek Pembesaran Gambar Saat Ini */
+    .carousel-item.opacity-100 {
+        opacity: 1 !important;
+    }
+    /* Efek Pembesaran Gambar yang Tidak Aktif */
+    .carousel-item.opacity-0 {
+        opacity: 0 !important;
+    }
+}
+
+/* Performa Banner pada Perangkat Seluler */
+@media (max-width: 1279px) {
+    .banner-container {
+        /* Mengaktifkan Akselerasi Perangkat Keras */
+        translate: 0 0 0;
+        will-change: transform, opacity;
+        /* Performa Rendisi/Rendering */
+        contain: layout style paint;
+        /* Mengurangi Penggambaran Ulang (Redraw) */
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+    /* Gambar */
+    .banner-container img {
+        /* Render Gambar */
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+        /* Mencegah Gambar Diseret (Drag) */
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        /* Sentuhan */
+        pointer-events: none;
+    }
+
+    .banner-text-overlay {
+        /* Render Teks */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        /* Mengurangi Reflow */
+        contain: layout style;
+    }
+
+    .carousel-item.ken-burns-enabled {
+        /* Akselerasi Perangkat Keras dan Pemeliharaan Skala Skalar */
+        scale: 1.0;
+        translate: 0 0 0;
+        will-change: transform, opacity;
+        /* Respon Sentuhan */
+        touch-action: pan-y;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+    .carousel-item:not(.ken-burns-enabled) {
+        scale: 1.0;
+        translate: 0 0 0;
+        will-change: transform, opacity;
+        /* Respon Sentuhan */
+        touch-action: pan-y;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    /* Indikator Carousel */
+    .carousel-indicators {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        translate: -50% 0;
+        display: flex;
+        gap: 8px;
+        z-index: 10;
+    }
+
+    .carousel-indicator {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        transition: all var(--transition-duration-medium) ease;
+        cursor: pointer;
+    }
+    .carousel-indicator.active {
+        background: rgba(255, 255, 255, 0.9);
+        scale: 1.2;
+    }
+}
+
+/* Mode Gelap Perangkat Seluler */
+@media (max-width: 1279px) and (prefers-color-scheme: dark) {
+    .banner-text-overlay {
+        background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(0, 0, 0, 0.4) 50%,
+            transparent 100%
+        );
+    }
+}
+
+/* Mode Lanskap Perangkat Seluler */
+@media (max-width: 1279px) and (orientation: landscape) {
+    .banner-text-overlay {
+        padding: 1rem 1.5rem;
+        align-items: center !important; /* Rata tengah vertikal */
+        justify-content: center !important; /* Rata tengah horizontal */
+        text-align: center !important; /* Teks rata tengah */
+    }
+
+    .banner-title {
+        font-size: 2.2rem !important; /* Memperbesar ukuran font */
+        line-height: 1.3;
+    }
+
+    .banner-subtitle {
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1279px) {
+    /* Lapisan Pelapis Teks Banner */
+    .banner-text-overlay {
+        align-items: center !important; /* Rata tengah vertikal */
+        justify-content: center !important; /* Rata tengah horizontal */
+        padding: 2rem !important;
+        text-align: center !important; /* Teks rata tengah */
+    }
+    /* Kontainer Teks */
+    .banner-text-overlay > div {
+        margin-bottom: 0 !important; /* Menghapus margin bawah untuk mempertahankan posisi tengah */
+        width: 85% !important;
+        text-align: center !important; /* Memastikan teks rata tengah */
+    }
+
+    /* Teks Judul */
+    .banner-title {
+        font-size: 4rem !important;
+        line-height: 1.1 !important;
+        margin-bottom: 1rem !important;
+    }
+
+    /* Teks Subjudul */
+    .banner-subtitle {
+        font-size: 1.5rem !important;
+        line-height: 1.4 !important;
+    }
+}
+
+/* Ponsel Layar Sedang */
+@media (min-width: 513px) and (max-width: 768px) {
+    /* Lapisan Pelapis Teks Banner */
+    .banner-text-overlay {
+        align-items: center !important; /* Rata tengah vertikal */
+        justify-content: center !important; /* Rata tengah horizontal */
+        padding: 1.5rem !important;
+        text-align: center !important; /* Teks rata tengah */
+    }
+    /* Kontainer Teks */
+    .banner-text-overlay > div {
+        margin-bottom: 0 !important; /* Menghapus margin bawah untuk mempertahankan posisi tengah */
+        width: 90% !important;
+        text-align: center !important; /* Memastikan teks rata tengah */
+    }
+
+    /* Teks Judul */
+    .banner-title {
+        font-size: 3.8rem !important; /* Memperbesar ukuran font */
+        line-height: 1.1 !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    /* Teks Subjudul */
+    .banner-subtitle {
+        font-size: 1.125rem !important;
+        line-height: 1.4 !important;
+    }
+}
+
+/* Ponsel Layar Kecil */
+@media (max-width: 512px) {
+    /* Lapisan Pelapis Teks Banner */
+    .banner-text-overlay {
+        align-items: center !important; /* Rata tengah vertikal */
+        justify-content: center !important; /* Rata tengah horizontal */
+        padding: 1rem !important;
+        text-align: center !important; /* Teks rata tengah */
+    }
+    /* Kontainer Teks */
+    .banner-text-overlay > div {
+        margin-bottom: 0 !important; /* Menghapus margin bawah untuk mempertahankan posisi tengah */
+        width: 95% !important; /* Meningkatkan penggunaan lebar teks */
+        text-align: center !important; /* Memastikan teks rata tengah */
+    }
+
+    /* Teks Judul */
+    .banner-title {
+        font-size: 3.2rem !important; /* Memperbesar ukuran font */
+        line-height: 1.1 !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    /* Teks Subjudul */
+    .banner-subtitle {
+        font-size: 1rem !important;
+        line-height: 1.3 !important;
+    }
+}
+
+/**
+ * Gelombang / Gelombang Air
+ */
+
+ /* Animasi Gelombang */
+@keyframes wave {
+    0% {
+        translate: -90px 0 0;
+    }
+    100% {
+        translate: 85px 0 0;
+    }
+}
+
+/* Sinkronisasi Beralih Gelombang dan Latar Belakang */
+#header-waves {
+    /* Memastikan kontainer gelombang berada pada lapisan komposit yang sama dengan latar belakang halaman */
+    isolation: isolate;
+    /* Mengoptimalkan performa rendering - Menghapus strict containment dan beralih ke none */
+    contain: none;
+    /* Penjajaran Presisi */
+    margin-bottom: -1px;
+}
+
+/* Penyeragaman Animasi Gelombang */
+#header-waves .parallax use {
+    animation-name: wave;
+    animation-duration: 25s;
+    animation-timing-function: cubic-bezier(0.5, 0.5, 0.45, 0.5);
+    animation-iteration-count: infinite;
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+}
+/* Urutan Animasi Berlapis (Menggantikan gaya inline) */
+#header-waves .parallax use:nth-child(1) {
+    animation-duration: 7s;
+    animation-delay: -2s;
+}
+#header-waves .parallax use:nth-child(2) {
+    animation-duration: 10s;
+    animation-delay: -3s;
+}
+#header-waves .parallax use:nth-child(3) {
+    animation-duration: 13s;
+    animation-delay: -4s;
+}
+#header-waves .parallax use:nth-child(4) {
+    animation-duration: 20s;
+    animation-delay: -5s;
+}
+
+#header-waves .waves {
+    /* Memastikan SVG dirender secara penuh (SVG itu sendiri adalah .waves) */
+    width: 100%;
+    height: 100%;
+    display: block;
+    /* Memastikan riak air ditampilkan secara utuh */
+    overflow: visible;
+    z-index: 5;
+    /* Akselerasi perangkat keras, memastikan rendering serentak dengan latar belakang */
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+    /* Mengoptimalkan performa rendering - Menghapus strict containment dan beralih ke none */
+    contain: none;
+}
+
+/* Pengalihan Tema Warna Isi Gelombang */
+#header-waves .waves use {
+    /* Memastikan warna isian diperbarui secara sinkron dengan latar belakang halaman */
+    will-change: fill;
+}
+
+/* Perlindungan Tambahan saat Pengalihan Tema */
+.theme-changing #header-waves,
+.theme-changing #header-waves svg,
+.theme-changing #header-waves use {
+    /* Nonaktifkan semua kemungkinan penundaan rendering selama masa pengalihan tema */
+    will-change: auto;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Kasus Khusus Riak Air pada Perangkat Seluler */
+@media (max-width: 1023px) {
+    #header-waves {
+        /* Memastikan kontainer riak air tidak terpotong */
+        overflow: visible;
+        z-index: 5;
+    }
+
+    #header-waves .waves {
+        /* SVG Perangkat Seluler */
+        min-height: 60px;
+    }
+}

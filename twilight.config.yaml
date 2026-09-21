@@ -1,0 +1,483 @@
+# Konfigurasi Situs
+site:
+    # URL situs (diakhiri dengan garis miring)
+    siteURL: "https://rudysaputra.com/"
+    # Judul situs
+    title: "rudysaputra.com"
+    # Subjudul situs
+    subtitle: "a Personal Website & Tought"
+    # Konfigurasi bahasa
+    lang: "id"
+    # Konfigurasi terjemahan
+    translate:
+        # Aktifkan fitur terjemahan
+        enable: true
+        # Layanan terjemahan
+        service: "client.edge"
+        # Tampilkan dropdown pemilihan bahasa
+        showSelectTag: false
+        # Deteksi bahasa pengguna secara otomatis
+        autoDiscriminate: false
+        # Nama kelas CSS yang diabaikan saat menerjemahkan
+        ignoreClasses:
+            - "ignore"
+            - "banner-title"
+            - "banner-subtitle"
+        # Tag HTML yang diabaikan saat menerjemahkan
+        ignoreTags:
+            - "script"
+            - "style"
+            - "code"
+            - "pre"
+    # Konfigurasi zona waktu
+    timeZone: 7
+    # Konfigurasi font
+    font:
+        # Contoh konfigurasi font - Zen Maru Gothic (bawaan website)
+        "Example - ZenMaruGothic":
+            # Sumber font (tautan CSS font | jalur file font)
+            src: "https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap"
+            # Nama font (font-family)
+            family: "Zen Maru Gothic"
+        # Font tambahan khusus untuk banner
+        "Outfit":
+            src: "https://fonts.googleapis.com/css2?family=Outfit&display=swap"
+            family: "Outfit"    
+    # Konfigurasi warna tema
+    themeColor:
+        # Hue bawaan warna tema (rentang 0 sampai 360. Contoh: Merah: 0, Sian: 200, Biru kehijauan: 250, Merah muda: 345)
+        hue: 255
+    # Tema bawaan ("system" ikuti sistem | "light" terang | "dark" gelap)
+    defaultTheme: "dark"
+    # Konfigurasi wallpaper
+    wallpaper:
+        # Mode ("banner" banner | "fullscreen" layar penuh | "none" warna polos)
+        mode: "banner"
+        # Konfigurasi sumber gambar (berbagi antara mode fullscreen dan banner)
+        src:
+            # Gambar wallpaper desktop (relatif terhadap direktori /public; mendukung gambar tunggal atau array gambar, carousel otomatis aktif jika panjang array > 1)
+            desktop:
+                - "/assets/images/desktopWallpaper_1.webp"
+                - "/assets/images/desktopWallpaper_2.webp"
+                - "/assets/images/desktopWallpaper_3.webp"
+            # Gambar wallpaper seluler (relatif terhadap direktori /public; mendukung gambar tunggal atau array gambar, carousel otomatis aktif jika panjang array > 1)
+            mobile:
+                - "/assets/images/mobileWallpaper_1.jpg"
+                - "/assets/images/mobileWallpaper_2.jpg"
+        # Posisi wallpaper ('top' | 'center' | 'bottom')
+        position: "center"
+        # Konfigurasi carousel (berbagi antara mode fullscreen dan banner)
+        carousel:
+            # Aktifkan carousel untuk banyak gambar, jika tidak akan menampilkan satu gambar secara acak
+            enable: true
+            # Interval waktu carousel (detik)
+            interval: 3.6
+            # Aktifkan efek Ken Burns
+            kenBurns: true
+        # Konfigurasi khusus mode Banner
+        banner:
+            # Konfigurasi teks banner
+            homeText:
+                # Tampilkan teks di halaman utama
+                enable: true
+                # Judul utama
+                title: "RDS - Personal Space"
+                # Subjudul, mendukung string tunggal atau array string
+                subtitle:
+                    - "Illuminate Our Paths"
+                # Efek mesin tik pada subjudul
+                typewriter:
+                    # Aktifkan efek mesin tik subjudul
+                    enable: true
+                    # Kecepatan mengetik (milidetik)
+                    speed: 111
+                    # Kecepatan menghapus (milidetik)
+                    deleteSpeed: 51
+                    # Waktu jeda setelah tampil penuh (milidetik)
+                    pauseTime: 3000
+            # Teks sumber gambar banner
+            credit:
+                # Tampilkan teks sumber gambar banner
+                enable: false
+                # Teks sumber yang akan ditampilkan
+                text: "Describe"
+                # (Opsional) Tautan URL ke karya seni atau halaman seniman asli
+                url: ""
+            # Konfigurasi bilah navigasi
+            navbar:
+                # Mode transparansi bilah navigasi ("semi" semi-transparan dengan sudut membulat | "full" transparan penuh | "semifull" transparan dinamis)
+                transparentMode: "semifull"
+            # Konfigurasi efek gelombang air
+            waves:
+                # Aktifkan efek gelombang air
+                enable: true
+                # Aktifkan mode performa (menyederhanakan efek gelombang untuk meningkatkan performa)
+                performanceMode: false
+        # Konfigurasi khusus mode Fullscreen
+        fullscreen:
+            # Indeks Z (zIndex)
+            zIndex: -1
+            # Transparansi wallpaper, antara 0-1
+            opacity: 0.9
+            # Tingkat buram latar belakang (nilai piksel)
+            blur: 1
+            # Mode transparansi bilah navigasi
+            navbar:
+                transparentMode: "semi"
+    # Konfigurasi halaman pemuatan (loading overlay)
+    loadingOverlay:
+        # Apakah mengaktifkan halaman pemuatan
+        enable: true
+        # Apakah menunggu font selesai dimuat sebelum menutup halaman pemuatan
+        waitForFonts: true
+        # Apakah menunggu gambar layar utama (seperti wallpaper/avatar) selesai didekode sebelum menutup halaman pemuatan
+        waitForImages: true
+        # Waktu tunggu maksimum halaman pemuatan (detik)
+        maxWait: 3
+        # Konfigurasi judul pemuatan
+        title:
+            # Apakah mengaktifkan judul pemuatan
+            enable: true
+            # Teks judul pemuatan
+            content: "LOADING"
+            # Siklus animasi (detik)
+            interval: 1.5
+        # Konfigurasi animasi pemuatan (spinner)
+        spinner:
+            # Apakah mengaktifkan animasi pemuatan
+            enable: true
+            # Siklus animasi (detik)
+            interval: 1.5
+    # Konfigurasi favicon
+    favicon: []
+    # Konfigurasi bangumi
+    bangumi:
+        # ID Pengguna
+        userId: "your-bangumi-id"
+    # Konfigurasi OpenGraph
+    generateOgImages: false
+
+# Konfigurasi analitik
+analytics:
+    # Apakah mengaktifkan analitik
+    enabled: false
+    # Platform analitik
+    platform: "umami"
+    # Konfigurasi analitik Umami
+    umami:
+        # Alamat API Umami
+        baseUrl: "https://api.umami.is"
+        # Kunci API
+        apiKey: ''
+        # Kode pelacakan
+        code: ''
+
+# Konfigurasi bilah navigasi
+navbar:
+    # Konfigurasi tautan (preset tautan terletak di LinkPresets pada src/constants/link-presets.ts)
+    links:
+        - # Tautan navigasi tingkat 1 - Beranda (preset)
+            "Home"
+        - # Tautan navigasi tingkat 1 - Arsip (preset)
+            "Archive"
+        - # Tautan navigasi tingkat 1 - Pameran (kustom)
+            # Nama navigasi
+            name: "Exhibition"
+            # Tautan navigasi
+            url: "/exhibition/"
+            # Ikon navigasi
+            icon: "material-symbols:person"
+            # Deskripsi navigasi
+            description: "A collection of my creative works and experiences"
+            # Sub-tautan
+            children:
+                - # Tautan navigasi tingkat 2 - Proyek (preset)
+                    "Projects"
+                - # Tautan navigasi tingkat 2 - Keahlian (preset)
+                    "Skills"
+                - # Tautan navigasi tingkat 2 - Linimasa (preset)
+                    "Timeline"
+                - # Tautan navigasi tingkat 2 - Catatan harian (preset)
+                    "Diary"
+                - # Tautan navigasi tingkat 2 - Album foto (preset)
+                    "Albums"
+                - # Tautan navigasi tingkat 2 - Anime (preset)
+                    "Anime"
+        - # Tautan navigasi tingkat 1 - Teman (preset)
+            "Friends"
+        - # Tautan navigasi tingkat 1 - Tentang (preset)
+            "About"
+
+# Konfigurasi bilah sisi (sidebar)
+sidebar:
+    # Daftar konfigurasi komponen bilah sisi (preset komponen terdapat di WidgetComponentType pada src/types/config.ts)
+    components:
+        # Bilah sisi kiri
+        left:
+            - # Komponen - Direktori (preset)
+                # Tipe
+                type: "directory"
+                # Strategi posisi ("top" melayang di atas | "sticky" menempel saat digulir)
+                position: "sticky"
+            - # Komponen - Kategori artikel (preset)
+                # Tipe
+                type: "categories"
+                # Strategi posisi ("top" melayang di atas | "sticky" menempel saat digulir)
+                position: "sticky"
+                # Konfigurasi responsif
+                responsive:
+                    # Ambang batas penutupan/penyembunyian
+                    collapseThreshold: 5
+                # Kedalaman direktori
+                depth: 3
+            - # Komponen - Tag artikel (preset)
+                # Tipe
+                type: "tags"
+                # Strategi posisi ("top" melayang di atas | "sticky" menempel saat digulir)
+                position: "sticky"
+                # Konfigurasi responsif
+                responsive:
+                    # Ambang batas penutupan/penyembunyian
+                    collapseThreshold: 20
+        # Bilah sisi kanan
+        right:
+            - # Komponen - Profil (preset)
+                # Tipe
+                type: "profile"
+                # Strategi posisi ("top" melayang di atas | "sticky" menempel saat digulir)
+                position: "top"
+                # Konfigurasi visibilitas halaman
+                visibility:
+                    # Mode pencocokan: 'include' (sertakan), 'exclude' (kecualikan)
+                    mode: "exclude"
+                    # Daftar aturan pencocokan jalur halaman (mendukung string regex)
+                    paths: ["^/posts/", "^/archive"]
+            - # Komponen - Pengumuman (preset)
+                # Tipe
+                type: "announcement"
+                # Strategi posisi ("top" melayang di atas | "sticky" menempel saat digulir)
+                position: "top"
+                # Konfigurasi visibilitas halaman
+                visibility:
+                    # Mode pencocokan: 'include' (sertakan), 'exclude' (kecualikan)
+                    mode: "exclude"
+                    # Daftar aturan pencocokan jalur halaman (mendukung string regex)
+                    paths: ["^/posts/", "^/archive"]
+            - # Komponen - Daftar isi artikel (preset)
+                # Tipe
+                type: "toc"
+                # Strategi posisi ("top" melayang di atas | "sticky" menempel saat digulir)
+                position: "sticky"
+                # Kedalaman daftar isi (1-6, 1 berarti hanya menampilkan judul h1, 2 berarti menampilkan judul h1 dan h2, dan seterusnya)
+                depth: 3
+            - # Komponen - Statistik artikel (preset)
+                # Tipe
+                type: "statistics"
+                # Strategi posisi ("top" melayang di atas | "sticky" menempel saat digulir)
+                position: "sticky"
+                # Konfigurasi visibilitas halaman
+                visibility:
+                    # Mode pencocokan: 'include' (sertakan), 'exclude' (kecualikan)
+                    mode: "include"
+                    # Daftar aturan pencocokan jalur halaman (mendukung string regex)
+                    paths: ["^/$", "^/archive$"]
+
+# Konfigurasi profil
+profile:
+    # Konfigurasi avatar (relatif terhadap direktori /public)
+    avatar: "/assets/images/avatar.jpg"
+    # Konfigurasi informasi
+    name: "Rudy Saputra"
+    # Konfigurasi biodata singkat
+    bio: "Hi"
+    # Konfigurasi tautan
+    links:
+        - # Contoh tautan
+            # Nama
+            name: "GitHub"
+            # Ikon
+            icon: "fa6-brands:github"
+            # Tautan
+            url: "https://github.com/Rudysapp"
+
+# Konfigurasi pengumuman
+announcement:
+    # Judul pengumuman
+    title: "Announcement"
+    # Isi pengumuman
+    content: "Welcome to my blog!"
+    # Izinkan pengguna menutup pengumuman
+    closable: true
+    # Konfigurasi tautan
+    link:
+        # Aktifkan tautan
+        enable: true
+        # Teks tautan
+        text: "Learn More"
+        # URL tautan
+        url: "/about/"
+        # Apakah tautan eksternal
+        external: false
+
+# Konfigurasi artikel
+post:
+    # Konfigurasi kartu artikel
+    card:
+        # Sampul
+        cover:
+            # Posisi ("left" | "right")
+            side: "left"
+            # Lebar sampul
+            width: "33%"
+            # Tampilkan teks pada sampul (judul, tag, ringkasan)
+            showContent: true
+            # Tampilkan sampul bawaan jika tidak ada sampul yang ditentukan
+            showDefaultCover: true
+        # Ukuran judul (kelas ukuran teks Tailwind, misalnya "text-3xl")
+        titleSize: "text-2xl"
+    # Tampilkan kartu "terakhir diubah"
+    showLastModified: true
+    # Konfigurasi pemrosesan kode (expressive code)
+    expressiveCode:
+        # Tema
+        theme: "github-dark"
+    # Konfigurasi lisensi
+    license:
+        # Aktifkan lisensi
+        enable: true
+        # Nama lisensi
+        name: "CC BY-NC-SA 4.0"
+        # Tautan lisensi
+        url: "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+    # Konfigurasi komentar
+    comment:
+        # Aktifkan fitur komentar
+        enable: false
+        # Penyedia layanan komentar (opsional, jika kosong akan mendeteksi layanan terkonfigurasi secara otomatis)
+        provider:
+        # Konfigurasi sistem komentar
+        
+
+# Konfigurasi footer
+footer:
+    # Aktifkan fitur injeksi HTML pada Footer
+    enable: true
+    # Konten HTML kustom, digunakan untuk menambahkan nomor lisensi/ICP, dll.
+    customHtml: ""
+
+# Konfigurasi efek partikel
+particle:
+    # Aktifkan efek partikel
+    enable: true
+    # Jumlah partikel
+    particleNum: 12
+    # Batas pengulangan partikel yang keluar dari batas, -1 untuk perulangan tak terbatas
+    limitTimes: -1
+    # Konfigurasi ukuran partikel
+    size:
+        # Pengali ukuran minimum partikel
+        min: 0.3
+        # Pengali ukuran maksimum partikel
+        max: 0.9
+    # Konfigurasi transparansi partikel
+    opacity:
+        # Opasitas minimum partikel
+        min: 0.3
+        # Opasitas maksimum partikel
+        max: 0.9
+    # Konfigurasi kecepatan pergerakan partikel
+    speed:
+        # Kecepatan gerak horizontal
+        horizontal:
+            # Nilai minimum
+            min: -0.9
+            # Nilai maksimum
+            max: 0.9
+        # Kecepatan gerak vertikal
+        vertical:
+            # Nilai minimum
+            min: 0.15
+            # Nilai maksimum
+            max: 0.3
+        # Kecepatan rotasi
+        rotation: 0.12
+        # Kecepatan menghilang (fading)
+        fadeSpeed: 0.12
+    # Indeks Z partikel
+    zIndex: 100
+
+# Konfigurasi pemutar musik
+musicPlayer:
+    # Aktifkan fitur pemutar musik
+    enable: true
+    # Mode bawaan ("meting" API | "local" lokal)
+    mode: "meting"
+    # Konfigurasi khusus mode meting
+    meting:
+        # Alamat Meting API
+        meting_api: "https://meting.spr-aachen.com/api"
+        # Platform musik
+        server: "netease"
+        # Tipe ("playlist" daftar putar | "song" lagu tunggal)
+        type: "playlist"
+        # ID Sumber Daya
+        id: "2161912966"
+    # Konfigurasi khusus mode lokal
+    local:
+        # Daftar pemutaran
+        playlist:
+            - # Contoh daftar
+                # Nomor urut
+                id: 1
+                # Judul
+                title: "深海之息"
+                # Artis
+                artist: "Youzee Music"
+                # Sampul
+                cover: "https://p1.music.126.net/PhKOqFtljgHDDpKYM2ADUA==/109951169858309716.jpg"
+                # Jalur file musik
+                url: "assets/music/深海之息.m4a"
+                # Jalur file lirik
+                lrc: "assets/music/深海之息.lrc"
+                # Durasi
+                duration: 146
+    # Apakah pemutaran otomatis
+    autoplay: true
+
+# Konfigurasi maskot (Pio)
+pio:
+    # Aktifkan maskot
+    enable: false
+    # Jalur file model
+    models:
+        - "/pio/models/pio/model.json"
+    # Posisi maskot
+    position: "left"
+    # Lebar maskot
+    width: 280
+    # Tinggi maskot
+    height: 250
+    # Mode tampilan
+    mode: "draggable"
+    # Sembunyikan di perangkat seluler
+    hiddenOnMobile: true
+    # Konfigurasi dialog
+    dialog:
+        # Pesan selamat datang
+        welcome: "Welcome!"
+        # Petunjuk sentuhan
+        touch:
+            - "What are you doing?"
+            - "Stop touching me!"
+            - "Don't bully me like that!"
+            - "(｡í _ ì｡)"
+        # Petunjuk beranda
+        home: "Click here to go back to homepage!"
+        # Petunjuk ganti pakaian
+        skin:
+            - "Want to see my new outfit?"
+            - "The new outfit looks great~"
+        # Petunjuk penutupan
+        close: "See you next time~"
+        # Tautan tentang
+        link: "https://nav.kungal.org"
