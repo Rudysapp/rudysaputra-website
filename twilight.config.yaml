@@ -409,7 +409,7 @@ particle:
 # Konfigurasi pemutar musik
 musicPlayer:
     # Aktifkan fitur pemutar musik
-    enable: true
+    enable: false
     # Mode bawaan ("meting" API | "local" lokal)
     mode: "meting"
     # Konfigurasi khusus mode meting

@@ -3,7 +3,7 @@
     "description": "This is an example album.",
     "cover": "https://picsum.photos/800/600?random=1",
     "date": "2025-01-01T00:00:00.000Z",
-    "location": "Unknown",
+    "location": "Japan",
     "tags": ["example"],
     "layout": "masonry",
     "columns": 3,
@@ -15,6 +15,12 @@
             "description": "This is a beautiful image from local file",
             "tags": ["human"]
         },
+        {   "src": "./智子_ASK.jpg",
+            "alt": "智子",
+            "title": "智子 by ASK",
+            "description": "This is a beautiful image from local file",
+            "tags": ["human"]
+        },    
         {
             "src": "https://picsum.photos/800/600?random=2",
             "alt": "random image",
