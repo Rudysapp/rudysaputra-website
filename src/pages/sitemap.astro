@@ -1,0 +1,63 @@
+---
+import GridLayout from "@layouts/grid.astro";
+import { getSortedPosts } from "@utils/post";
+import { getPostUrl } from "@utils/url";
+import { siteConfig } from "@/config";
+
+// 1. Ambil seluruh postingan yang sudah terurut
+const posts = await getSortedPosts();
+
+// 2. Daftar Halaman Statis Utama
+const staticPages = [
+  { title: "Beranda", url: "/" },
+  { title: "Arsip", url: "/archive/" },
+  { title: "Tentang Saya", url: "/about/" },
+  { title: "Proyek", url: "/projects/" },
+];
+---
+
+<GridLayout title={`Sitemap - ${siteConfig.title}`}>
+  <div class="card-base z-10 px-6 md:px-9 pt-6 pb-6 relative w-full mb-4">
+    <h1 class="text-3xl font-bold mb-6 text-black/90 dark:text-white/90">
+      Peta Situs [Sitemap]
+    </h1>
+
+    <!-- Section Halaman Utama -->
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold mb-3 text-black/80 dark:text-white/80 border-b border-black/10 dark:border-white/10 pb-2">
+        Halaman Utama
+      </h2>
+      <ul class="list-disc pl-5 space-y-2">
+        {staticPages.map((page) => (
+          <li>
+            <a 
+              href={page.url} 
+              class="transition link text-(--primary) font-medium hover:underline"
+            >
+              {page.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- Section Artikel / Postingan -->
+    <section>
+      <h2 class="text-xl font-semibold mb-3 text-black/80 dark:text-white/80 border-b border-black/10 dark:border-white/10 pb-2">
+        Daftar Artikel & Tulisan ({posts.length})
+      </h2>
+      <ul class="list-disc pl-5 space-y-2">
+        {posts.map((post) => (
+          <li>
+            <a 
+              href={getPostUrl(post)} 
+              class="transition link text-(--primary) font-medium hover:underline"
+            >
+              {post.data.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </div>
+</GridLayout>
