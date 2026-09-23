@@ -41,7 +41,9 @@ if (footerConfig.enable) {
         &copy; <span id="copyright-year">{currentYear}</span> {profileConfig.name}. - Crafted with good mood :) /
         <a class="transition link text-(--primary) font-medium" href={url('rss/')} onclick={`event.preventDefault(); navigateToPage('${url('rss/')}')`}>RSS</a> /
         <a class="transition link text-(--primary) font-medium" href={url('atom/')} onclick={`event.preventDefault(); navigateToPage('${url('atom/')}')`}>Atom</a> /
-        <a class="transition link text-(--primary) font-medium" href={url('sitemap/')}>Sitemap</a></a>
+        <a class="transition link text-(--primary) font-medium" href={url('sitemap/')}>Sitemap</a></a> /
+        <a class="transition link text-(--primary) font-medium" href={url('sitemap-index.xml/')}>Sitemap Index</a></a> /
+        <a class="transition link text-(--primary) font-medium" href={url('sitemap-0.xml/')}>Sitemap XML</a></a>
         <br>
         Powered by
         <a class="transition link text-(--primary) font-medium" target="_blank" href="https://astro.build">Astro</a> &
