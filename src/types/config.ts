@@ -238,17 +238,17 @@ export enum LinkPreset {
 
 
 export type NavbarLink = {
-    // 链接名称
+    // Nama tautan
     name: string;
-    // 链接
+    // URL tautan
     url: string;
-    // 是否为外部链接
+    // Apakah merupakan tautan eksternal
     external?: boolean;
-    // 链接图标
+    // Ikon tautan
     icon?: string;
-    // 中转页描述
+    // Deskripsi halaman transit/perantara
     description?: string;
-    // 子链接，可以是NavbarLink或LinkPreset
+    // Sub-tautan, dapat berupa NavbarLink atau LinkPreset
     children?: (NavbarLink | LinkPreset)[];
 };
 

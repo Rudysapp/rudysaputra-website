@@ -2,6 +2,8 @@
 title: Draft Example
 published: 2021-12-02
 tags: [Markdown]
+featured: true
+description: Contoh deskripsi pada postingan
 category: Examples
 draft: true
 ---

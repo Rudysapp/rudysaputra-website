@@ -1,0 +1,28 @@
+---
+import Layout from '@layouts/grid.astro';
+
+// Membaca seluruh file JSON di dalam folder src/content/gallery/
+const modules = import.meta.glob('/src/content/gallery/*.json', { eager: true });
+const galleryItems = Object.values(modules).map((mod: any) => mod.default || mod);
+---
+
+<Layout title="Gallery" description="Galeri Foto">
+  <div class="card-base p-6">
+    <h1 class="text-2xl font-bold mb-6">Galeri Foto</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {galleryItems.map((item) => (
+        <div class="border rounded-lg overflow-hidden shadow-sm bg-white dark:bg-zinc-800">
+          {item.cover && (
+            <img src={item.cover} alt={item.title} class="w-full h-48 object-cover" />
+          )}
+          <div class="p-4">
+            <h2 class="font-bold text-lg">{item.title}</h2>
+            {item.description && <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">{item.description}</p>}
+            {item.date && <p class="text-xs text-gray-400 mt-2">{item.date}</p>}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>

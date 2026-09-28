@@ -25,6 +25,11 @@ media:
     input: src/content/projects
     output: /src/content/projects
     categories: [image]
+  - name: gallery
+    label: Gallery Images
+    input: src/content/gallery
+    output: /src/content/gallery
+    categories: [image]
 
 
 # 内容管理配置
@@ -228,3 +233,15 @@ content:
       #- { name: title, label: Title, type: string, required: false }
       #- { name: description, label: Description, type: string, required: false }
       - { name: body, label: Body, type: rich-text }
+
+  # Gallery
+  - type: collection
+    name: gallery
+    label: Gallery
+    path: src/content/gallery
+    filename: "{slug}.json"   # Atau .md jika ingin berupa artikel
+    fields:
+      - { name: title, label: Title, type: string }
+      - { name: description, label: Description, type: text, required: false }
+      - { name: cover, label: Cover, type: image, options: {media: gallery} }
+      - { name: date, label: Date, type: date }

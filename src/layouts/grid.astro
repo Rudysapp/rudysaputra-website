@@ -14,6 +14,7 @@ import TocButton from "@components/tocButton.astro";
 import BackToTopButton from "@components/back2TopButton.astro";
 import BaseLayout from "./base.astro";
 import "@styles/grid.css";
+import HomepageCustomSections from '@/components/HomepageCustomSections.astro'
 
 /**
  * Wallpaper
@@ -199,6 +200,9 @@ const {
                         id="content-wrapper"
                         class="onload-animation-up transition-leaving"
                     >
+                    <!-- SECTION BARU HANYA MUNCUL DI HOMEPAGE -->
+        {isHomePage && <HomepageCustomSections />}
+        
                         <slot />
                         <div
                             class="footer col-span-2 onload-animation-up hidden lg:block transition-swup-fade"

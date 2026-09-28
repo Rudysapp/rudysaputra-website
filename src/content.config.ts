@@ -41,6 +41,7 @@ const postsCollection = defineCollection({
         licenseUrl: z.string().optional().default(""),
         comment: z.boolean().optional().default(true),
         draft: z.boolean().optional().default(false),
+        featured: z.boolean().optional().default(false),
 
         /* Page encryption fields */
         encrypted: z.boolean().optional().default(false),
