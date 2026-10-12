@@ -99,9 +99,9 @@ export type SiteConfig = {
     // 字体配置
     font: {
         [key: string]: {
-            // 字体源 (字体 CSS 链接 | 字体文件路径)
+            // Font Source (Font CSS Link | Font File Path)
             src: string;
-            // 字体名 (font-family)
+            // Font Name (font-family)
             family: string;
         };
     };

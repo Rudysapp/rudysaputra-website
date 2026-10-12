@@ -18,9 +18,9 @@ let pioInitialized = $state(false);
 let pioContainer = $state<HTMLElement>();
 let pioCanvas = $state<HTMLCanvasElement>();
 
-// 样式已通过 base.astro 静态引入，无需动态加载
+// Styles have been introduced statically through base.astro, no need to load dynamically
 
-// 等待 DOM 加载完成后再初始化 Pio
+// Wait for the DOM to load before initializing Pio
 function initPio() {
     if (typeof window !== "undefined" && typeof (window as any).Paul_Pio !== "undefined") {
         try {

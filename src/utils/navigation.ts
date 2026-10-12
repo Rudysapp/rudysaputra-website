@@ -93,7 +93,6 @@ export function navigateToPage(
         }
         return;
     }
-
     // 检查 Swup 是否可用
     if (typeof window !== "undefined" && (window as any).swup) {
         try {

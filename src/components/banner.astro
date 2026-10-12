@@ -154,7 +154,7 @@ const isPerformanceMode = config.banner?.waves?.performanceMode;
                 </defs>
                 <g class="parallax">
                     {isPerformanceMode ? (
-                        // 性能模式：只渲染二个波浪层
+                        // Mode kinerja: hanya merender dua lapisan gelombang
                         <use
                             xlink:href="#gentle-wave"
                             x="48"
@@ -168,7 +168,7 @@ const isPerformanceMode = config.banner?.waves?.performanceMode;
                             class="opacity-75 fill-(--page-bg)"
                         ></use>
                     ) : (
-                        // 正常模式：渲染四个波浪层
+                        // Mode normal: menampilkan empat lapisan gelombang
                         <>
                             <use
                                 xlink:href="#gentle-wave"

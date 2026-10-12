@@ -14,7 +14,7 @@ import TocButton from "@components/tocButton.astro";
 import BackToTopButton from "@components/back2TopButton.astro";
 import BaseLayout from "./base.astro";
 import "@styles/grid.css";
-import HomepageCustomSections from '@/components/HomepageCustomSections.astro'
+import HomepageSections from '@/components/homepageSections.astro'
 
 /**
  * Wallpaper
@@ -106,18 +106,22 @@ const {
         )
     }
 
-    <!-- Banner - 总是渲染但通过CSS控制可见性 -->
-    <Banner
-        config={siteConfig.wallpaper}
-        isHomePage={isHomePage}
-        class={siteConfig.wallpaper.mode === "banner" ? "" : "hidden"}
-    />
+    <!-- Banner - always keep the Swup container present -->
+<div id="swup-banner">
+    {!isHomePage && (
+        <Banner
+            config={siteConfig.wallpaper}
+            isHomePage={false}
+            class={siteConfig.wallpaper.mode === "banner" ? "" : "hidden"}
+        />
+    )}
+</div>
 
-    <!-- Main content -->
+    <!-- Main content Twilight-->
     <div
-        class={`absolute w-full z-30 pointer-events-none transition-transform duration-600 top-0 min-h-[calc(100vh-var(--main-content-top))] ${siteConfig.wallpaper.mode !== "banner" ? "no-banner-layout" : ""} ${transparentClass}`}
-        style="transform: translateY(var(--main-content-top))"
-    >
+    id="main-layout-wrapper"
+    class={`absolute w-full z-30 pointer-events-none transition-transform duration-600 top-0 min-h-[calc(100vh-var(--main-content-top))] ${siteConfig.wallpaper.mode !== "banner" ? "no-banner-layout" : ""} ${transparentClass}`}
+>
         <div
             class="relative max-w-(--page-width) mx-auto pointer-events-auto"
         >
@@ -163,74 +167,109 @@ const {
                         </a>
                     )
                 }
-
-                <div class="contents lg:contents md:flex md:flex-col md:col-start-1 md:row-start-1 md:gap-4">
-                    {
-                        hasLeftSidebar ? (
-                            <Sidebar
-                                id="left-sidebar"
-                                side="left"
-                                class={`${leftSidebarClass} ${transparentClass} onload-animation-up`}
-                                headings={headings}
-                            />
-                        ) : (
-                            <div id="left-sidebar" class="hidden"></div>
-                        )
-                    }
-                    {
-                        hasRightSidebar ? (
-                            <Sidebar
-                                id="right-sidebar"
-                                side="right"
-                                class={`${rightSidebarClass} ${transparentClass} onload-animation-up`}
-                                headings={headings}
-                            />
-                        ) : (
-                            <div id="right-sidebar" class="hidden"></div>
-                        )
-                    }
-                </div>
+            {isHomePage ? (
+    <>
+        <div id="left-sidebar" class="hidden"></div>
+        <div id="right-sidebar" class="hidden"></div>
+    </>
+) : (
+    <div class="contents lg:contents md:flex md:flex-col md:col-start-1 md:row-start-1 md:gap-4">
+        {
+            hasLeftSidebar ? (
+                <Sidebar
+                    id="left-sidebar"
+                    side="left"
+                    class={`${leftSidebarClass} ${transparentClass} onload-animation-up`}
+                    headings={headings}
+                />
+            ) : (
+                <div id="left-sidebar" class="hidden"></div>
+            )
+        }
+        {
+            hasRightSidebar ? (
+                <Sidebar
+                    id="right-sidebar"
+                    side="right"
+                    class={`${rightSidebarClass} ${transparentClass} onload-animation-up`}
+                    headings={headings}
+                />
+            ) : (
+                <div id="right-sidebar" class="hidden"></div>
+            )
+        }
+    </div>
+)}
 
                 <main
-                    id="swup-container"
-                    class={`${mainContentClass} transition-swup-fade`}
+    id="swup-container"
+    class={`${isHomePage ? "col-span-full w-full pointer-events-auto" : mainContentClass} transition-swup-fade`}
+  >
+    {isHomePage ? (
+    <>
+        <HomepageSections />
+
+        <div class="footer col-span-full w-full mt-8">
+            <Footer />
+        </div>
+    </>
+    ) : (
+        <>
+            <div
+                id="grid-class-carrier"
+                data-grid-class={gridCols}
+                class="hidden"
+            ></div>
+
+            <div
+                id="content-wrapper"
+                class="onload-animation-up transition-leaving"
+            >
+                <slot />
+
+                <div
+                    class="footer col-span-2 onload-animation-up hidden lg:block transition-swup-fade"
                 >
-                    <div id="grid-class-carrier" data-grid-class={gridCols} class="hidden"></div>
-                    <div
-                        id="content-wrapper"
-                        class="onload-animation-up transition-leaving"
-                    >
-                    <!-- SECTION BARU HANYA MUNCUL DI HOMEPAGE -->
-        {isHomePage && <HomepageCustomSections />}
-        
-                        <slot />
-                        <div
-                            class="footer col-span-2 onload-animation-up hidden lg:block transition-swup-fade"
-                        >
-                            <Footer />
-                        </div>
-                    </div>
-                </main>
-
-                <div class={middleSidebarClass}>
-                    <Sidebar
-                        id="middle-sidebar"
-                        side="middle"
-                        class={`${transparentClass} onload-animation-up`}
-                        headings={headings}
-                    />
-                </div>
-
-                <div class={mobileFooterClass}>
                     <Footer />
                 </div>
-
             </div>
+        </>
+    )}
+</main>
+
+            {isHomePage ? (
+    <div id="middle-sidebar" class="hidden"></div>
+) : (
+    <>
+        <div class={middleSidebarClass}>
+            <Sidebar
+                id="middle-sidebar"
+                side="middle"
+                class={`${transparentClass} onload-animation-up`}
+                headings={headings}
+            />
         </div>
+
+        <div class={mobileFooterClass}>
+            <Footer />
+        </div>
+    </>)}
     </div>
+</div>
+</div>
 
     <TocButton />
 
     <BackToTopButton />
 
 </BaseLayout>
+
+<style is:global>
+    #main-layout-wrapper {
+        transform: translateY(var(--main-content-top));
+    }
+
+    body.is-home #main-layout-wrapper {
+        transform: translateY(var(--navbar-height));
+    }
+</style>

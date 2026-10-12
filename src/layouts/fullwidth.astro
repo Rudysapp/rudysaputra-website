@@ -1,0 +1,173 @@
+---
+import { siteConfig } from "@/config";
+import Navbar from "@components/navbar.astro";
+import FullscreenWallpaper from "@components/fullscreenWallpaper.astro";
+import Banner from "@components/banner.astro";
+import Footer from "@components/footer.astro";
+import BackToTopButton from "@components/back2TopButton.astro";
+import BaseLayout from "./base.astro";
+
+interface Props {
+    title?: string;
+    banner?: string;
+    description?: string;
+    lang?: string;
+    setOGTypeArticle?: boolean;
+    postSlug?: string;
+    watermarkLeft?: string;
+    watermarkRight?: string;
+    bgColor?: string; // Opsional: jika diisi manual akan meng-override warna theme
+}
+
+const {
+    title,
+    banner,
+    description,
+    lang,
+    setOGTypeArticle,
+    postSlug,
+    watermarkLeft = "RUDY SAPUTRA",
+    watermarkRight = "PERSONAL SPACE",
+    bgColor
+} = Astro.props;
+
+const shouldEnableTransparency = siteConfig.wallpaper.mode === "banner" || siteConfig.wallpaper.mode === "fullscreen";
+const transparentClass = shouldEnableTransparency ? "wallpaper-transparent" : "";
+---
+
+<BaseLayout
+    title={title}
+    banner={banner}
+    description={description}
+    lang={lang}
+    setOGTypeArticle={setOGTypeArticle}
+    postSlug={postSlug}
+>
+    <!-- Background Override & Watermark Overlay Container -->
+    <div
+        class="site-custom-bg-overlay"
+        style={bgColor ? `--custom-override-bg: ${bgColor};` : ""}
+    >
+        <div class="watermark-side watermark-left">{watermarkLeft}</div>
+        <div class="watermark-side watermark-right">{watermarkRight}</div>
+    </div>
+
+    <!-- Navbar -->
+    <slot slot="head" name="head" />
+    <div
+        id="top-row"
+        class="z-50 pointer-events-none relative transition-all duration-600 max-w-(--page-width) px-0 md:px-4 mx-auto h-(--top-row-height)"
+    >
+        <div id="navbar-wrapper" class="pointer-events-auto sticky top-0 transition-all">
+            <Navbar />
+        </div>
+    </div>
+
+    <!-- Wallpaper & Banner -->
+    <FullscreenWallpaper
+        config={siteConfig.wallpaper}
+        class={siteConfig.wallpaper.mode === "fullscreen" ? "" : "hidden"}
+    />
+
+    {shouldEnableTransparency && (
+        <script>
+            document.body.classList.add('wallpaper-transparent');
+            document.body.classList.add('is-home');
+        </script>
+    )}
+
+    <Banner
+        config={siteConfig.wallpaper}
+        isHomePage={true}
+        class={siteConfig.wallpaper.mode === "banner" ? "" : "hidden"}
+    />
+
+    <!-- Main Content (Full Width) -->
+    <div
+        class={`absolute w-full z-30 pointer-events-none transition-transform duration-600 top-0 min-h-[calc(100vh-var(--main-content-top))] ${siteConfig.wallpaper.mode !== "banner" ? "no-banner-layout" : ""} ${transparentClass}`}
+        style="transform: translateY(var(--main-panel-top-banner-home))"
+    >
+        <div class="relative max-w-(--page-width) mx-auto pointer-events-auto px-4">
+            <main id="swup-container" class="w-full transition-swup-fade">
+                <div id="content-wrapper" class="onload-animation-up transition-leaving">
+                    <slot />
+                    <div class="footer mt-8 onload-animation-up block transition-swup-fade">
+                        <Footer />
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <BackToTopButton />
+</BaseLayout>
+
+<style is:global>
+    /* 1. Background Overlay Mengikuti Tema (Light/Dark) */
+    .site-custom-bg-overlay {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        /* Gunakan override warna jika ada prop bgColor, jika tidak gunakan CSS variable tema bawaan */
+        background-color: var(--custom-override-bg, #faf8f5);
+        z-index: 0;
+        pointer-events: none;
+        overflow: hidden;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Kustomisasi saat dark mode aktif */
+    :root.dark .site-custom-bg-overlay,
+    html.dark .site-custom-bg-overlay,
+    body.dark .site-custom-bg-overlay {
+        background-color: var(--custom-override-bg, var(--page-bg-dark, var(--bg-main-dark, #121212)));
+    }
+
+    /* 2. Watermark Mengikuti Warna Teks Utama Tema (Adaptif Dark/Light Mode) */
+    .watermark-side {
+        position: absolute;
+        top: 50%;
+        font-size: 12rem;
+        font-weight: 1000;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        /* Menggunakan currentColor agar warnanya otomatis adaptif terhadap teks light/dark mode */
+        color: currentColor;
+        opacity: 0.06; /* Murni mengontrol tingkat transparan di light & dark mode */
+        writing-mode: vertical-rl;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        white-space: nowrap;
+        user-select: none;
+        pointer-events: none;
+        transition: opacity 0.3s ease, color 0.3s ease;
+    }
+
+    /* Penyesuaian kejelasan opacity watermark saat Mode Gelap (Dark Mode) */
+    :root.dark .watermark-side,
+    html.dark .watermark-side,
+    body.dark .watermark-side {
+
+    color: rgba(255, 255, 255, 0.04); /* Menggunakan warna putih dengan transparansi 12% */
+    opacity: 1; /* Reset opacity karena transparansi sudah diatur di dalam RGBA */
+}
+
+    /* Watermark Sisi Kiri */
+    .watermark-left {
+        left: 0.1rem;
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    /* Watermark Sisi Kanan */
+    .watermark-right {
+        right: 0.1rem;
+        transform: translateY(-50%);
+    }
+
+    /* Sembunyikan watermark jika layar di bawah 1080px (layar HP/Tablet) */
+    @media (max-width: 1080px) {
+        .watermark-side {
+            display: none !important;
+        }
+    }
+</style>

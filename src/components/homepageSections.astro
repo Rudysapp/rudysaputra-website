@@ -1,0 +1,454 @@
+---
+// Milestone 2A: replace dummy content/assets below with approved real content.
+// Hero and Possibilities are locked; Navbar/Footer belong to Milestone 2B.
+const selectedThoughts = [
+  {
+    title: "Memahami Kebenaran dan Perspektifnya: Kebenaran Absolut vs Kebenaran Relatif",
+    category: "Thinking",
+    readTime: "11 min read",
+    date: "2020-05-14",
+    dateLabel: "14 MEI  2020",
+    excerpt: "Mendalami bagaimana menilai dan menentukan cara pandang terhadap sebuah kebenaran.",
+    href: "/posts/memahami-kebenaran-dan-perspektifnya/",
+  },
+];
+
+// DUMMY SNAPSHOT: these are examples, not confirmed personal learning claims.
+const learningSnapshot = [
+  { topic: "Menggunakan AI untuk membantu riset dan menguji pemahaman", status: "EXPLORING" },
+  { topic: "Memahami alur informasi dalam rantai pasok industri", status: "LEARNING" },
+  { topic: "Menghubungkan keyakinan dengan keputusan sehari-hari", status: "REFLECTING" },
+  { topic: "Memahami bagaimana kebiasaan terbentuk di dalam komunitas", status: "EXPLORING" },
+];
+
+// Add entries here: the grid automatically scales to six, seven, or more works.
+const featuredWork = [
+  { title: "Jalamas", area: "BUSINESS · SYSTEMS · DIGITAL", description: "Building and rethinking a supply-chain business for mining and industrial operations.", image: "/assets/images/homepage-dummy/industrial.svg" },
+  { title: "Baduy Heritage", area: "CULTURE · TECHNOLOGY · RESEARCH", description: "A digital space for learning about Baduy culture beyond the usual tourism narrative.", image: "/assets/images/homepage-dummy/culture.svg" },
+];
+
+// Homepage selection only. Replace dummy photos and supply relationship context.
+// Detail links are intentionally omitted until the corresponding pages exist.
+const networkSelection = [
+  { name: "Ika Sastrosoebroto", expertise: "Public Relations Expert · CEO of Prominent PR", image: "/assets/images/homepage-dummy/portrait.svg", context: "Konteks persinggungan akan ditambahkan." },
+  { name: "B&W Production", expertise: "Photography · Videography", image: "/assets/images/homepage-dummy/portrait.svg", context: "Konteks persinggungan akan ditambahkan." },
+  { name: "The Excellence", expertise: "Management Consulting · Social Media · Digital Consulting", image: "/assets/images/homepage-dummy/portrait.svg", context: "Konteks persinggungan akan ditambahkan." },
+];
+---
+
+<section
+  aria-label="Rudy Saputra trial homepage"
+  class="min-h-screen w-full overflow-x-hidden font-sans transition-colors duration-300
+         bg-[var(--card-bg)] text-[#1c1b18]
+         dark:bg-[#141413] dark:text-[#eceaee]"
+>
+
+  <!-- ======================================================
+       HERO
+       ====================================================== -->
+  <header class="min-h-[85vh] flex flex-col justify-between pt-6 w-full transition-colors duration-300 bg-[var(--card-bg)] bg-olive-400/[0.21] dark:bg-white/[0.02]">
+    <div class="w-[calc(100%-48px)] max-w-[1240px] mx-auto max-md:w-[calc(100%-32px)]">
+
+      <!-- Meta / Brand Info -->
+      <div class="flex justify-between items-center text-[0.85rem] font-semibold tracking-[0.1em] text-[#737067] dark:text-[#a09d98]">
+        <div class="flex items-center gap-2">
+          <span>RUDY SAPUTRA</span>
+          <span class="opacity-90">·</span>
+          <span>PERSONAL WEBSITE / 2026</span>
+        </div>
+      </div>
+
+      <!-- Hero Content -->
+      <div class="py-20 pb-15 max-md:py-16">
+        <p class="m-0 text-[1.25rem] font-semibold leading-tight tracking-[0.14em] uppercase text-[#737067] dark:text-[#a09d98]">
+          THINKING  ·  LEARNING  ·  MAKING THINGS
+        </p>
+
+        <h1 class="max-w-[1080px] my-5.5 mb-15 font-sans text-[clamp(3.2rem,8vw,7.8rem)] max-md:text-[clamp(2.8rem,12vw,5rem)] font-semibold leading-[0.96] tracking-[-0.04em] opacity-90">
+          A place for ideas,<br />
+          works &amp; things<br />
+          worth remembering.
+        </h1>
+
+        <div class="grid grid-cols-[1fr_auto] max-md:grid-cols-1 gap-10 max-md:gap-7.5 items-end">
+          <p class="max-w-[460px] m-0 text-[1.05rem] leading-[1.65] font-normal opacity-85">
+            A personal space to explore what I think, what I build,
+            what I learn, and what I find worth doing. - RDS
+          </p>
+
+          <span class="text-[0.80rem] font-semibold tracking-[0.12em] text-[#737067] dark:text-[#a09d98] max-md:hidden">
+            SCROLL ↓
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ======================================================
+       TIGA ARAH
+       ====================================================== -->
+  <section class="w-full transition-colors duration-300 bg-[var(--card-bg)] bg-olive-400/[0.15] dark:bg-white/[0.04]">
+    <div class="w-[calc(100%-48px)] max-w-[1240px] mx-auto max-md:w-[calc(100%-32px)] py-[clamp(80px,11vw,150px)]">
+
+      <!-- Label -->
+      <div class="flex justify-between gap-6 border-t border-[rgba(28,27,24,0.12)] dark:border-[rgba(236,234,238,0.14)] pt-4 text-[0.68rem] font-semibold tracking-[0.12em] uppercase text-[#737067] dark:text-[#a09d98]">
+        <span>RDS</span>
+        <span>THE FRAMEWORK</span>
+      </div>
+
+      <!-- Heading -->
+      <div class="grid grid-cols-[minmax(180px,0.7fr)_1.3fr] max-md:grid-cols-1 gap-10 max-md:gap-7.5 mt-18.75 max-md:mt-12.5">
+        <p class="m-0 text-[1.25rem] font-semibold leading-tight tracking-[0.14em] uppercase text-[#737067] dark:text-[#a09d98]">
+          A SIMPLE WAY OF MOVING THROUGH THINGS
+        </p>
+        <h2 class="m-0 font-sans text-[clamp(2.8rem,6.5vw,6.2rem)] font-semibold leading-[0.98] tracking-[-0.04em]">
+          Thinking.<br />
+          Learning.<br />
+          Making Things.
+        </h2>
+      </div>
+
+      <!-- Directions List -->
+      <div class="mt-22.5 max-md:mt-15 border-t border-[rgba(28,27,24,0.12)] dark:border-[rgba(236,234,238,0.14)]">
+        <article class="grid grid-cols-[100px_1fr] max-md:grid-cols-[40px_1fr] gap-10 max-md:gap-4 py-9.5 border-b border-[rgba(28,27,24,0.12)] dark:border-[rgba(236,234,238,0.14)]">
+          <span class="text-[0.75rem] font-semibold text-[#737067] dark:text-[#a09d98]">01</span>
+          <div>
+            <h3 class="m-0 mb-3 font-sans text-[clamp(1.4rem,2.8vw,2.2rem)] font-semibold tracking-[-0.02em]">Berpikir</h3>
+            <p class="max-w-[580px] m-0 opacity-80 leading-[1.7] text-[0.98rem]">
+              Segala sesuatu dapat bermula dari pertanyaan. Mempertanyakan, menghubungkan, membandingkan, dan mencoba memahami sesuatu lebih dalam.
+            </p>
+          </div>
+        </article>
+
+        <article class="grid grid-cols-[100px_1fr] max-md:grid-cols-[40px_1fr] gap-10 max-md:gap-4 py-9.5 border-b border-[rgba(28,27,24,0.12)] dark:border-[rgba(236,234,238,0.14)]">
+          <span class="text-[0.75rem] font-semibold text-[#737067] dark:text-[#a09d98]">02</span>
+          <div>
+            <h3 class="m-0 mb-3 font-sans text-[clamp(1.4rem,2.8vw,2.2rem)] font-semibold tracking-[-0.02em]">Belajar</h3>
+            <p class="max-w-[580px] m-0 opacity-80 leading-[1.7] text-[0.98rem]">
+              Berpikir membawa kita pada batas pengetahuan. Di sanalah belajar dimulai, memperluas, menguji, dan mengoreksi cara kita memahami sesuatu.
+            </p>
+          </div>
+        </article>
+
+        <article class="grid grid-cols-[100px_1fr] max-md:grid-cols-[40px_1fr] gap-10 max-md:gap-4 py-9.5 border-b border-[rgba(28,27,24,0.12)] dark:border-[rgba(236,234,238,0.14)]">
+          <span class="text-[0.75rem] font-semibold text-[#737067] dark:text-[#a09d98]">03</span>
+          <div>
+            <h3 class="m-0 mb-3 font-sans text-[clamp(1.4rem,2.8vw,2.2rem)] font-semibold tracking-[-0.02em]">Membuat Sesuatu</h3>
+            <p class="max-w-[580px] m-0 opacity-80 leading-[1.7] text-[0.98rem]">
+              Pemikiran dan pembelajaran menemukan bentuknya ketika sesuatu dilakukan, ketika gagasan mulai memiliki konsekuensi di dunia nyata.
+            </p>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       THINKING - JOURNAL OF THOUGHT
+       ====================================================== -->
+  <section class="w-full transition-colors duration-300 bg-olive-400/[0.15] dark:bg-white/[0.07]">
+    <div class="w-[calc(100%-48px)] max-w-[1240px] mx-auto max-md:w-[calc(100%-32px)] py-[clamp(80px,11vw,150px)]">
+
+      <div class="flex justify-between gap-6 border-t border-[rgba(28,27,24,0.12)] dark:border-[rgba(236,234,238,0.14)] pt-4 text-[0.68rem] font-semibold tracking-[0.12em] uppercase text-[#737067] dark:text-[#a09d98]">
+        <span>RDS</span>
+        <span>THOUGHTS</span>
+      </div>
+
+      <div class="grid grid-cols-[1.35fr_0.65fr] max-md:grid-cols-1 gap-[70px] max-md:gap-7.5 mt-20">
+        <p class="max-w-[850px] m-0 font-sans text-[clamp(2.6rem,5.5vw,5.8rem)] max-md:text-[clamp(2.2rem,10vw,4rem)] font-medium leading-[1.05] tracking-[-0.04em]">
+          A place for thoughts
+          <em class="text-green-700 dark:text-emerald-200 not-italic font-normal">worth writing down.</em>
+        </p>
+
+        <div class="self-end">
+          <p class="m-0 mb-8.75 opacity-80 leading-[1.7] text-[0.98rem]">
+            Ada hal-hal yang tidak cukup dituliskan dalam satu kolom postingan media sosial. Di sini tertulis catatan atas pemikiran, pertanyaan, pengamatan, dan pengalaman, sebagai upaya untuk memahami sesuatu lebih jauh.
+          </p>
+
+          <a href="/posts/" class="font-medium text-current no-underline border-b-[1.5px] border-current pb-1 transition-colors duration-180 ease-in-out hover:text-[#b85b32] hover:border-[#b85b32] dark:hover:text-[#e08358] dark:hover:border-[#e08358]">
+            Jelajahi Catatan.. <span>↗</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<!-- ======================================================
+       NOTES
+       ====================================================== -->
+  <section class="w-full transition-colors duration-300 bg-olive-400/[0.18] dark:bg-white/[0.03]">
+    <div class="w-[calc(100%-48px)] max-w-[1240px] mx-auto max-md:w-[calc(100%-32px)] py-[clamp(80px,11vw,150px)]">
+
+      <div class="flex justify-between gap-6 border-t border-[rgba(28,27,24,0.12)] dark:border-[rgba(236,234,238,0.14)] pt-4 text-[0.68rem] font-semibold tracking-[0.12em] uppercase text-[#737067] dark:text-[#a09d98]">
+        <span>RDS</span>
+        <span>SELECTED THOUGHTS</span>
+      </div>
+
+      <!-- Editorial placeholders. Replace the shared illustration and excerpts with real articles. -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 mt-20 max-md:mt-15">
+        {selectedThoughts.map((thought) => (
+          <a
+         href={thought.href}
+         class="group min-w-0 flex flex-col text-inherit no-underline"
+         >
+            <div class="aspect-[16/10] overflow-hidden bg-[#e6e0d4] dark:bg-[#282622]">
+              <img src="/assets/images/person-writing.png" alt="" width="400" height="400" loading="lazy" decoding="async" class="w-full h-full object-contain motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:scale-[1.025]" />
+            </div>
+            <p class="mt-6 mb-3 text-[0.7rem] tracking-[0.05em] text-[#737067] dark:text-[#a09d98]">{thought.category} · {thought.readTime}</p>
+            <h3 class="m-0 font-sans text-[clamp(1.35rem,2.3vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em]">{thought.title}</h3>
+            <p class="mt-4 mb-6 text-[0.95rem] leading-[1.65] opacity-80 line-clamp-3">{thought.excerpt}</p>
+            <div class="mt-auto flex justify-between items-center gap-4 border-t border-[rgba(28,27,24,0.12)] dark:border-[rgba(236,234,238,0.14)] pt-4">
+              <time datetime={thought.date} class="text-[0.7rem] tracking-[0.05em] text-[#737067] dark:text-[#a09d98]">{thought.dateLabel}</time>
+              <span aria-hidden="true" class="motion-safe:transition-transform motion-safe:duration-200 motion-safe:group-hover:translate-x-1">→</span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       READING / LEARNING
+       ====================================================== -->
+  <section class="w-full transition-colors duration-300 bg-[#f6f4ee] dark:bg-[#171715]">
+    <div class="w-[calc(100%-48px)] max-w-[1240px] mx-auto max-md:w-[calc(100%-32px)] py-[clamp(80px,11vw,150px)]">
+
+      <div class="flex justify-between gap-6 border-t border-[rgba(28,27,24,0.12)] dark:border-[rgba(236,234,238,0.14)] pt-4 text-[0.68rem] font-semibold tracking-[0.12em] uppercase text-[#737067] dark:text-[#a09d98]">
+        <span>04</span>
+        <span>READING / LEARNING</span>
+      </div>
+
+      <div class="grid grid-cols-[1.2fr_0.8fr] max-md:grid-cols-1 gap-20 max-md:gap-7.5 mt-20 items-end">
+        <h2 class="m-0 font-sans text-[clamp(2.8rem,6vw,5.8rem)] font-semibold leading-[1.02] tracking-[-0.04em]">
+          Things I am<br /><em class="text-[#9c451e] dark:text-[#f0956b] not-italic font-normal">trying to understand.</em>
+        </h2>
+        <p class="max-w-[390px] m-0 opacity-80 leading-[1.7] text-[0.98rem]">
+          Books, articles, ideas, tools, and subjects that have occupied
+          my attention lately.
+        </p>
+      </div>
+
+      <div class="mt-20 max-md:mt-15">
+        <p class="mb-5 text-[0.7rem] tracking-[0.08em] uppercase text-[#737067] dark:text-[#a09d98]">Contoh snapshot sementara</p>
+        <ul class="m-0 p-0 list-none border-t border-[rgba(28,27,24,0.12)] dark:border-[rgba(236,234,238,0.14)]">
+          {learningSnapshot.map((item, index) => (
+            <li class="grid grid-cols-[55px_1fr_auto] max-md:grid-cols-[35px_1fr] gap-x-5 gap-y-2 items-start py-6 border-b border-[rgba(28,27,24,0.12)] dark:border-[rgba(236,234,238,0.14)]">
+              <span aria-hidden="true" class="text-[0.72rem] font-semibold text-[#737067] dark:text-[#a09d98]">{String(index + 1).padStart(2, "0")}</span>
+              <span class="text-[1.1rem] font-medium leading-[1.5]">{item.topic}</span>
+              <span class="max-md:col-start-2 text-[0.65rem] font-semibold tracking-[0.08em] text-[#737067] dark:text-[#a09d98]">{item.status}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       WORK & MAKING
+       ====================================================== -->
+  <section class="w-full transition-colors duration-300 bg-olive-400/[0.21] dark:bg-white/[0.07]">
+    <div class="w-[calc(100%-48px)] max-w-[1240px] mx-auto max-md:w-[calc(100%-32px)] py-[clamp(80px,11vw,150px)]">
+
+      <div class="flex justify-between gap-6 border-t border-[rgba(28,27,24,0.12)] dark:border-[rgba(236,234,238,0.14)] pt-4 text-[0.68rem] font-semibold tracking-[0.12em] uppercase text-[#737067] dark:text-[#a09d98]">
+        <span>RDS</span>
+        <span>FEATURED WORK</span>
+      </div>
+
+      <div class="mt-20">
+        <h2 class="m-0 max-w-[900px] font-sans text-[clamp(2.8rem,6vw,5.8rem)] font-semibold leading-[1.02] tracking-[-0.04em]">
+       Things I've built<br />
+       &amp; worked on.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 mt-20">
+        {featuredWork.map((work) => (
+          <article class="min-w-0">
+            <div class="aspect-[16/10] overflow-hidden bg-[#e6e0d4] dark:bg-[#282622]">
+              <img src={work.image} alt={`Visual dummy ${work.title}, akan diganti dengan foto karya`} width="800" height="500" loading="lazy" decoding="async" class="w-full h-full object-cover" />
+            </div>
+            <div class="pt-5.5">
+              <p class="m-0 text-[0.68rem] font-semibold leading-[1.5] tracking-[0.1em] uppercase text-[#737067] dark:text-[#a09d98]">{work.area}</p>
+              <h3 class="mt-2 mb-3 font-sans text-[clamp(1.6rem,2.5vw,2.2rem)] font-semibold tracking-[-0.03em]">{work.title}</h3>
+              <p class="m-0 opacity-80 leading-[1.6] text-[0.95rem]">{work.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    <div class="mt-16 max-md:mt-12">
+
+   <div class="flex justify-between gap-6 border-t border-[rgba(28,27,24,0.12)] dark:border-[rgba(236,234,238,0.14)] pt-4 text-[0.68rem] font-semibold tracking-[0.12em] uppercase text-[#737067] dark:text-[#a09d98]">
+    <span>RDS</span>
+    <span>AREAS I'VE WORKED AROUND</span>
+   </div>
+
+   <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 mt-6">
+    {[
+      "Business & Entrepreneurship",
+      "Mining Support & Industrial Supply",
+      "Technology & Web",
+      "Community & Organization",
+      "Problem Solving & Systems",
+      "Writing & Ideas",
+    ].map((area, index) => (
+      <div class="grid grid-cols-[35px_1fr] gap-3 py-4 border-b border-[rgba(28,27,24,0.12)] dark:border-[rgba(236,234,238,0.14)] items-center">
+        <span class="text-[0.72rem] font-semibold text-[#737067] dark:text-[#a09d98]">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+
+        <span class="font-sans text-[0.98rem] font-medium tracking-[-0.02em]">
+          {area}
+        </span>
+      </div>
+    ))}
+   </div>
+
+   </div>
+     </div>
+  </section>
+
+<!-- ======================================================
+     ACROSS THE JOURNEY
+     ====================================================== -->
+<section class="w-full transition-colors duration-300 bg-[#f6f4ee] dark:bg-[#171715]">
+  <div class="w-[calc(100%-48px)] max-w-[1240px] mx-auto max-md:w-[calc(100%-32px)] py-[clamp(80px,11vw,150px)]">
+
+    <!-- Section Label -->
+    <div class="flex justify-between gap-6 border-t border-[rgba(28,27,24,0.12)] dark:border-[rgba(236,234,238,0.14)] pt-4 text-[0.68rem] font-semibold tracking-[0.12em] uppercase text-[#737067] dark:text-[#a09d98]">
+      <span>RDS</span>
+      <span>ACROSS THE JOURNEY</span>
+    </div>
+
+    <!-- Intro -->
+    <div class="grid grid-cols-[1.2fr_0.8fr] max-md:grid-cols-1 gap-20 max-md:gap-8 mt-20 items-end">
+
+      <h2 class="m-0 font-sans text-[clamp(2.8rem,6vw,5.8rem)] font-semibold leading-[1.02] tracking-[-0.04em]">
+        Different people.<br />
+        Different expertise.<br />
+        <em class="font-normal not-italic text-green-700 dark:text-emerald-200">
+          More possibilities.
+        </em>
+      </h2>
+
+      <p class="max-w-[410px] m-0 opacity-80 leading-[1.7] text-[0.98rem]">
+        Not everything has to be done alone. Different problems often
+        need different perspectives, skills, and people.
+      </p>
+
+    </div>
+
+    <!-- Equal-weight selection; no numbering, ranking, or social-proof treatment. -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 mt-20 max-md:mt-15">
+      {networkSelection.map((person) => (
+        <article class="min-w-0">
+          <div class="aspect-[4/3] overflow-hidden bg-[#e0e4dc] dark:bg-[#222724]">
+            <img src={person.image} alt={`Foto dummy untuk ${person.name}`} width="800" height="600" loading="lazy" decoding="async" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="mt-6 mb-3 font-sans text-[clamp(1.25rem,2.3vw,1.9rem)] font-medium leading-[1.2] tracking-[-0.02em]">{person.name}</h3>
+          <p class="m-0 text-[0.85rem] leading-[1.6] text-[#737067] dark:text-[#a09d98]">{person.expertise}</p>
+          <p class="mt-4 mb-0 text-[0.9rem] leading-[1.65] opacity-75">{person.context}</p>
+        </article>
+      ))}
+    </div>
+    <div class="mt-12">
+      <a href="/network/" class="font-medium text-current no-underline border-b-[1.5px] border-current pb-1 transition-colors hover:text-[#b85b32] dark:hover:text-[#e08358] focus-visible:outline-2 focus-visible:outline-offset-4">
+        Explore our network →
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ======================================================
+     POSSIBILITIES
+     ====================================================== -->
+<section class="w-full transition-colors duration-300 bg-[#e9e5da] dark:bg-[#20201d]">
+  <div class="w-[calc(100%-48px)] max-w-[1240px] mx-auto max-md:w-[calc(100%-32px)] py-[clamp(100px,14vw,190px)]">
+
+    <div class="flex justify-between gap-6 border-t border-[rgba(28,27,24,0.12)] dark:border-[rgba(236,234,238,0.14)] pt-4 text-[0.68rem] font-semibold tracking-[0.12em] uppercase text-[#737067] dark:text-[#a09d98]">
+      <span>RDS</span>
+      <span>POSSIBILITIES</span>
+    </div>
+
+    <div class="mt-[clamp(70px,9vw,120px)]">
+
+      <h2 class="m-0 max-w-[1050px] font-sans text-[clamp(3.2rem,7.5vw,7.2rem)] font-semibold leading-[0.96] tracking-[-0.045em]">
+        What could come<br />
+        <em class="font-normal not-italic text-[#9c451e] dark:text-[#f0956b]">
+          from all of this?
+        </em>
+      </h2>
+
+      <div class="mt-[clamp(70px,9vw,120px)] ml-[clamp(0px,18vw,260px)] max-md:ml-0 max-w-[700px]">
+
+        <p class="m-0 font-sans text-[clamp(1.4rem,2.7vw,2.2rem)] leading-[1.5] tracking-[-0.02em]">
+          An idea may become a conversation.<br />
+          A problem may find a different perspective.<br />
+          A connection may lead somewhere unexpected.<br />
+          A conversation may become something worth making.
+        </p>
+
+        <p class="mt-10 mb-0 max-w-[540px] opacity-70 leading-[1.7] text-[0.95rem]">
+          Not every possibility needs a predefined form.
+          Sometimes it begins simply by connecting the right question,
+          perspective, skill, or person.
+        </p>
+
+    <div class="mt-[clamp(100px,14vw,180px)] border-t border-[rgba(28,27,24,0.18)] dark:border-[rgba(236,234,238,0.18)] pt-6">
+
+    <div class="flex justify-between gap-6 text-[0.68rem] font-semibold tracking-[0.12em] uppercase text-[#737067] dark:text-[#a09d98]">
+    <span>RDS</span>
+    <span>WHAT COULD WE DO TOGETHER?</span>
+    </div>
+
+   <div class="mt-[clamp(50px,7vw,90px)]">
+
+     <a
+    href="mailto:saputra8181@gmail.com"
+    class="group flex items-end justify-between gap-10 text-inherit no-underline"
+     >
+    <span class="font-sans text-[clamp(4rem,11vw,10rem)] font-semibold leading-[0.88] tracking-[-0.055em]">
+         Let's talk.
+       </span>
+
+        <span class="text-[clamp(2rem,4vw,4rem)] transition-transform duration-180 group-hover:translate-x-2">
+        →
+         </span>
+        </a>
+
+      <div class="mt-10 flex justify-between gap-10 max-md:flex-col">
+      <p class="m-0 max-w-[600px] opacity-75 leading-[1.7]">
+        A question, an idea, a problem worth thinking about,
+        an introduction—or perhaps something we haven't thought of yet.
+      </p>
+
+      <a
+        href="mailto:saputra8181@gmail.com"
+        class="text-sm font-semibold text-inherit no-underline border-b border-current self-start"
+      >
+        saputra8181@gmail.com
+      </a>
+    </div>
+
+  </div>
+
+</div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+</section>

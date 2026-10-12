@@ -67,10 +67,11 @@ export default defineConfig({
             theme: false,
             animationClass: "transition-swup-", // see https://swup.js.org/options/#animationselector
             containers: [
-                "#swup-container",
-                "#left-sidebar",
-                "#right-sidebar",
-                "#middle-sidebar",
+               "#swup-container",
+               "#left-sidebar",
+               "#right-sidebar",
+               "#middle-sidebar",
+               "#swup-banner",
             ],
             cache: true,
             preload: true,

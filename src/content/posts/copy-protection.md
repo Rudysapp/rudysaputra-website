@@ -6,7 +6,7 @@ featured: true
 pinned: false
 tags: [Copy Protection]
 category: Examples
-draft: false
+draft: true
 copyProtection:
     blockSelection: true
     blockClipboard: true
