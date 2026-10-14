@@ -262,6 +262,65 @@ const {
 
     <BackToTopButton />
 
+
+<!-- Persistent delegated Journal controls: remains active across Swup page replacements. -->
+<script>
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+    const editorial = document.getElementById("journal-editorial");
+    if (!editorial) return;
+
+    const topicButton = target.closest<HTMLButtonElement>("#journal-filters button[data-topic]");
+    const resetButton = target.closest<HTMLButtonElement>("#journal-reset");
+    const exploreButton = target.closest<HTMLButtonElement>("#journal-explore");
+    if (!topicButton && !resetButton && !exploreButton) return;
+
+    const buttons = Array.from(editorial.querySelectorAll<HTMLButtonElement>("#journal-filters button[data-topic]"));
+    const cards = Array.from(editorial.querySelectorAll<HTMLElement>("#journal-cards [data-journal-post]"));
+    const featuredTopics: string[] = JSON.parse(editorial.dataset.featuredTopics ?? "[]");
+    const reset = editorial.querySelector<HTMLButtonElement>("#journal-reset");
+    const count = editorial.querySelector<HTMLElement>("#journal-count");
+    const empty = editorial.querySelector<HTMLElement>("#journal-empty");
+    const featuredMatch = editorial.querySelector<HTMLElement>("#journal-featured-match");
+
+    if (topicButton) {
+      const wasPressed = topicButton.getAttribute("aria-pressed") === "true";
+      topicButton.setAttribute("aria-pressed", String(!wasPressed));
+    }
+    if (resetButton) {
+      buttons.forEach((button) => button.setAttribute("aria-pressed", "false"));
+    }
+
+    const selected = new Set(buttons
+      .filter((button) => button.getAttribute("aria-pressed") === "true")
+      .map((button) => button.dataset.topic)
+      .filter((topic): topic is string => Boolean(topic)));
+
+    let visible = 0;
+    for (const card of cards) {
+      const tags: string[] = JSON.parse(card.dataset.topics ?? "[]");
+      const matches = selected.size === 0 || tags.some((tag) => selected.has(tag));
+      card.classList.toggle("hidden", !matches);
+      if (matches) visible++;
+    }
+    const featuredMatches = selected.size === 0 || featuredTopics.some((tag) => selected.has(tag));
+    if (count) count.textContent = selected.size > 0 ? `${visible + (featuredMatches ? 1 : 0)} tulisan sesuai pilihan` : "";
+    if (featuredMatch) featuredMatch.classList.toggle("hidden", selected.size === 0 || !featuredMatches);
+    if (empty) empty.classList.toggle("hidden", selected.size === 0 || visible > 0 || featuredMatches);
+    if (reset) reset.hidden = selected.size === 0;
+
+    if (exploreButton) {
+      const destination = visible > 0
+        ? document.getElementById("journal-discovery-title")
+        : featuredMatches
+          ? document.getElementById("journal-featured-title")
+          : document.getElementById("journal-empty");
+      destination?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+</script>
+
 </BaseLayout>
 
 <style is:global>

@@ -178,17 +178,20 @@ navbar:
     links:
         - # Tautan navigasi tingkat 1 - Beranda (preset)
             "Home"
-        - # Tautan navigasi tingkat 1 - Arsip (preset)
-            "Archive"
+        - # Tautan navigasi tingkat 1 - Journal (kustom)
+            name: "Journal"
+            url: "/journal/"
+            icon: "material-symbols:menu-book"
+            description: "Thoughts, reflections, questions, and learning."
         - # Tautan navigasi tingkat 1 - Pameran (kustom)
             # Nama navigasi
-            name: "Exhibition"
+            name: "Showcase"
             # Tautan navigasi
             url: "/exhibition/"
             # Ikon navigasi
-            icon: "material-symbols:person"
+            icon: "material-symbols:dashboard"
             # Deskripsi navigasi
-            description: "A collection of my creative works and experiences"
+            description: "Things I make, explore, and share."
             # Sub-tautan
             children:
                 - # Tautan navigasi tingkat 2 - Proyek (preset)
