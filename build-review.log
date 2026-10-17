@@ -1,0 +1,231 @@
+
+> rudysaputra-website@1.0.0 build /Users/rudysapp/RDS FILES/JALAMAS ARTHA SAKTI/OTHER WEB PROJECT/WEB RUDY VS CODE/rudysaputra-website
+> node scripts/generate-icons.js && node scripts/build-with-pagefind.cjs
+
+🚀 开始扫描图标...
+📦 发现 40 个唯一图标
+✅ 已生成 /Users/rudysapp/RDS FILES/JALAMAS ARTHA SAKTI/OTHER WEB PROJECT/WEB RUDY VS CODE/rudysaputra-website/src/utils/icons.ts
+🚀 Detected deployment platform: vercel
+📁 Pagefind output directory: .vercel/output/static
+🔨 Running Astro build...
+npm warn Unknown env config "manage-package-manager-versions". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown project config "manage-package-manager-versions". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+09:59:47 [content] Syncing content
+09:59:47 [content] Synced content
+09:59:47 [types] Generated 156ms
+09:59:47 [build] output: "static"
+09:59:47 [build] mode: "server"
+09:59:47 [build] directory: /Users/rudysapp/RDS FILES/JALAMAS ARTHA SAKTI/OTHER WEB PROJECT/WEB RUDY VS CODE/rudysaputra-website/dist/
+09:59:47 [build] adapter: @astrojs/vercel
+09:59:47 [build] Collecting build info...
+09:59:47 [build] ✓ Completed in 248ms.
+09:59:47 [build] Building server entrypoints...
+Found 3 warnings while optimizing generated CSS:
+
+Issue #1:
+[2m│     color: var(--primary);[22m
+[2m│   }[22m
+[2m│[22m   .is-theme-transitioning :is(.wallpaper-transparent)body #navbar > div {
+[2m┆[22m                                                      [33m[2m^--[22m Unexpected token Ident("body")[39m
+[2m┆[22m
+[2m│     transition: none !important;[22m
+[2m│     backdrop-filter: none !important;[22m
+
+Issue #2:
+[2m│     backdrop-filter: none !important;[22m
+[2m│   }[22m
+[2m│[22m   .is-theme-transitioning :is(.wallpaper-transparent)body #navbar[data-transparent-mode] > div {
+[2m┆[22m                                                      [33m[2m^--[22m Unexpected token Ident("body")[39m
+[2m┆[22m
+[2m│     transition: none !important;[22m
+[2m│     backdrop-filter: none !important;[22m
+
+Issue #3:
+[2m│     backdrop-filter: none !important;[22m
+[2m│   }[22m
+[2m│[22m   .is-theme-transitioning :is(.wallpaper-transparent)body #navbar[data-transparent-mode].scrolled > div {
+[2m┆[22m                                                      [33m[2m^--[22m Unexpected token Ident("body")[39m
+[2m┆[22m
+[2m│     transition: none !important;[22m
+[2m│     backdrop-filter: none !important;[22m
+
+09:59:51 [WARN] [vite] src/plugins/translate.js (10189:31): Use of eval in "src/plugins/translate.js" is strongly discouraged as it poses security risks and may cause issues with minification.
+09:59:51 [vite] ✓ built in 3.52s
+09:59:51 [build] ✓ Completed in 3.55s.
+
+ building client (vite) 
+09:59:51 [vite] transforming...
+09:59:53 [vite] ✓ 915 modules transformed.
+09:59:53 [WARN] [vite] src/plugins/translate.js (10189:31): Use of eval in "src/plugins/translate.js" is strongly discouraged as it poses security risks and may cause issues with minification.
+09:59:53 [vite] rendering chunks...
+09:59:53 [vite] computing gzip size...
+09:59:53 [vite] dist/client/_astro/ec.g1fg5.js                                                            0.94 kB
+09:59:53 [vite] dist/client/_astro/ec.9bf0i.css                                                          21.83 kB │ gzip:  4.65 kB
+09:59:53 [vite] dist/client/_astro/trial.B_S5UE-9.css                                                    37.93 kB │ gzip:  7.46 kB
+09:59:53 [vite] dist/client/_astro/layout.CVh_XTks.js                                                     0.12 kB │ gzip:  0.12 kB
+09:59:53 [vite] dist/client/_astro/tocButton.astro_astro_type_script_index_0_lang.BghoJ8lu.js             0.15 kB │ gzip:  0.13 kB
+09:59:53 [vite] dist/client/_astro/postMeta.astro_astro_type_script_index_0_lang.vl4Nc5nS.js              0.25 kB │ gzip:  0.17 kB
+09:59:53 [vite] dist/client/_astro/profile.astro_astro_type_script_index_0_lang.D5FZ7pS-.js               0.25 kB │ gzip:  0.17 kB
+09:59:53 [vite] dist/client/_astro/breakpoints.B5o5bNg3.js                                                0.26 kB │ gzip:  0.23 kB
+09:59:53 [vite] dist/client/_astro/translation.IT4qGc6c.js                                                0.29 kB │ gzip:  0.20 kB
+09:59:53 [vite] dist/client/_astro/if.BbKfHWCt.js                                                         0.42 kB │ gzip:  0.30 kB
+09:59:53 [vite] dist/client/_astro/snippet.asnWPMd2.js                                                    0.43 kB │ gzip:  0.30 kB
+09:59:53 [vite] dist/client/_astro/this.LduCQI0c.js                                                       0.45 kB │ gzip:  0.29 kB
+09:59:53 [vite] dist/client/_astro/url.Do4aAlOx.js                                                        0.54 kB │ gzip:  0.29 kB
+09:59:53 [vite] dist/client/_astro/hue.BqmMUzCS.js                                                        0.61 kB │ gzip:  0.33 kB
+09:59:53 [vite] dist/client/_astro/DropdownPanel.Cb6tXjad.js                                              0.72 kB │ gzip:  0.47 kB
+09:59:53 [vite] dist/client/_astro/html._YTGCsPh.js                                                       0.73 kB │ gzip:  0.47 kB
+09:59:53 [vite] dist/client/_astro/_commonjsHelpers.D6-XlEtG.js                                           0.73 kB │ gzip:  0.39 kB
+09:59:53 [vite] dist/client/_astro/input.CAcO9nlo.js                                                      0.81 kB │ gzip:  0.45 kB
+09:59:53 [vite] dist/client/_astro/DropdownItem.D3QXse3-.js                                               0.94 kB │ gzip:  0.60 kB
+09:59:53 [vite] dist/client/_astro/client.svelte.B6g8l7E-.js                                              1.01 kB │ gzip:  0.56 kB
+09:59:53 [vite] dist/client/_astro/SwupScriptsPlugin.DeeT9ppa.js                                          1.10 kB │ gzip:  0.62 kB
+09:59:53 [vite] dist/client/_astro/preload-helper.BlTxHScW.js                                             1.11 kB │ gzip:  0.65 kB
+09:59:53 [vite] dist/client/_astro/theme.8PA4u5RZ.js                                                      1.29 kB │ gzip:  0.58 kB
+09:59:53 [vite] dist/client/_astro/props.BtuY8H3A.js                                                      1.30 kB │ gzip:  0.73 kB
+09:59:53 [vite] dist/client/_astro/axisNiceTicks.Hne1hD1w.js                                              1.48 kB │ gzip:  0.74 kB
+09:59:53 [vite] dist/client/_astro/branches.DH0opW9x.js                                                   1.51 kB │ gzip:  0.67 kB
+09:59:53 [vite] dist/client/_astro/index.modern.D46RI4Wq.js                                               1.77 kB │ gzip:  0.91 kB
+09:59:53 [vite] dist/client/_astro/pio.BE6edB8Y.js                                                        1.82 kB │ gzip:  1.03 kB
+09:59:53 [vite] dist/client/_astro/page.CR_I6EgT.js                                                       2.11 kB │ gzip:  1.02 kB
+09:59:53 [vite] dist/client/_astro/language.co08bX7x.js                                                   2.16 kB │ gzip:  0.95 kB
+09:59:53 [vite] dist/client/_astro/navMenu.DEid9Oap.js                                                    2.38 kB │ gzip:  1.25 kB
+09:59:53 [vite] dist/client/_astro/SwupHeadPlugin.DvOZNxAa.js                                             2.58 kB │ gzip:  1.28 kB
+09:59:53 [vite] dist/client/_astro/directoryTree.DLawipvy.js                                              3.35 kB │ gzip:  1.63 kB
+09:59:53 [vite] dist/client/_astro/translator.DAQmrQj0.js                                                 3.39 kB │ gzip:  1.78 kB
+09:59:53 [vite] dist/client/_astro/displaySettings.CkC19PAK.js                                            3.41 kB │ gzip:  1.67 kB
+09:59:53 [vite] dist/client/_astro/transitions.DUwpXXOT.js                                                3.43 kB │ gzip:  1.71 kB
+09:59:53 [vite] dist/client/_astro/umami-share.gHy9ClAp.js                                                3.55 kB │ gzip:  1.27 kB
+09:59:53 [vite] dist/client/_astro/lightDarkSwitch.T60ENPcY.js                                            3.63 kB │ gzip:  1.55 kB
+09:59:53 [vite] dist/client/_astro/wallpaperSwitch.c_jq2Oc4.js                                            3.64 kB │ gzip:  1.53 kB
+09:59:53 [vite] dist/client/_astro/each.Ck_42eQc.js                                                       4.26 kB │ gzip:  2.00 kB
+09:59:53 [vite] dist/client/_astro/wallpaper.BiD6tTys.js                                                  4.59 kB │ gzip:  1.34 kB
+09:59:53 [vite] dist/client/_astro/archivePanel.CM2k2YkQ.js                                               4.73 kB │ gzip:  2.02 kB
+09:59:53 [vite] dist/client/_astro/widget.IG7kVwl0.js                                                     5.09 kB │ gzip:  1.79 kB
+09:59:53 [vite] dist/client/_astro/SwupA11yPlugin.DHEAekkc.js                                             5.25 kB │ gzip:  2.13 kB
+09:59:53 [vite] dist/client/_astro/render.CBf5jfJD.js                                                     5.35 kB │ gzip:  2.41 kB
+09:59:53 [vite] dist/client/_astro/SwupPreloadPlugin.U1aa-Ru8.js                                          6.06 kB │ gzip:  2.35 kB
+09:59:53 [vite] dist/client/_astro/search.Cy1FThHT.js                                                     7.27 kB │ gzip:  3.07 kB
+09:59:53 [vite] dist/client/_astro/attributes.BV0P7KB1.js                                                 7.29 kB │ gzip:  3.38 kB
+09:59:53 [vite] dist/client/_astro/toc.astro_astro_type_script_index_0_lang.rjPVRbwI.js                   8.52 kB │ gzip:  2.82 kB
+09:59:53 [vite] dist/client/_astro/core.DCnk_SIO.js                                                       9.32 kB │ gzip:  3.98 kB
+09:59:53 [vite] dist/client/_astro/base.astro_astro_type_script_index_0_lang.DQKrKScC.js                 13.08 kB │ gzip:  4.76 kB
+09:59:53 [vite] dist/client/_astro/statistics.DRTh_oMW.js                                                19.01 kB │ gzip:  7.46 kB
+09:59:53 [vite] dist/client/_astro/renderers.BF74Wk2i.js                                                 20.03 kB │ gzip:  8.52 kB
+09:59:53 [vite] dist/client/_astro/createSeriesData.CNZVC4Ea.js                                          20.75 kB │ gzip:  6.57 kB
+09:59:53 [vite] dist/client/_astro/icon.bevWf1ff.js                                                      21.55 kB │ gzip:  6.80 kB
+09:59:53 [vite] dist/client/_astro/Swup.B7n39ElZ.js                                                      21.61 kB │ gzip:  7.41 kB
+09:59:53 [vite] dist/client/_astro/install.AIexAYSW.js                                                   24.23 kB │ gzip:  9.62 kB
+09:59:53 [vite] dist/client/_astro/utils.ur0dB7zq.js                                                     28.78 kB │ gzip: 11.30 kB
+09:59:53 [vite] dist/client/_astro/charts.DPp_rBHG.js                                                    35.90 kB │ gzip: 13.33 kB
+09:59:53 [vite] dist/client/_astro/musicPlayer.cHwJY1yA.js                                               39.79 kB │ gzip: 14.71 kB
+09:59:53 [vite] dist/client/_astro/language.oQIsDRMo.js                                                  45.25 kB │ gzip: 12.49 kB
+09:59:53 [vite] dist/client/_astro/config.9uGgXzJc.js                                                    62.20 kB │ gzip: 20.24 kB
+09:59:53 [vite] dist/client/_astro/passwordProtection.astro_astro_type_script_index_0_lang.BMoMoINP.js   71.87 kB │ gzip: 27.17 kB
+09:59:53 [vite] dist/client/_astro/components.BxVgCY6h.js                                                80.81 kB │ gzip: 26.90 kB
+09:59:53 [vite] dist/client/_astro/index.I5EOuyRm.js                                                    116.69 kB │ gzip: 40.32 kB
+09:59:53 [vite] dist/client/_astro/dashStyle.CD6gNv86.js                                                143.97 kB │ gzip: 48.83 kB
+09:59:53 [vite] dist/client/_astro/translate.w0zqtkXL.js                                                149.14 kB │ gzip: 46.71 kB
+09:59:53 [vite] dist/client/_astro/Axis.Cg489lGK.js                                                     221.76 kB │ gzip: 78.42 kB
+09:59:53 [vite] ✓ built in 2.10s
+
+ prerendering static routes 
+09:59:53 ▶ src/pages/404.astro
+09:59:53   └─ /404.html (+20ms) 
+09:59:53 ▶ src/pages/[...menu].astro
+09:59:53   └─ /exhibition/index.html (+5ms) 
+09:59:53 ▶ src/pages/[...page].astro
+09:59:53   └─ /index.html (+2ms) 
+09:59:53 ▶ src/pages/about.astro
+09:59:53   └─ /about/index.html (+4ms) 
+09:59:53 ▶ src/pages/albums/[id]/index.astro
+09:59:53   └─ /albums/jsonExample/index.html (+5ms) 
+09:59:53 ▶ src/pages/albums.astro
+09:59:53   └─ /albums/index.html (+4ms) 
+09:59:53 ▶ src/pages/anime.astro
+09:59:53   └─ /anime/index.html (+4ms) 
+09:59:53 ▶ src/pages/archive.astro
+09:59:53   └─ /archive/index.html (+5ms) 
+09:59:53 λ src/pages/atom.xml.ts
+09:59:53   └─ /atom.xml (+11ms) 
+09:59:53 ▶ src/pages/atom.astro
+09:59:53   └─ /atom/index.html (+4ms) 
+09:59:53 ▶ src/pages/diary.astro
+09:59:53   └─ /diary/index.html (+3ms) 
+09:59:53 ▶ src/pages/friends.astro
+09:59:53   └─ /friends/index.html (+3ms) 
+09:59:53 ▶ src/pages/gallery/index.astro
+09:59:53   └─ /gallery/index.html (+4ms) 
+09:59:53 ▶ src/pages/journal.astro
+09:59:53   └─ /journal/index.html (+4ms) 
+09:59:53 λ src/pages/og/[...slug].png.ts
+09:59:53 ▶ src/pages/posts/[...slug].astro
+09:59:53   └─ /posts/memahami-kebenaran-dan-perspektifnya/index.html (+6ms) 
+09:59:53 ▶ src/pages/projects.astro
+09:59:53   └─ /projects/index.html (+4ms) 
+09:59:53 λ src/pages/robots.txt.ts
+09:59:53   └─ /robots.txt (+0ms) 
+09:59:54 λ src/pages/rss.xml.ts
+09:59:54   └─ /rss.xml (+11ms) 
+09:59:54 ▶ src/pages/rss.astro
+09:59:54   └─ /rss/index.html (+3ms) 
+09:59:54 ▶ src/pages/sitemap.astro
+09:59:54   └─ /sitemap/index.html (+3ms) 
+09:59:54 ▶ src/pages/skills.astro
+09:59:54   └─ /skills/index.html (+4ms) 
+09:59:54 ▶ src/pages/timeline.astro
+09:59:54   └─ /timeline/index.html (+4ms) 
+09:59:54 ▶ src/pages/trial.astro
+09:59:54   └─ /trial/index.html (+2ms) 
+09:59:54 ▶ decap-cms-oauth-astro/src/admin.astro
+09:59:54   └─ /admin/index.html (+0ms) 
+09:59:54 λ decap-cms-oauth-astro/src/config.ts
+09:59:54   └─ /admin/config.yml (+0ms) 
+09:59:54 ✓ Completed in 506ms.
+
+ generating optimized images 
+09:59:54   ▶ /_astro/智子_ASK.rpd0aOd2_Z1KV28r.webp (reused cache entry) (+1ms) (1/3)
+09:59:54   ▶ /_astro/Twilight_Cover.CodURR07_Z1vOv5x.webp (reused cache entry) (+1ms) (2/3)
+09:59:54   ▶ /_astro/Dawn.D8NFvJkl_AawRX.webp (reused cache entry) (+1ms) (3/3)
+09:59:54 ✓ Completed in 1ms.
+
+09:59:54 [build] Rearranging server assets...
+09:59:54 [@astrojs/vercel] Bundling function ../../../../dist/server/entry.mjs
+09:59:54 [@astrojs/sitemap] `sitemap-index.xml` created at `dist/client`
+09:59:54 [@astrojs/vercel] Copying static files to .vercel/output/static
+09:59:54 [build] Server built in 6.98s
+09:59:54 [build] Complete!
+🔍 Running Pagefind search index generation...
+npm warn Unknown env config "manage-package-manager-versions". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown project config "manage-package-manager-versions". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+Running Pagefind v1.5.2 (Extended)
+Running from: "/Users/rudysapp/RDS FILES/JALAMAS ARTHA SAKTI/OTHER WEB PROJECT/WEB RUDY VS CODE/rudysaputra-website"
+Source:       ".vercel/output/static"
+Output:       ".vercel/output/static/pagefind"
+
+[Walking source directory]
+Found 22 files matching **/*.{html}
+
+[Parsing files]
+Found a data-pagefind-body element on the site.
+↳ Ignoring pages without this tag.
+1 page found without an <html> element. 
+Pages without an outer <html> element will not be processed by default. 
+If adding this element is not possible, use the root selector config to target a different root element.
+  * "/FooterConfig.html" has no <html> element
+
+[Reading languages]
+Discovered 1 language: id
+
+[Building search indexes]
+Total: 
+  Indexed 1 language
+  Indexed 3 pages
+  Indexed 475 words
+  Indexed 0 filters
+  Indexed 0 sorts
+
+Finished in 0.033 seconds
+✅ Build completed!
+📊 Search index generated at: .vercel/output/static/pagefind/

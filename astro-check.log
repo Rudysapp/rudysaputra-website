@@ -1,0 +1,389 @@
+
+> rudysaputra-website@1.0.0 check /Users/rudysapp/RDS FILES/JALAMAS ARTHA SAKTI/OTHER WEB PROJECT/WEB RUDY VS CODE/rudysaputra-website
+> astro check
+
+03:37:52 [content] Syncing content
+03:37:52 [content] Synced content
+03:37:52 [types] Generated 150ms
+03:37:52 [check] Getting diagnostics for Astro files in /Users/rudysapp/RDS FILES/JALAMAS ARTHA SAKTI/OTHER WEB PROJECT/WEB RUDY VS CODE/rudysaputra-website...
+[96msrc/components/banner.astro[0m:[93m205[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m205[0m <script define:vars={{ carouselInterval }}>
+[7m   [0m [93m        ~~~~~~~~~~~[0m
+
+[96msrc/components/fullscreenWallpaper.astro[0m:[93m108[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m108[0m <script define:vars={{ carouselInterval }}>
+[7m   [0m [93m        ~~~~~~~~~~~[0m
+
+[96msrc/components/postPage.astro[0m:[93m14[0m:[93m44[0m - [91merror[0m[90m ts(2344): [0mType '"posts"' does not satisfy the constraint 'keyof DataEntryMap'.
+
+[7m14[0m     {page.data.map((entry: CollectionEntry<"posts">) => (
+[7m  [0m [91m                                           ~~~~~~~[0m
+
+[96msrc/components/common/icon.astro[0m:[93m25[0m:[93m5[0m - [93mwarning[0m[90m ts(6133): [0m'fallback' is declared but its value is never read.
+
+[7m25[0m     fallback = "●",
+[7m  [0m [93m    ~~~~~~~~[0m
+
+[96msrc/components/common/iconifyLoader.astro[0m:[93m12[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m12[0m <script define:vars={{ preloadIcons }}>
+[7m  [0m [93m        ~~~~~~~~~~~[0m
+
+[96msrc/components/common/imageWrapper.astro[0m:[93m35[0m:[93m5[0m - [93mwarning[0m[90m ts(7043): [0mVariable 'img' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m35[0m let img;
+[7m  [0m [93m    ~~~[0m
+
+[96msrc/components/common/passwordProtection.astro[0m:[93m4[0m:[93m22[0m - [93mwarning[0m[90m ts(7016): [0mCould not find a declaration file for module 'crypto-js'. '/Users/rudysapp/RDS FILES/JALAMAS ARTHA SAKTI/OTHER WEB PROJECT/WEB RUDY VS CODE/rudysaputra-website/node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/crypto-js` if it exists or add a new declaration (.d.ts) file containing `declare module 'crypto-js';`
+
+[7m4[0m import CryptoJS from 'crypto-js';
+[7m [0m [93m                     ~~~~~~~~~~~[0m
+[96msrc/components/common/passwordProtection.astro[0m:[93m62[0m:[93m30[0m - [93mwarning[0m[90m ts(7016): [0mCould not find a declaration file for module 'crypto-js'. '/Users/rudysapp/RDS FILES/JALAMAS ARTHA SAKTI/OTHER WEB PROJECT/WEB RUDY VS CODE/rudysaputra-website/node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/crypto-js` if it exists or add a new declaration (.d.ts) file containing `declare module 'crypto-js';`
+
+[7m62[0m         import CryptoJS from 'crypto-js';
+[7m  [0m [93m                             ~~~~~~~~~~~[0m
+
+[96msrc/components/post/postCard.astro[0m:[93m108[0m:[93m28[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m108[0m                     {entry.data.encrypted ? (
+[7m   [0m [91m                           ~~~~[0m
+[96msrc/components/post/postCard.astro[0m:[93m52[0m:[93m47[0m - [91merror[0m[90m ts(2339): [0mProperty 'filePath' does not exist on type 'never'.
+
+[7m52[0m const imageBaseDir = getFileDirFromPath(entry.filePath || "");
+[7m  [0m [91m                                              ~~~~~~~~[0m
+[96msrc/components/post/postCard.astro[0m:[93m35[0m:[93m11[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m35[0m } = entry.data;
+[7m  [0m [91m          ~~~~[0m
+[96msrc/components/post/postCard.astro[0m:[93m16[0m:[93m28[0m - [91merror[0m[90m ts(2344): [0mType '"posts"' does not satisfy the constraint 'keyof DataEntryMap'.
+
+[7m16[0m     entry: CollectionEntry<"posts">;
+[7m  [0m [91m                           ~~~~~~~[0m
+[96msrc/components/post/postCard.astro[0m:[93m116[0m:[93m70[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'tag' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m116[0m                                 {tags && tags.length > 0 ? tags.map((tag) => (
+[7m   [0m [93m                                                                     ~~~[0m
+
+[96msrc/components/post/postMeta.astro[0m:[93m40[0m:[93m36[0m - [93mwarning[0m[90m ts(6133): [0m'platform' is declared but its value is never read.
+
+[7m40[0m const { enabled: analyticsEnabled, platform, baseUrl, apiKey, websiteId } = getAnalyticsConfig();
+[7m  [0m [93m                                   ~~~~~~~~[0m
+
+[96msrc/components/sidebar/profile.astro[0m:[93m19[0m:[93m27[0m - [93mwarning[0m[90m ts(6133): [0m'style' is declared but its value is never read.
+
+[7m19[0m const { class: className, style, side = "default" } = Astro.props;
+[7m  [0m [93m                          ~~~~~[0m
+[96msrc/components/sidebar/profile.astro[0m:[93m12[0m:[93m36[0m - [93mwarning[0m[90m ts(6133): [0m'platform' is declared but its value is never read.
+
+[7m12[0m const { enabled: analyticsEnabled, platform, baseUrl, apiKey, websiteId } = getAnalyticsConfig();
+[7m  [0m [93m                                   ~~~~~~~~[0m
+
+[96msrc/components/sidebar/toc.ts[0m:[93m96[0m:[93m13[0m - [93mwarning[0m[90m ts(7043): [0mVariable 'top' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m96[0m         let top;
+[7m  [0m [93m            ~~~[0m
+
+[96msrc/layouts/base.astro[0m:[93m60[0m:[93m14[0m - [93mwarning[0m[90m ts(6133): [0m'banner' is declared but its value is never read.
+
+[7m60[0m let { title, banner, description, lang, setOGTypeArticle, postSlug } = Astro.props;
+[7m  [0m [93m             ~~~~~~[0m
+[96msrc/layouts/base.astro[0m:[93m612[0m:[93m11[0m - [93mwarning[0m[90m ts(80006): [0mThis may be converted to an async function.
+
+[7m612[0m     const imageReady = (img: HTMLImageElement) => {
+[7m   [0m [93m          ~~~~~~~~~~[0m
+[96msrc/layouts/base.astro[0m:[93m345[0m:[93m25[0m - [93mwarning[0m[90m ts(6133): [0m'getComponentConfig' is declared but its value is never read.
+
+[7m345[0m import { widgetManager, getComponentConfig } from "@utils/widget";
+[7m   [0m [93m                        ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/layouts/base.astro[0m:[93m338[0m:[93m5[0m - [93mwarning[0m[90m ts(6133): [0m'BANNER_HEIGHT_HOME' is declared but its value is never read.
+
+[7m338[0m     BANNER_HEIGHT_HOME,
+[7m   [0m [93m    ~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/anime.astro[0m:[93m336[0m:[93m66[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'g' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m336[0m                                                 {anime.genre.map(g => (
+[7m   [0m [93m                                                                 ~[0m
+
+[96msrc/pages/diary.astro[0m:[93m71[0m:[93m72[0m - [93mwarning[0m[90m ts(6133): [0m'index' is declared but its value is never read.
+
+[7m71[0m                                             {moment.images.map((image, index) => (
+[7m  [0m [93m                                                                       ~~~~~[0m
+
+[96msrc/pages/timeline.astro[0m:[93m113[0m:[93m54[0m - [93mwarning[0m[90m ts(6133): [0m'index' is declared but its value is never read.
+
+[7m113[0m                         {allTimelineItems.map((item, index) => (
+[7m   [0m [93m                                                     ~~~~~[0m
+
+[96msrc/pages/albums/[id]/index.astro[0m:[93m74[0m:[93m43[0m - [93mwarning[0m[90m ts(6133): [0m'index' is declared but its value is never read.
+
+[7m74[0m                 {album.photos.map((photo, index) => (
+[7m  [0m [93m                                          ~~~~~[0m
+
+[96msrc/pages/journal/[...slug].astro[0m:[93m384[0m:[93m43[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m384[0m     <CopyProtection copyProtection={entry.data.copyProtection} />
+[7m   [0m [91m                                          ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m373[0m:[93m36[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m373[0m                             {entry.data.prevTitle}
+[7m   [0m [91m                                   ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m370[0m:[93m23[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m370[0m                 entry.data.prevSlug && (
+[7m   [0m [91m                      ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m366[0m:[93m49[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m366[0m                 { "pointer-events-none": !entry.data.prevSlug },
+[7m   [0m [91m                                                ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m362[0m:[93m42[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m362[0m                 ? getPostUrlBySlug(entry.data.prevSlug)
+[7m   [0m [91m                                         ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m361[0m:[93m25[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m361[0m             href={entry.data.prevSlug
+[7m   [0m [91m                        ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m354[0m:[93m36[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m354[0m                             {entry.data.nextTitle}
+[7m   [0m [91m                                   ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m347[0m:[93m23[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m347[0m                 entry.data.nextSlug && (
+[7m   [0m [91m                      ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m343[0m:[93m49[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m343[0m                 { "pointer-events-none": !entry.data.nextSlug },
+[7m   [0m [91m                                                ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m339[0m:[93m42[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m339[0m                 ? getPostUrlBySlug(entry.data.nextSlug)
+[7m   [0m [91m                                         ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m338[0m:[93m25[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m338[0m             href={entry.data.nextSlug
+[7m   [0m [91m                        ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m234[0m:[93m47[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m234[0m                             licenseUrl={entry.data.licenseUrl}
+[7m   [0m [91m                                              ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m233[0m:[93m48[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m233[0m                             licenseName={entry.data.licenseName}
+[7m   [0m [91m                                               ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m232[0m:[93m47[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m232[0m                             sourceLink={entry.data.sourceLink}
+[7m   [0m [91m                                              ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m231[0m:[93m43[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m231[0m                             author={entry.data.author}
+[7m   [0m [91m                                          ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m230[0m:[93m44[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m230[0m                             pubDate={entry.data.published!}
+[7m   [0m [91m                                           ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m229[0m:[93m39[0m - [91merror[0m[90m ts(2339): [0mProperty 'id' does not exist on type 'never'.
+
+[7m229[0m                             id={entry.id}
+[7m   [0m [91m                                      ~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m228[0m:[93m42[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m228[0m                             title={entry.data.title}
+[7m   [0m [91m                                         ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m220[0m:[93m33[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m220[0m                 password={entry.data.password}
+[7m   [0m [91m                                ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m211[0m:[93m64[0m - [91merror[0m[90m ts(2339): [0mProperty 'filePath' does not exist on type 'never'.
+
+[7m211[0m                             basePath={getFileDirFromPath(entry.filePath || '')}
+[7m   [0m [91m                                                               ~~~~~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m210[0m:[93m40[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m210[0m                             src={entry.data.cover}
+[7m   [0m [91m                                       ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m205[0m:[93m43[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m205[0m                 entry.data.cover && entry.data.coverInContent && (
+[7m   [0m [91m                                          ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m205[0m:[93m23[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m205[0m                 entry.data.cover && entry.data.coverInContent && (
+[7m   [0m [91m                      ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m198[0m:[93m71[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m198[0m                     (!entry.data.cover || (entry.data.cover && !entry.data.coverInContent)) && (
+[7m   [0m [91m                                                                      ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m198[0m:[93m50[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m198[0m                     (!entry.data.cover || (entry.data.cover && !entry.data.coverInContent)) && (
+[7m   [0m [91m                                                 ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m198[0m:[93m29[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m198[0m                     (!entry.data.cover || (entry.data.cover && !entry.data.coverInContent)) && (
+[7m   [0m [91m                            ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m194[0m:[93m37[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m194[0m                     category={entry.data.category}
+[7m   [0m [91m                                    ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m193[0m:[93m33[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m193[0m                     tags={entry.data.tags}
+[7m   [0m [91m                                ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m192[0m:[93m36[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m192[0m                     updated={entry.data.updated}
+[7m   [0m [91m                                   ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m191[0m:[93m38[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m191[0m                     published={entry.data.published!}
+[7m   [0m [91m                                     ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m184[0m:[93m28[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m184[0m                     {entry.data.title}
+[7m   [0m [91m                           ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m117[0m:[93m21[0m - [91merror[0m[90m ts(2339): [0mProperty 'id' does not exist on type 'never'.
+
+[7m117[0m     postSlug={entry.id}
+[7m   [0m [91m                    ~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m115[0m:[93m17[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m115[0m     lang={entry.data.lang}
+[7m   [0m [91m                ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m114[0m:[93m24[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m114[0m     description={entry.data.description}
+[7m   [0m [91m                       ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m113[0m:[93m18[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m113[0m     title={entry.data.title}
+[7m   [0m [91m                 ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m112[0m:[93m19[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m112[0m     banner={entry.data.cover}
+[7m   [0m [91m                  ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m105[0m:[93m17[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m105[0m         ? entry.data.lang.replace("_", "-")
+[7m   [0m [91m                ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m104[0m:[93m23[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m104[0m     inLanguage: entry.data.lang
+[7m   [0m [91m                      ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m103[0m:[93m47[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m103[0m     datePublished: formatDateToYYYYMMDD(entry.data.published!),
+[7m   [0m [91m                                              ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m97[0m:[93m21[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m97[0m     keywords: entry.data.tags,
+[7m  [0m [91m                    ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m96[0m:[93m50[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m96[0m     description: entry.data.description || entry.data.title,
+[7m  [0m [91m                                                 ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m96[0m:[93m24[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m96[0m     description: entry.data.description || entry.data.title,
+[7m  [0m [91m                       ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m95[0m:[93m21[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m95[0m     headline: entry.data.title,
+[7m  [0m [91m                    ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m68[0m:[93m56[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m68[0m const lastModified = dayjs(entry.data.updated || entry.data.published)
+[7m  [0m [91m                                                       ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m68[0m:[93m34[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m68[0m const lastModified = dayjs(entry.data.updated || entry.data.published)
+[7m  [0m [91m                                 ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m65[0m:[93m52[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m65[0m let isEncrypted = !!(entry.data.encrypted && entry.data.password);
+[7m  [0m [91m                                                   ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m65[0m:[93m28[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m65[0m let isEncrypted = !!(entry.data.encrypted && entry.data.password);
+[7m  [0m [91m                           ~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m52[0m:[93m26[0m - [91merror[0m[90m ts(2322): [0mType 'ResolvedPost' is not assignable to type 'never'.
+
+[7m52[0m                 props: { entry },
+[7m  [0m [91m                         ~~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m38[0m:[93m22[0m - [91merror[0m[90m ts(2322): [0mType 'ResolvedPost' is not assignable to type 'never'.
+
+[7m38[0m             props: { entry },
+[7m  [0m [91m                     ~~~~~[0m
+[96msrc/pages/journal/[...slug].astro[0m:[93m29[0m:[93m41[0m - [91merror[0m[90m ts(2344): [0mType '"posts"' does not satisfy the constraint 'keyof DataEntryMap'.
+
+[7m29[0m         props: { entry: CollectionEntry<"posts"> };
+[7m  [0m [91m                                        ~~~~~~~[0m
+
+[96msrc/pages/og/[...slug].png.ts[0m:[93m227[0m:[93m64[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m227[0m                                                 children: post.data.title,
+[7m   [0m [91m                                                               ~~~~[0m
+[96msrc/pages/og/[...slug].png.ts[0m:[93m130[0m:[93m30[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m130[0m     const description = post.data.description;
+[7m   [0m [91m                             ~~~~[0m
+[96msrc/pages/og/[...slug].png.ts[0m:[93m124[0m:[93m26[0m - [91merror[0m[90m ts(2339): [0mProperty 'data' does not exist on type 'never'.
+
+[7m124[0m     const pubDate = post.data.published!.toLocaleDateString("en-US", {
+[7m   [0m [91m                         ~~~~[0m
+[96msrc/pages/og/[...slug].png.ts[0m:[93m99[0m:[93m39[0m - [91merror[0m[90m ts(2344): [0mType '"posts"' does not satisfy the constraint 'keyof DataEntryMap'.
+
+[7m99[0m }: APIContext<{ post: CollectionEntry<"posts"> }>) {
+[7m  [0m [91m                                      ~~~~~~~[0m
+
+[96msrc/utils/markdown.ts[0m:[93m81[0m:[93m34[0m - [93mwarning[0m[90m ts(6387): [0mThe signature '(commandId: string, showUI?: boolean | undefined, value?: string | undefined): boolean' of 'document.execCommand' is deprecated.
+
+[7m81[0m                         document.execCommand('copy');
+[7m  [0m [93m                                 ~~~~~~~~~~~[0m
+
+[96msrc/utils/particle.ts[0m:[93m171[0m:[93m29[0m - [93mwarning[0m[90m ts(6133): [0m'x' is declared but its value is never read.
+
+[7m171[0m             ret = function (x: number, y: number) {
+[7m   [0m [93m                            ~[0m
+[96msrc/utils/particle.ts[0m:[93m165[0m:[93m40[0m - [93mwarning[0m[90m ts(6133): [0m'y' is declared but its value is never read.
+
+[7m165[0m             ret = function (x: number, y: number) {
+[7m   [0m [93m                                       ~[0m
+
+[96msrc/utils/widget.ts[0m:[93m307[0m:[93m24[0m - [93mwarning[0m[90m ts(6133): [0m'componentType' is declared but its value is never read.
+
+[7m307[0m     isSidebarComponent(componentType: WidgetComponentType): boolean {
+[7m   [0m [93m                       ~~~~~~~~~~~~~[0m
+[96msrc/utils/widget.ts[0m:[93m198[0m:[93m57[0m - [93mwarning[0m[90m ts(6133): [0m'index' is declared but its value is never read.
+
+[7m198[0m     getComponentStyle(component: WidgetComponentConfig, index: number): string {
+[7m   [0m [93m                                                        ~~~~~[0m
+[96msrc/utils/widget.ts[0m:[93m158[0m:[93m57[0m - [93mwarning[0m[90m ts(6133): [0m'index' is declared but its value is never read.
+
+[7m158[0m     getComponentClass(component: WidgetComponentConfig, index: number, side: "left" | "right" | "middle"): string {
+[7m   [0m [93m                                                        ~~~~~[0m
+
+Result (117 files): 
+- 59 errors
+- 0 warnings
+- 26 hints
+
+ ELIFECYCLE  Command failed with exit code 1.

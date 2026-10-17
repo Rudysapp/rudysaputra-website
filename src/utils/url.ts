@@ -23,16 +23,16 @@ export function removeFileExtension(id: string): string {
 export function getPostUrlBySlug(slug: string): string {
     // 移除文件扩展名（如 .md, .mdx 等）
     const slugWithoutExt = removeFileExtension(slug);
-    return url(`/posts/${slugWithoutExt}/`);
+    return url(`/journal/${slugWithoutExt}/`);
 }
 
 export function getPostUrlByRouteName(routeName: string): string {
-    // 移除开头的斜杠并确保固定链接在 /posts/ 路径下
+    // 移除开头的斜杠并确保固定链接在 /journal/ 路径下
     const cleanRouteName = routeName.replace(/^\/+/, "");
-    return url(`/posts/${cleanRouteName}/`);
+    return url(`/journal/${cleanRouteName}/`);
 }
 
-export function getPostUrl(post: CollectionEntry<"posts">): string;
+export function getPostUrl(post: CollectionEntry<"journal">): string;
 export function getPostUrl(post: { id: string; data: { routeName?: string } }): string;
 export function getPostUrl(post: any): string {
     // 如果文章有自定义固定链接，优先使用固定链接

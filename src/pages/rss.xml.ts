@@ -50,7 +50,7 @@ export async function GET(context: APIContext) {
                 // derive base directory from real file path to preserve casing
                 const contentDirRaw = post.filePath
                     ? getFileDirFromPath(post.filePath)
-                    : "src/content/posts";
+                    : "src/content/journal";
                 const contentDir = contentDirRaw.startsWith("src/")
                     ? contentDirRaw
                     : `src/${contentDirRaw}`;

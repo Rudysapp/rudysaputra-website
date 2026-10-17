@@ -3,8 +3,8 @@ import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 import { url } from "@utils/url";
 
-// 1. Ambil seluruh postingan dari folder content/posts
-const allPosts = await getCollection("posts", ({ data }) => {
+// 1. Ambil seluruh postingan dari folder content/journal
+const allPosts = await getCollection("journal", ({ data }) => {
   return import.meta.env.PROD ? data.draft !== true : true;
 });
 
@@ -130,7 +130,7 @@ const displayEssays = featuredEssays.length > 0 ? featuredEssays : allPosts.slic
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {displayEssays.map((post) => (
         <a 
-          href={url(`/posts/${post.id}/`)} 
+          href={url(`/journal/${post.id}/`)}
           class="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-neutral-900/80 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-purple-500/50 hover:bg-neutral-900 shadow-lg hover:shadow-purple-500/10"
         >
           <div class="space-y-3">

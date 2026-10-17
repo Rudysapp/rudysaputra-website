@@ -26,7 +26,7 @@ export async function getStaticPaths() {
     const blogEntries = await getSortedPosts();
     const paths: {
         params: { slug: string };
-        props: { entry: CollectionEntry<"posts"> };
+        props: { entry: CollectionEntry<"journal"> };
     }[] = [];
 
     for (const entry of blogEntries) {
@@ -44,8 +44,8 @@ export async function getStaticPaths() {
             let routeName = entry.data.routeName
                 .replace(/^\/+/, "")
                 .replace(/\/+$/, "");
-            if (routeName.startsWith("posts/")) {
-                routeName = routeName.replace(/^posts\//, "");
+            if (/^(posts|journal)\//.test(routeName)) {
+               routeName = routeName.replace(/^(posts|journal)\//, "");
             }
             paths.push({
                 params: { slug: routeName },

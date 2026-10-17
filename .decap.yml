@@ -22,11 +22,11 @@ collections:
 
     - # 文章
         # 集合名称
-        name: "posts"
+        name: "journal"
         # 后台显示标签
-        label: "Posts"
+        label: "Journal"
         # 内容存储目录
-        folder: "src/content/posts"
+        folder: "src/content/journal"
         # 目录嵌套配置
         meta:
             # 路径配置

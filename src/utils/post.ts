@@ -10,8 +10,8 @@ import { i18n } from "@i18n/translation";
 import I18nKey from "@i18n/i18nKey";
 
 
-type ResolvedPost = CollectionEntry<"posts"> & {
-    data: CollectionEntry<"posts">["data"] & { published: Date };
+type ResolvedPost = CollectionEntry<"journal"> & {
+    data: CollectionEntry<"journal">["data"] & { published: Date };
 };
 
 function getFileBirthtime(filePath: string): Date {
@@ -35,9 +35,9 @@ function getGitFirstCommitDate(filePath: string): Date | null {
     }
 }
 
-function resolvePublishDate(post: CollectionEntry<"posts">) {
+function resolvePublishDate(post: CollectionEntry<"journal">) {
     if (post.data.published) return;
-    const filePath = post.filePath || path.join(process.cwd(), "src", "content", "posts", post.id);
+    const filePath = post.filePath || path.join(process.cwd(), "src", "content", "journal", post.id);
 
     const gitDate = getGitFirstCommitDate(filePath);
     if (gitDate && !isNaN(gitDate.getTime())) {
@@ -50,7 +50,7 @@ function resolvePublishDate(post: CollectionEntry<"posts">) {
 
 // // Retrieve posts and sort them by publication date
 async function getRawSortedPosts(): Promise<ResolvedPost[]> {
-    const allBlogPosts = await getCollection("posts", ({ data }) => {
+    const allBlogPosts = await getCollection("journal", ({ data }) => {
         return import.meta.env.PROD ? data.draft !== true : true;
     });
 
@@ -102,7 +102,7 @@ export async function getSortedPostsList(): Promise<PostForList[]> {
     return sortedPostsList;
 }
 export async function getTagList(): Promise<Tag[]> {
-    const allBlogPosts = await getCollection<"posts">("posts", ({ data }) => {
+    const allBlogPosts = await getCollection<"journal">("journal", ({ data }) => {
         return import.meta.env.PROD ? data.draft !== true : true;
     });
 
@@ -138,7 +138,7 @@ export type CategoryTreeItem = {
 };
 
 export async function getCategoryList(): Promise<Category[]> {
-    const allBlogPosts = await getCollection<"posts">("posts", ({ data }) => {
+    const allBlogPosts = await getCollection<"journal">("journal", ({ data }) => {
         return import.meta.env.PROD ? data.draft !== true : true;
     });
     const count: { [key: string]: number } = {};
@@ -170,7 +170,7 @@ export async function getCategoryList(): Promise<Category[]> {
 }
 
 export async function getCategoryTree(): Promise<CategoryTreeItem[]> {
-    const allBlogPosts = await getCollection<"posts">("posts", ({ data }) => {
+    const allBlogPosts = await getCollection<"journal">("journal", ({ data }) => {
         return import.meta.env.PROD ? data.draft !== true : true;
     });
 

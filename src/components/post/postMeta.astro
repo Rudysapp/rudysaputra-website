@@ -34,7 +34,7 @@ const {
     slug,
     postUrl
 } = Astro.props;
-const finalPostUrl = postUrl || (slug ? url(`/posts/${slug}/`) : "");
+const finalPostUrl = postUrl || (slug ? url(`/journal/${slug}/`) : "");
 const categoryParts = getCategoryPathParts(category ?? null);
 
 const { enabled: analyticsEnabled, platform, baseUrl, apiKey, websiteId } = getAnalyticsConfig();

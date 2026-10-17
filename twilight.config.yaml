@@ -254,7 +254,7 @@ sidebar:
                     # Mode pencocokan: 'include' (sertakan), 'exclude' (kecualikan)
                     mode: "exclude"
                     # Daftar aturan pencocokan jalur halaman (mendukung string regex)
-                    paths: ["^/posts/", "^/archive"]
+                    paths: ["^/journal/", "^/archive"]
             - # Komponen - Pengumuman (preset)
                 # Tipe
                 type: "announcement"
@@ -265,7 +265,7 @@ sidebar:
                     # Mode pencocokan: 'include' (sertakan), 'exclude' (kecualikan)
                     mode: "exclude"
                     # Daftar aturan pencocokan jalur halaman (mendukung string regex)
-                    paths: ["^/posts/", "^/archive"]
+                    paths: ["^/journal/", "^/archive"]
             - # Komponen - Daftar isi artikel (preset)
                 # Tipe
                 type: "toc"
