@@ -314,7 +314,10 @@ export class WidgetManager {
      */
     getPageHeadings() {
         if (typeof document === "undefined") return [];
-        return Array.from(document.querySelectorAll("h1, h2, h3, h4, h5, h6"))
+        const selector = window.location.pathname.startsWith("/work/")
+            ? ".work-detail h2[id]"
+            : "h1, h2, h3, h4, h5, h6";
+        return Array.from(document.querySelectorAll(selector))
             .filter((h) => h.id)
             .map((h) => ({
                 depth: parseInt(h.tagName.substring(1)),
@@ -329,7 +332,7 @@ export class WidgetManager {
      * @param currentPath 当前页面路径 (可选，用于过滤)
      */
     getGridLayout(headings: any[] = [], currentPath?: string) {
-        const hasLeftComponents = this.hasContentOnSide("left", headings, currentPath);
+        const hasLeftComponents = (currentPath ? /^\/work\//.test(currentPath) : false) || this.hasContentOnSide("left", headings, currentPath);
         const hasRightComponents = this.hasContentOnSide("right", headings, currentPath);
         const hasAnyComponents = hasLeftComponents || hasRightComponents;
 

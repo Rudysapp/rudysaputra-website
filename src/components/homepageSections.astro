@@ -21,16 +21,55 @@ const learningSnapshot = [
   { topic: "Memahami bagaimana kebiasaan terbentuk di dalam komunitas", status: "EXPLORING" },
 ];
 
-// Add entries here: the grid automatically scales to six, seven, or more works.
+// Featured Works: personal contributions, with image placeholders pending real assets.
 const featuredWork = [
-  { title: "Jalamas", area: "BUSINESS · SYSTEMS · DIGITAL", description: "Building and rethinking a supply-chain business for mining and industrial operations.", image: "/assets/images/homepage-dummy/industrial.svg" },
-  { title: "Baduy Heritage", area: "CULTURE · TECHNOLOGY · RESEARCH", description: "A digital space for learning about Baduy culture beyond the usual tourism narrative.", image: "/assets/images/homepage-dummy/culture.svg" },
+  {
+    title: "Jalamas Artha Sakti",
+    href: "/work/jalamas/",
+    area: "BUSINESS · INDUSTRIAL OPERATIONS",
+    description:
+      "Building and running an industrial supply business serving mining operations, while navigating changing customer needs and supply-chain realities.",
+    learning:
+      "Working through market pressure has meant questioning established business models and rethinking where the business can create value.",
+    image: "/assets/images/featured-work/jalamas.webp",
+    imageAlt: "Placeholder illustration for Jalamas",
+  },
+  {
+    title: "Baduy Heritage",
+    area: "CULTURE · DIGITAL ENTREPRENEURSHIP",
+    description:
+      "Developing a digital platform around Baduy cultural heritage, connecting cultural storytelling with opportunities for visits and local products.",
+    learning:
+      "Turning an idea into a working platform also means learning the practical side: partners, pricing, and the responsibility of representing a living culture.",
+    image: "/assets/images/featured-work/baduy-heritage.webp",
+    imageAlt: "Placeholder illustration for Baduy Heritage",
+  },
+  {
+    title: "Digital Projects",
+    area: "TECHNOLOGY · WEB · EXPERIMENTATION",
+    description:
+      "Building and experimenting with websites and digital workflows, including this personal site, while learning through hands-on development.",
+    learning:
+      "Each iteration brings decisions about usability, maintainability, and how to use AI as a tool without giving up critical judgment.",
+    image: "/assets/images/featured-work/digital-projects.webp",
+    imageAlt: "Placeholder illustration for Digital Projects",
+  },
+  {
+    title: "Community Initiatives",
+    area: "COMMUNITY · ORGANIZATION",
+    description:
+      "Contributing to neighborhood administration and community activities, from coordinating people to organizing information and shared programs.",
+    learning:
+      "Good coordination depends not only on procedures, but also on listening, respecting different perspectives, and earning trust through consistent work.",
+    image: "/assets/images/featured-work/community-initiatives.webp",
+    imageAlt: "Placeholder illustration for Community Initiatives",
+  },
 ];
 
 // Homepage selection only. Replace dummy photos and supply relationship context.
 // Detail links are intentionally omitted until the corresponding pages exist.
 const networkSelection = [
-  { name: "Ika Sastrosoebroto", expertise: "Public Relations Expert · CEO of Prominent PR", image: "/assets/images/homepage-dummy/portrait.svg", context: "Konteks persinggungan akan ditambahkan." },
+  { name: "Prominent PR", expertise: "An established Public Relations and Strategic Communications agency", image: "/assets/images/homepage-dummy/portrait.svg", context: "Konteks persinggungan akan ditambahkan." },
   { name: "B&W Production", expertise: "Photography · Videography", image: "/assets/images/homepage-dummy/portrait.svg", context: "Konteks persinggungan akan ditambahkan." },
   { name: "The Excellence", expertise: "Management Consulting · Social Media · Digital Consulting", image: "/assets/images/homepage-dummy/portrait.svg", context: "Konteks persinggungan akan ditambahkan." },
 ];
@@ -270,34 +309,73 @@ const networkSelection = [
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 mt-20">
-        {featuredWork.map((work) => (
-          <article class="min-w-0">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16 mt-20 max-md:mt-12">
+        {featuredWork.map((work, index) => (
+          <article class="group min-w-0 flex flex-col">
             <div class="aspect-[16/10] overflow-hidden bg-[#e6e0d4] dark:bg-[#282622]">
-              <img src={work.image} alt={`Visual dummy ${work.title}, akan diganti dengan foto karya`} width="800" height="500" loading="lazy" decoding="async" class="w-full h-full object-cover" />
+             <img
+               src={work.image}
+                alt={work.imageAlt}
+                width="800"
+                height="500"
+                loading="lazy"
+                decoding="async"
+                class="w-full h-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-[1.025]"
+              />
             </div>
-            <div class="pt-5.5">
-              <p class="m-0 text-[0.68rem] font-semibold leading-[1.5] tracking-[0.1em] uppercase text-[#737067] dark:text-[#a09d98]">{work.area}</p>
-              <h3 class="mt-2 mb-3 font-sans text-[clamp(1.6rem,2.5vw,2.2rem)] font-semibold tracking-[-0.03em]">{work.title}</h3>
-              <p class="m-0 opacity-80 leading-[1.6] text-[0.95rem]">{work.description}</p>
+
+              <div class="pt-6 flex flex-col flex-1">
+                <div class="flex items-start justify-between gap-4">
+                  <p class="m-0 text-[0.68rem] font-semibold leading-[1.5] tracking-[0.1em] uppercase text-[#737067] dark:text-[#a09d98]">
+                    {work.area}
+                  </p>
+                  <span class="text-[0.72rem] text-[#737067] dark:text-[#a09d98]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+
+                <h3 class="mt-4 mb-4 font-sans text-[clamp(1.8rem,3vw,2.7rem)] font-semibold leading-[1.15] tracking-[-0.03em]">
+                    {work.href ? (
+                    <a href={work.href} class="hover:underline underline-offset-4">
+                    {work.title} <span aria-hidden="true">↗</span>
+                    </a>
+                    ) : (
+                    work.title
+                  )}
+                </h3>
+
+                <p class="m-0 max-w-[520px] opacity-80 leading-[1.7] text-[0.98rem]">
+                  {work.description}
+                </p>
+
+              <div class="mt-auto pt-8">
+                <p class="m-0 mb-3 pt-4 border-t border-[rgba(28,27,24,0.12)] dark:border-[rgba(236,234,238,0.14)] text-[0.72rem] font-semibold tracking-[0.09em] uppercase text-[#737067] dark:text-[#a09d98]">
+                  THE WORK &amp; LEARNING
+                </p>
+                <p class="m-0 text-[0.95rem] leading-[1.7] opacity-85">
+                  {work.learning}
+                </p>
+              </div>
             </div>
           </article>
         ))}
       </div>
+
     <div class="mt-16 max-md:mt-12">
 
    <div class="flex justify-between gap-6 border-t border-[rgba(28,27,24,0.12)] dark:border-[rgba(236,234,238,0.14)] pt-4 text-[0.68rem] font-semibold tracking-[0.12em] uppercase text-[#737067] dark:text-[#a09d98]">
     <span>RDS</span>
-    <span>AREAS I'VE WORKED AROUND</span>
+    <span>AREAS OF PRACTICE</span>
    </div>
 
    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 mt-6">
     {[
-      "Business & Entrepreneurship",
-      "Mining Support & Industrial Supply",
-      "Technology & Web",
+      "Business & Industrial Operations",
+      "Digital Products & Technology",
+      "Cultural Heritage & Entrepreneurship",
       "Community & Organization",
-      "Problem Solving & Systems",
+      "Systems & Problem Solving",
       "Writing & Ideas",
     ].map((area, index) => (
       <div class="grid grid-cols-[35px_1fr] gap-3 py-4 border-b border-[rgba(28,27,24,0.12)] dark:border-[rgba(236,234,238,0.14)] items-center">

@@ -1,0 +1,25 @@
+---
+import GridLayout from '@layouts/grid.astro';
+import WorkDetail from '@components/work/WorkDetail.astro';
+const sections = [
+  { eyebrow: 'The Context', title: 'A business shaped by industrial needs.', paragraphs: [
+    'PT Jalamas Artha Sakti is an Indonesian limited liability company established in 2019, operating in the industrial and mining-support supply space, where equipment availability, technical requirements, and procurement decisions intersect.',
+    'My involvement has meant learning to understand not only products and customers, but also the systems and relationships behind day-to-day operations.'
+  ] },
+  { eyebrow: 'The Work', title: 'From products to practical decisions.', paragraphs: [
+    'The work involves navigating industrial supply needs, communicating with customers and suppliers, and considering how a business can deliver value beyond simply reselling components.',
+    'It also involves making decisions about positioning, operations, and the direction of the business as circumstances change.'
+  ] },
+  { eyebrow: 'Challenges & Decisions', title: 'When familiar models are questioned.', paragraphs: [
+    'Changes in supplier relationships and market dynamics can challenge an established way of doing business. Those conditions invite a closer look at where a company genuinely contributes value.',
+    'Rather than presenting this as a completed success story, I see it as an ongoing process of evaluating assumptions, adapting decisions, and navigating the challenges that arise throughout its operational journey.'
+  ] },
+  { eyebrow: 'The Learning', title: 'Understanding value beyond the transaction.', paragraphs: [
+    'One continuing lesson is that a business model cannot be separated from the environment in which it operates. Understanding customers, supply chains, and changing incentives matters as much as knowing the products themselves.',
+    'The experience continues to shape how I think about resilience, practical judgment, and what it means to build something useful.'
+  ] },
+];
+---
+<GridLayout title="Jalamas — Work & Learning" description="Personal reflections on industrial supply, business adaptation, and the work behind Jalamas.">
+  <WorkDetail title="Jalamas Artha Sakti, PT" category="Business · Industrial Operations" introduction="Building and navigating an industrial supply business serving mining operations, while learning to adapt to changing needs and market realities." image="/assets/images/featured-work/jalamas.webp" sections={sections} />
+</GridLayout>

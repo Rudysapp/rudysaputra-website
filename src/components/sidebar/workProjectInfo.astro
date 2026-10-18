@@ -1,0 +1,23 @@
+---
+interface Props { path: string }
+const { path } = Astro.props;
+const projects: Record<string, { name: string; field: string; focus: string; website?: string }> = {
+  jalamas: { name: "Jalamas Artha Sakti", field: "Industrial supply", focus: "Business & operations", website: "https://jalamas.co.id" },
+  "baduy-heritage": { name: "Baduy Heritage", field: "Culture & tourism", focus: "Digital entrepreneurship", website: "https://baduyheritage.com" },
+  "digital-projects": { name: "Digital Projects", field: "Digital development", focus: "Websites & workflows" },
+  "community-initiatives": { name: "Community Initiatives", field: "Community", focus: "Coordination & administration" },
+};
+const slug = path.split('/').filter(Boolean)[1];
+const project = projects[slug];
+---
+{project && (
+  <aside class="rounded-[var(--radius-large)] card-base p-4 text-sm leading-relaxed text-neutral-800 dark:text-neutral-100" aria-label="Project overview">
+    <p class="mb-4 text-xs uppercase tracking-widest opacity-80">Project Overview</p>
+    <p class="font-semibold mb-3 break-words">{project.name}</p>
+    <dl class="space-y-3">
+      <div><dt class="text-xs opacity-80">Field</dt><dd class="break-words">{project.field}</dd></div>
+      <div><dt class="text-xs opacity-80">Focus</dt><dd class="break-words">{project.focus}</dd></div>
+    </dl>
+    {project.website && <a class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-400 dark:hover:text-emerald-600 font-bold mt-4 inline-block break-words underline underline-offset-4" href={project.website} target="_blank" rel="noopener noreferrer">Visit website ↗</a>}
+  </aside>
+)}

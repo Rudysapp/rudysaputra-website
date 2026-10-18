@@ -9,6 +9,7 @@ import Categories from "@components/sidebar/categories.astro";
 import Tags from "@components/sidebar/tags.astro";
 import Statistics from "@components/sidebar/statistics.astro";
 import TOC from "@components/sidebar/toc.astro";
+import WorkProjectInfo from "@components/sidebar/workProjectInfo.astro";
 
 
 interface Props {
@@ -108,6 +109,8 @@ function renderComponent(component: any, index: number) {
                 const { Component, props } = renderData;
                 return <Component {...props} side={side} />;
             })}
+            {side === "left" && /^\/work\//.test(currentPath) && <WorkProjectInfo path={currentPath} />}
         </div>
     )}
+
 </div>

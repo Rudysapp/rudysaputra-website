@@ -44,6 +44,7 @@ const hasBannerLink = !!siteConfig.wallpaper.banner?.credit?.url;
 
 // 检查是否为首页
 const isHomePage = pathsEqual(Astro.url.pathname, url("/"));
+const isWorkDetail = /^\/work\//.test(Astro.url.pathname);
 
 // 检查是否应该启用半透明效果
 const shouldEnableTransparency = siteConfig.wallpaper.mode === "banner" || siteConfig.wallpaper.mode === "fullscreen";
@@ -127,7 +128,7 @@ const {
         >
             <div
                 id="main-grid"
-                class={`w-full left-0 right-0 grid ${gridCols} grid-rows-[auto] mx-auto gap-4 px-0 md:px-4 ${!hasAnyComponents ? "mobile-no-sidebar" : ""} ${(hasLeftSidebar || hasRightSidebar) ? "mobile-both-sidebar" : ""}`}
+                class={`w-full left-0 right-0 grid ${isWorkDetail ? "grid-cols-1 md:grid-cols-[16.25rem_minmax(0,1fr)]" : gridCols} grid-rows-[auto] mx-auto gap-4 px-0 md:px-4 ${!hasAnyComponents ? "mobile-no-sidebar" : ""} ${(hasLeftSidebar || hasRightSidebar) ? "mobile-both-sidebar" : ""}`}
             >
                 <!-- Banner image credit -->
                 {
@@ -179,7 +180,7 @@ const {
                 <Sidebar
                     id="left-sidebar"
                     side="left"
-                    class={`${leftSidebarClass} ${transparentClass} onload-animation-up`}
+                    class={`${isWorkDetail ? "hidden md:flex md:flex-col md:col-start-1 md:row-start-1 min-w-0" : leftSidebarClass} ${transparentClass} onload-animation-up`}
                     headings={headings}
                 />
             ) : (
@@ -203,7 +204,7 @@ const {
 
                 <main
     id="swup-container"
-    class={`${isHomePage ? "col-span-full w-full pointer-events-auto" : mainContentClass} transition-swup-fade`}
+    class={`${isHomePage ? "col-span-full w-full pointer-events-auto" : isWorkDetail ? "col-span-1 min-w-0 w-full md:col-start-2 md:row-start-1 overflow-hidden" : mainContentClass} transition-swup-fade`}
   >
     {isHomePage ? (
     <>

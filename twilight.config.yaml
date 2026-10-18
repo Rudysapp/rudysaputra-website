@@ -222,11 +222,17 @@ sidebar:
                 type: "directory"
                 # Strategi posisi ("top" melayang di atas | "sticky" menempel saat digulir)
                 position: "sticky"
+                visibility:
+                    mode: "exclude"
+                    paths: ["^/work(?:/|$)"]
             - # Komponen - Kategori artikel (preset)
                 # Tipe
                 type: "categories"
                 # Strategi posisi ("top" melayang di atas | "sticky" menempel saat digulir)
                 position: "sticky"
+                visibility:
+                    mode: "exclude"
+                    paths: ["^/work(?:/|$)"]
                 # Konfigurasi responsif
                 responsive:
                     # Ambang batas penutupan/penyembunyian
@@ -238,11 +244,21 @@ sidebar:
                 type: "tags"
                 # Strategi posisi ("top" melayang di atas | "sticky" menempel saat digulir)
                 position: "sticky"
+                visibility:
+                    mode: "exclude"
+                    paths: ["^/work(?:/|$)"]
                 # Konfigurasi responsif
                 responsive:
                     # Ambang batas penutupan/penyembunyian
                     collapseThreshold: 20
         # Bilah sisi kanan
+            - # Daftar isi khusus Featured Works
+                type: "toc"
+                position: "sticky"
+                depth: 2
+                visibility:
+                    mode: "include"
+                    paths: ["^/work(?:/|$)"]
         right:
             - # Komponen - Profil (preset)
                 # Tipe
@@ -254,7 +270,7 @@ sidebar:
                     # Mode pencocokan: 'include' (sertakan), 'exclude' (kecualikan)
                     mode: "exclude"
                     # Daftar aturan pencocokan jalur halaman (mendukung string regex)
-                    paths: ["^/journal/", "^/archive"]
+                    paths: ["^/journal/", "^/archive", "^/work(?:/|$)"]
             - # Komponen - Pengumuman (preset)
                 # Tipe
                 type: "announcement"
@@ -265,7 +281,7 @@ sidebar:
                     # Mode pencocokan: 'include' (sertakan), 'exclude' (kecualikan)
                     mode: "exclude"
                     # Daftar aturan pencocokan jalur halaman (mendukung string regex)
-                    paths: ["^/journal/", "^/archive"]
+                    paths: ["^/journal/", "^/archive", "^/work(?:/|$)"]
             - # Komponen - Daftar isi artikel (preset)
                 # Tipe
                 type: "toc"
@@ -273,6 +289,9 @@ sidebar:
                 position: "sticky"
                 # Kedalaman daftar isi (1-6, 1 berarti hanya menampilkan judul h1, 2 berarti menampilkan judul h1 dan h2, dan seterusnya)
                 depth: 3
+                visibility:
+                    mode: "exclude"
+                    paths: ["^/work(?:/|$)"]
             - # Komponen - Statistik artikel (preset)
                 # Tipe
                 type: "statistics"
