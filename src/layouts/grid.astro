@@ -168,39 +168,19 @@ const {
                         </a>
                     )
                 }
-            {isHomePage ? (
-    <>
-        <div id="left-sidebar" class="hidden"></div>
-        <div id="right-sidebar" class="hidden"></div>
-    </>
-) : (
-    <div class="contents lg:contents md:flex md:flex-col md:col-start-1 md:row-start-1 md:gap-4">
-        {
-            hasLeftSidebar ? (
-                <Sidebar
-                    id="left-sidebar"
-                    side="left"
-                    class={`${isWorkDetail ? "hidden md:flex md:flex-col md:col-start-1 md:row-start-1 min-w-0" : leftSidebarClass} ${transparentClass} onload-animation-up`}
-                    headings={headings}
-                />
-            ) : (
-                <div id="left-sidebar" class="hidden"></div>
-            )
-        }
-        {
-            hasRightSidebar ? (
-                <Sidebar
-                    id="right-sidebar"
-                    side="right"
-                    class={`${rightSidebarClass} ${transparentClass} onload-animation-up`}
-                    headings={headings}
-                />
-            ) : (
-                <div id="right-sidebar" class="hidden"></div>
-            )
-        }
-    </div>
-)}
+            <!-- Stable sidebar parent across Swup navigation -->
+            <div class="contents lg:contents md:flex md:flex-col md:col-start-1 md:row-start-1 md:gap-4">
+                {(!isHomePage && hasLeftSidebar) ? (
+                    <Sidebar id="left-sidebar" side="left"
+                        class={`${isWorkDetail ? "hidden md:flex md:flex-col md:col-start-1 md:row-start-1 min-w-0" : leftSidebarClass} ${transparentClass} onload-animation-up`}
+                        headings={headings} />
+                ) : <div id="left-sidebar" class="hidden"></div>}
+                {(!isHomePage && hasRightSidebar) ? (
+                    <Sidebar id="right-sidebar" side="right"
+                        class={`${rightSidebarClass} ${transparentClass} onload-animation-up`}
+                        headings={headings} />
+                ) : <div id="right-sidebar" class="hidden"></div>}
+            </div>
 
                 <main
     id="swup-container"
@@ -208,6 +188,7 @@ const {
   >
     {isHomePage ? (
     <>
+        <div id="grid-class-carrier" data-grid-class={gridCols} data-main-class="col-span-full w-full pointer-events-auto" class="hidden"></div>
         <HomepageSections />
 
         <div class="footer col-span-full w-full mt-8">
@@ -219,6 +200,7 @@ const {
             <div
                 id="grid-class-carrier"
                 data-grid-class={gridCols}
+                data-main-class={isWorkDetail ? "col-span-1 min-w-0 w-full md:col-start-2 md:row-start-1 overflow-hidden" : mainContentClass}
                 class="hidden"
             ></div>
 
@@ -238,23 +220,16 @@ const {
     )}
 </main>
 
-            {isHomePage ? (
-    <div id="middle-sidebar" class="hidden"></div>
-) : (
-    <>
-        <div class={middleSidebarClass}>
-            <Sidebar
-                id="middle-sidebar"
-                side="middle"
-                class={`${transparentClass} onload-animation-up`}
-                headings={headings}
-            />
-        </div>
-
-        <div class={mobileFooterClass}>
-            <Footer />
-        </div>
-    </>)}
+            <!-- Stable middle sidebar parent; mobile footer visibility follows route state -->
+            <div class={middleSidebarClass}>
+                {isHomePage ? <div id="middle-sidebar" class="hidden"></div> : (
+                    <Sidebar id="middle-sidebar" side="middle"
+                        class={`${transparentClass} onload-animation-up`} headings={headings} />
+                )}
+            </div>
+            <div class={mobileFooterClass} data-inner-mobile-footer>
+                <Footer />
+            </div>
     </div>
 </div>
 </div>
@@ -328,6 +303,8 @@ const {
     #main-layout-wrapper {
         transform: translateY(var(--main-content-top));
     }
+
+    body.is-home [data-inner-mobile-footer] { display: none !important; }
 
     body.is-home #main-layout-wrapper {
         transform: translateY(var(--navbar-height));

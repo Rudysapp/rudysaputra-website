@@ -1,30 +1,58 @@
 ---
 title: About
+description: Mengenal Rudy Saputra, aktivitas, minat, dan ruang personal di balik rudysaputra.com.
 ---
 
-# About This Site
+# About
 
-Twilight is a CMS integrated static blog template built with [Astro](https://astro.build) framework.
+## Who I Am
 
-::github{repo="Spr-Aachen/Twilight"}
+Saya Rudy Saputra, seorang profesional dan pelaku usaha yang memiliki ketertarikan pada dunia bisnis, teknologi, pemikiran, dan berbagai hal yang dapat memperluas pemahaman tentang kehidupan.
 
+Dalam keseharian, saya menjalankan tanggung jawab profesional, terlibat dalam kegiatan sosial kemasyarakatan, serta meluangkan waktu untuk membaca, menulis, belajar, dan mengeksplorasi berbagai gagasan.
 
-## Milestones
+Saya tidak membatasi ketertarikan pada satu bidang tertentu. Bagi saya, selalu ada sesuatu yang dapat dipelajari dari pekerjaan, interaksi dengan orang lain, maupun pengalaman sehari-hari.
 
-- Integrated content management system in [#1](https://github.com/Spr-Aachen/Twilight/pull/1)
-- Seamless wallpaper mode switching in [#2](https://github.com/Spr-Aachen/Twilight/pull/2)
-- Dynamic content container response in [#47](https://github.com/Spr-Aachen/Twilight/pull/47)
-- Seamless page component loading in [#48](https://github.com/Spr-Aachen/Twilight/pull/48)
-- Smart music playback handling in [#49](https://github.com/Spr-Aachen/Twilight/pull/49)
-- Infinite-level navigation system in [#50](https://github.com/Spr-Aachen/Twilight/pull/50)
-- Comprehensive statistics dashboard in [#51](https://github.com/Spr-Aachen/Twilight/pull/51)
-- Low-barrier configuration scheme in [#58](https://github.com/Spr-Aachen/Twilight/pull/58)
-- Dynamic breakpoint handling in [#68](https://github.com/Spr-Aachen/Twilight/pull/68)
-- Advanced content management in [#73](https://github.com/Spr-Aachen/Twilight/pull/73)
-- Nested category support in [#74](https://github.com/Spr-Aachen/Twilight/pull/74)
-- Comprehensive music card plugin in [#81](https://github.com/Spr-Aachen/Twilight/pull/81)
-- Refactored DecapCMS OAuth integration in [#107](https://github.com/Spr-Aachen/Twilight/pull/107)
-- Non-breaking PagesCMS support in [#114](https://github.com/Spr-Aachen/Twilight/pull/114)
-- Directory tree view component in [#117](https://github.com/Spr-Aachen/Twilight/pull/117)
-- Enhanced post card cover handler in [#141](https://github.com/Spr-Aachen/Twilight/pull/141)
-- Configurable post copy protection support in [#160](https://github.com/Spr-Aachen/Twilight/pull/160)
+## What I Do
+
+Aktivitas profesional utama saya adalah menjalankan PT Jalamas Artha Sakti, perusahaan yang bergerak dalam penyediaan komponen dan peralatan pendukung industri pertambangan.
+
+Di luar aktivitas tersebut, saya juga mengembangkan beberapa inisiatif di bidang digital, teknologi, dan usaha lainnya, termasuk Baduy Heritage, sebuah proyek yang berfokus pada pengenalan budaya dan pengalaman wisata Baduy.
+
+Saya turut terlibat dalam kegiatan sosial dan administrasi lingkungan sebagai bagian dari kepengurusan RW 08 di Bekasi Utara.
+
+Berbagai aktivitas tersebut memiliki karakter dan tantangan yang berbeda, tetapi semuanya memberikan kesempatan untuk belajar, bekerja sama, dan mengembangkan pemahaman melalui pengalaman langsung.
+
+## What Interests Me
+
+Saya memiliki ketertarikan pada penalaran, filsafat, teknologi, bisnis, komunikasi, dan perilaku manusia.
+
+Saya senang mengeksplorasi sebuah persoalan dari berbagai sudut pandang, menguji asumsi, serta memahami alasan di balik suatu kesimpulan. Tidak semua eksplorasi tersebut menghasilkan jawaban final, dan tidak semuanya harus berakhir dengan kesepakatan.
+
+Membaca, menulis, dan berdiskusi menjadi bagian dari cara saya mempelajari berbagai hal. Sebagian gagasan berkembang menjadi tulisan yang lebih terstruktur, sementara sebagian lainnya tetap menjadi catatan pemikiran yang terbuka untuk ditinjau kembali.
+
+Saya juga tertarik pada hubungan antara pengetahuan dan penerapannya dalam kehidupan nyata, termasuk bagaimana manusia mengambil keputusan, berkomunikasi, bekerja sama, dan menghadapi perubahan.
+
+## About This Website
+
+rudysaputra.com adalah website personal yang saya bangun dan kembangkan sendiri sebagai ruang untuk mendokumentasikan berbagai hal yang saya pikirkan, pelajari, kerjakan, dan alami.
+
+Website ini memuat tulisan reflektif, eksplorasi gagasan, catatan pembelajaran, serta dokumentasi pekerjaan dan proyek yang saya jalankan.
+
+Saya mengembangkan website ini menggunakan teknologi web modern, dengan Astro dan Twilight sebagai salah satu fondasi awal yang kemudian saya sesuaikan dengan kebutuhan dan arah pengembangannya.
+
+Tidak ada satu tema tunggal yang harus membatasi seluruh konten di dalamnya. Setiap bagian memiliki ruang dan konteksnya masing-masing, sebagaimana beragamnya hal yang menjadi bagian dari kehidupan saya.
+
+## Notes & Disclaimer
+
+Website ini merupakan ruang personal yang saya kembangkan untuk mendokumentasikan pemikiran, pengalaman, pembelajaran, serta berbagai hal yang saya kerjakan dan eksplorasi.
+
+Beberapa tulisan memuat pandangan pribadi, interpretasi, hipotesis, argumentasi, maupun refleksi yang lahir dari proses berpikir dan pengalaman saya. Konten tersebut tidak secara otomatis merupakan hasil penelitian ilmiah, kajian akademis, atau temuan empiris yang telah melalui proses pengujian formal, kecuali apabila dinyatakan secara eksplisit dan didukung oleh sumber atau metodologi yang relevan.
+
+Saya berupaya menjaga ketepatan informasi, konsistensi penalaran, dan kejelasan konteks. Namun, hal tersebut tidak menjadikan seluruh tulisan bebas dari kekeliruan, keterbatasan, atau kemungkinan perubahan pemahaman seiring berkembangnya pengetahuan dan pengalaman.
+
+Pandangan, interpretasi, dan kesimpulan yang disampaikan hendaknya dipahami dalam konteks pembahasannya masing-masing, bukan secara otomatis dianggap sebagai pernyataan universal, nasihat profesional, atau representasi pandangan organisasi dan pihak lain yang memiliki hubungan dengan saya.
+
+Informasi mengenai pekerjaan, proyek, maupun pengalaman profesional disajikan sesuai konteks dan tujuan dokumentasinya. Penyebutan pihak, institusi, atau aktivitas tertentu tidak dengan sendirinya menunjukkan adanya dukungan, afiliasi resmi, atau keterwakilan di luar hubungan yang secara jelas dinyatakan.
+
+Saya terbuka terhadap koreksi, perbedaan pandangan, dan pengembangan pemahaman yang didasarkan pada argumentasi serta informasi yang dapat dipertanggungjawabkan.

@@ -368,6 +368,25 @@ const setup = () => {
                 const gridClasses = gridClass.split(" ");
                 mainGrid.className = [...newClasses, ...gridClasses].join(" ");
             }
+            // Main element is a Swup target: its route-dependent grid classes
+            // must be synchronized when moving between home and inner pages.
+            const main = document.getElementById("swup-container");
+            const mainClass = gridClassCarrier.getAttribute("data-main-class");
+            if (main && mainClass) {
+                const routeClasses = [
+                    "col-span-full", "col-span-1", "w-full", "pointer-events-auto",
+                    "min-w-0", "overflow-hidden", "md:col-start-2", "md:row-start-1"
+                ];
+                main.className = [
+                    ...main.className.split(" ").filter(c =>
+                        !routeClasses.includes(c) && !c.startsWith("lg:col-") &&
+                        !c.startsWith("md:col-") && !c.startsWith("col-") &&
+                        !c.startsWith("row-") && !c.startsWith("lg:row-") &&
+                        !c.startsWith("md:row-")
+                    ),
+                    ...mainClass.split(" ")
+                ].join(" ");
+            }
         }
         // Restore pause-swup-transition class to newly replaced persistent elements
         pausedElementIds.forEach(id => {
