@@ -37,7 +37,11 @@ let links: NavbarLink[] = navbarConfig.links.map(
         "overflow-visible! max-w-(--page-width) h-18 mx-auto flex items-center justify-between md:px-4"]}>
         <a href={url('/')} class="btn-plain scale-animation rounded-lg h-13 px-2 sm:px-5 font-bold active:scale-95 max-w-[70vw] sm:max-w-none">
             <div class="flex flex-row text-(--primary) items-center text-md gap-2 min-w-0">
-       <Icon name="material-symbols:home-pin-outline" class="text-[1.5rem] sm:text-[2rem] shrink-0" />
+       <img
+        src="/assets/images/Logo-RDS.png"
+        alt="RDS Logo"
+        class="w-14 h-14 sm:w-18 sm:h-18 shrink-0 object-contain"
+        />
        <span>{siteConfig.title}</span>
     </div>
         </a>

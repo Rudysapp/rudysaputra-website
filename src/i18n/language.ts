@@ -35,6 +35,12 @@ export const LANGUAGE_CONFIG = {
         locale: "en-US",
         icon: "🇺🇸",
     },
+    id: {
+        translateCode: "indonesian",
+        displayName: "Bahasa Indonesia",
+        locale: "id-ID",
+        icon: "🇮🇩",
+    },
     zh_hant: {
         translateCode: "chinese_traditional",
         displayName: "繁體中文",
@@ -107,12 +113,7 @@ export const LANGUAGE_CONFIG = {
         locale: "vi-VN",
         icon: "🇻🇳",
     },
-    id: {
-        translateCode: "indonesian",
-        displayName: "Bahasa Indonesia",
-        locale: "id-ID",
-        icon: "🇮🇩",
-    },
+    
 } as const satisfies Record<string, LanguageConfig>;
 
 export type SupportedLanguage = keyof typeof LANGUAGE_CONFIG;

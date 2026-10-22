@@ -88,6 +88,7 @@ onDestroy(() => {
 </script>
 
 {#if siteConfig.translate?.enable}
+<!-- svelte-ignore a11y_no_static_element_interactions (hover-only panel dismissal; the nested button is the interactive control) -->
 <div class="relative z-50" onmouseleave={closePanel}>
     <!-- 翻译按钮 -->
     <button
@@ -118,7 +119,7 @@ onDestroy(() => {
                         isLast={false}
                     >
                         <span class="text-lg transition">{lang.icon}</span>
-                        <span class="text-sm transition grow text-left">{lang.name}</span>
+                        <span class="language-name text-sm transition grow text-left" translate="no">{lang.name}</span>
                         {#if currentLanguage === lang.code}
                             <span class="ml-auto text-(--primary)">✓</span>
                         {/if}

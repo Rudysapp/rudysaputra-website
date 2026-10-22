@@ -5660,7 +5660,7 @@ var translate = {
                 coreFeatures: "基础字母26个（A-Z），部分语言添加变音符号（如é、ñ、ü），从左到右书写",
                 languages: [ //包含的语种
                     "english", "latin", "french", "spanish", "deutsch", "portuguese",
-                    "italian", "越南语", "马来语", "印尼语",
+                    "italian", "越南语", "马来语", "indonesian",
                     "土耳其语", "波兰语", "荷兰语", "瑞典语", "非洲诸语（多数）",
                     "美洲诸语（多数）", "菲律宾语", "哈萨克语（现代拉丁化）"
                 ]
@@ -6190,6 +6190,14 @@ var translate = {
             当前 recognition 结果识别的语种，比如 english ,translate.js 的语言标识
         */
         recognition_languageName_force: function (recognition_result) {
+            // The character recognizer classifies Indonesian Latin text as English.
+            // When the site's declared source is Indonesian, use that source for
+            // Latin-script content so Indonesian -> English is not skipped.
+            if (translate.language.getLocal() === 'indonesian' &&
+                recognition_result.languageName === 'english' &&
+                translate.language.getCurrent() !== 'indonesian') {
+                return 'indonesian';
+            }
 
             //未启用，那用 recognition 的结果
             if (!translate.language.translateLocal) {

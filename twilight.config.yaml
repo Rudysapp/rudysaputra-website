@@ -17,12 +17,13 @@ site:
         # Tampilkan dropdown pemilihan bahasa
         showSelectTag: false
         # Deteksi bahasa pengguna secara otomatis
-        autoDiscriminate: false
+        autoDiscriminate: true
         # Nama kelas CSS yang diabaikan saat menerjemahkan
         ignoreClasses:
             - "ignore"
             - "banner-title"
             - "banner-subtitle"
+            - "language-name"
         # Tag HTML yang diabaikan saat menerjemahkan
         ignoreTags:
             - "script"

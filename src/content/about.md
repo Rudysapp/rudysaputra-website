@@ -7,29 +7,32 @@ description: Mengenal Rudy Saputra, aktivitas, minat, dan ruang personal di bali
 
 ## Who I Am
 
-Saya Rudy Saputra, seorang profesional dan pelaku usaha yang memiliki ketertarikan pada dunia bisnis, teknologi, pemikiran, dan berbagai hal yang dapat memperluas pemahaman tentang kehidupan.
+Saya Rudy Saputra, seorang Ayah, Anak, Kakak, juga sebagai pelaku usaha sebagaimana umumnya, yang memiliki ketertarikan pada dunia bisnis, teknologi, pemikiran, dan berbagai hal yang dapat memperluas pemahaman tentang kehidupan.
 
-Dalam keseharian, saya menjalankan tanggung jawab profesional, terlibat dalam kegiatan sosial kemasyarakatan, serta meluangkan waktu untuk membaca, menulis, belajar, dan mengeksplorasi berbagai gagasan.
+Dalam keseharian, saya menjalankan tanggung jawab dalam kegiatan usaha yang saya jalankan, sambil juga terlibat dalam kegiatan sosial kemasyarakatan, sambil mecoba meluangkan waktu untuk menulis, belajar, dan mengeksplorasi berbagai hal.
 
-Saya tidak membatasi ketertarikan pada satu bidang tertentu. Bagi saya, selalu ada sesuatu yang dapat dipelajari dari pekerjaan, interaksi dengan orang lain, maupun pengalaman sehari-hari.
+Saya tidak membatasi ketertarikan pada satu bidang tertentu. Bagi saya, selalu ada sesuatu yang dapat dipelajari dari setiap hal, baik itu pekerjaan, interaksi dengan orang lain, maupun pengalaman sehari-hari.
 
 ## What I Do
 
-Aktivitas profesional utama saya adalah menjalankan PT Jalamas Artha Sakti, perusahaan yang bergerak dalam penyediaan komponen dan peralatan pendukung industri pertambangan.
+Aktivitas usaha utama saya menjalankan PT Jalamas Artha Sakti, perusahaan yang bergerak dalam penyediaan komponen dan peralatan pendukung industri pertambangan.
 
-Di luar aktivitas tersebut, saya juga mengembangkan beberapa inisiatif di bidang digital, teknologi, dan usaha lainnya, termasuk Baduy Heritage, sebuah proyek yang berfokus pada pengenalan budaya dan pengalaman wisata Baduy.
+Di luar aktivitas tersebut, saya mengembangkan beberapa inisiatif di bidang digital, teknologi, dan usaha lainnya, termasuk Baduy Heritage, sebuah proyek yang berfokus pada pengenalan budaya dan pengalaman wisata Baduy.
 
-Saya turut terlibat dalam kegiatan sosial dan administrasi lingkungan sebagai bagian dari kepengurusan RW 08 di Bekasi Utara.
+Di sela itu juga saya terlibat aktif dalam kegiatan dan adinistratif sosial kemasyarakatan.. dan yang paling membanggakan adalah keterlibatan sebagai "marbot masjid" 😀
 
+Tidak ada hal besar dan istimewa dari keseharian yang saya jalankan dan apa yang saya lakukan, tapi bagi saya, besar-kecil adalah sebuah skala perbandingan, se-sederhana apapun peran dan perjalanan kehidupan seseorang, tetap memiliki <i>core value</i> yang bekerja setara dalam semua skala, yaitu "<strong>seberapa baik kamu menjalankan peranmu</strong>"
+
+Kembali kepada saya.<br>
 Berbagai aktivitas tersebut memiliki karakter dan tantangan yang berbeda, tetapi semuanya memberikan kesempatan untuk belajar, bekerja sama, dan mengembangkan pemahaman melalui pengalaman langsung.
 
 ## What Interests Me
 
 Saya memiliki ketertarikan pada penalaran, filsafat, teknologi, bisnis, komunikasi, dan perilaku manusia.
 
-Saya senang mengeksplorasi sebuah persoalan dari berbagai sudut pandang, menguji asumsi, serta memahami alasan di balik suatu kesimpulan. Tidak semua eksplorasi tersebut menghasilkan jawaban final, dan tidak semuanya harus berakhir dengan kesepakatan.
+Saya senang mengeksplorasi sebuah persoalan dari berbagai sudut pandang, menguji asumsi, mempelajari pola, serta memahami alasan/sebab di balik terjadinya suatu kondisi. Tidak semua eksplorasi tersebut menghasilkan jawaban final, dan tidak semuanya harus berakhir dengan kesepakatan.
 
-Membaca, menulis, dan berdiskusi menjadi bagian dari cara saya mempelajari berbagai hal. Sebagian gagasan berkembang menjadi tulisan yang lebih terstruktur, sementara sebagian lainnya tetap menjadi catatan pemikiran yang terbuka untuk ditinjau kembali.
+Membaca, menulis, dan berdiskusi menjadi bagian dari cara saya mempelajari berbagai hal. Sebagian gagasan berkembang menjadi tulisan yang lebih terstruktur, sementara sebagian lainnya tetap menjadi catatan pemikiran yang terbuka untuk ditinjau kembali, bahkan revisi total seiring perjalanan pemikiran.
 
 Saya juga tertarik pada hubungan antara pengetahuan dan penerapannya dalam kehidupan nyata, termasuk bagaimana manusia mengambil keputusan, berkomunikasi, bekerja sama, dan menghadapi perubahan.
 
@@ -38,8 +41,6 @@ Saya juga tertarik pada hubungan antara pengetahuan dan penerapannya dalam kehid
 rudysaputra.com adalah website personal yang saya bangun dan kembangkan sendiri sebagai ruang untuk mendokumentasikan berbagai hal yang saya pikirkan, pelajari, kerjakan, dan alami.
 
 Website ini memuat tulisan reflektif, eksplorasi gagasan, catatan pembelajaran, serta dokumentasi pekerjaan dan proyek yang saya jalankan.
-
-Saya mengembangkan website ini menggunakan teknologi web modern, dengan Astro dan Twilight sebagai salah satu fondasi awal yang kemudian saya sesuaikan dengan kebutuhan dan arah pengembangannya.
 
 Tidak ada satu tema tunggal yang harus membatasi seluruh konten di dalamnya. Setiap bagian memiliki ruang dan konteksnya masing-masing, sebagaimana beragamnya hal yang menjadi bagian dari kehidupan saya.
 

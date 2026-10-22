@@ -25,7 +25,7 @@ export function setStoredLanguage(lang: string): void {
     }
 }
 
-// 获取存储的语言设置
+// Dapatkan pengaturan bahasa yang tersimpan
 export function getStoredLanguage(): string | null {
     if (typeof localStorage !== "undefined") {
         return localStorage.getItem(LANG_STORAGE_KEY);
@@ -33,7 +33,7 @@ export function getStoredLanguage(): string | null {
     return null;
 }
 
-// 获取默认语言配置
+// Ambil konfigurasi bahasa default
 export function getDefaultLanguage(): string {
     const fallback = siteConfig.lang;
     if (typeof document !== "undefined") {
@@ -43,15 +43,15 @@ export function getDefaultLanguage(): string {
     return fallback;
 }
 
-// 将配置文件的语言代码转换为翻译服务的语言代码
+// Konversikan kode bahasa file konfigurasi ke kode bahasa layanan terjemahan
 export function getTranslateLanguageFromConfig(configLang: string): string {
     return langToTranslateMap[configLang] || "chinese_simplified";
 }
 
 /**
- * 解析语言代码为 SupportedLanguage。
- * 如果 code 不在 SUPPORTED_LANGUAGES 中，尝试在 LANGUAGE_REGION_MAP 中查找。
- */
+ * Kode bahasa yang diurai adalah SupportedLanguage.
+* Jika kode tidak dalam SUPPORTED_LANGUAGES, coba cari dalam LANGUAGE_REGION_MAP.
+*/
 function resolveSupportedLang(code: string): SupportedLanguage | undefined {
     if (SUPPORTED_LANGUAGES.includes(code as SupportedLanguage)) {
         return code as SupportedLanguage;
@@ -213,6 +213,7 @@ export async function loadAndInitTranslate(): Promise<void> {
         // 检查是否已经加载
         if (!(window as any).translate) {
             // 使用动态导入，Vite 会自动处理代码分割
+            // @ts-expect-error Legacy JavaScript plugin has no TypeScript declaration.
             await import("@/plugins/translate");
             (window as any).translateScriptLoaded = true;
         }
