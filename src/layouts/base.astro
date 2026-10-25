@@ -139,12 +139,23 @@ const bannerOffset =
     bannerOffsetByPosition[siteConfig.wallpaper.position || "center"];
 
 const { enabled: analyticsEnabled, code: analyticsCode } = getAnalyticsConfig();
+const enableGoogleTagManager = true;
+const googleTagManagerId = "GTM-PCG3K888";
 ---
 
 <!DOCTYPE html>
 <html lang={siteLang} class="bg-(--page-bg) text-[14px] md:text-[16px] is-loading"
 >
     <head>
+        {enableGoogleTagManager && (
+            <script is:inline define:vars={{ googleTagManagerId }}>
+                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayer',googleTagManagerId);
+            </script>
+        )}
         <meta charset="UTF-8" />
         <!-- Resource Preconnect -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -242,6 +253,12 @@ const { enabled: analyticsEnabled, code: analyticsCode } = getAnalyticsConfig();
 
     <body class=" min-h-screen " class:list={[{"is-home": isHomePage, "enable-banner": enableBanner}]}
     >
+        {enableGoogleTagManager && (
+            <noscript>
+                <iframe src={`https://www.googletagmanager.com/ns.html?id=${googleTagManagerId}`}
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+            </noscript>
+        )}
         <!-- 页面加载动画 -->
         <LoadingOverlay />
         <!-- 全局配置载体 -->
@@ -352,6 +369,23 @@ import { initFancybox, cleanupFancybox } from "@utils/fancybox";
 import { loadAndInitTranslate } from "@utils/language";
 import { setupParticleEffects } from "@/utils/particle";
 
+
+// Swup replaces page content without reloading the GTM container.
+// The first document load is tracked by the GA4 Google tag in GTM.
+// Subsequent navigations are emitted as a separate GTM custom event.
+let lastAnalyticsPageUrl = window.location.href;
+const trackSwupPageView = () => {
+    const currentUrl = window.location.href;
+    if (currentUrl === lastAnalyticsPageUrl) return;
+    lastAnalyticsPageUrl = currentUrl;
+    const dataLayer = ((window as any).dataLayer ??= []);
+    dataLayer.push({
+        event: 'swup_page_view',
+        page_location: currentUrl,
+        page_title: document.title,
+        page_path: window.location.pathname + window.location.search,
+    });
+};
 
 // 初始化Swup
 const setup = () => {
@@ -485,6 +519,7 @@ const setup = () => {
         }, 300)
     });
     window.swup.hooks.on('page:view', () => {
+        trackSwupPageView();
         // Scroll to top of the page after page transition
         window.scrollTo({
             top: 0,
