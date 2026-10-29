@@ -307,28 +307,26 @@ sidebar:
 
 # Konfigurasi profil
 profile:
-    # Konfigurasi avatar (relatif terhadap direktori /public)
-    avatar: "/assets/images/avatar.jpg"
-    # Konfigurasi informasi
+    avatar: "/assets/images/Logo-RDS.png"
     name: "Rudy Saputra"
-    # Konfigurasi biodata singkat
-    bio: "Hi"
-    # Konfigurasi tautan
+    bio: "Thinking · Learning · Making Things"
     links:
-        - # Contoh tautan
-            # Nama
-            name: "GitHub"
-            # Ikon
-            icon: "fa6-brands:github"
-            # Tautan
-            url: "https://github.com/Rudysapp"
+        - name: "Instagram"
+          icon: "fa6-brands:instagram"
+          url: "https://www.instagram.com/rudysapp_/"
+        - name: "Facebook"
+          icon: "fa6-brands:facebook"
+          url: "https://www.facebook.com/rudisaputra/"
+        - name: "LinkedIn"
+          icon: "fa6-brands:linkedin"
+          url: "https://www.linkedin.com/in/rudysaputra/"
 
 # Konfigurasi pengumuman
 announcement:
     # Judul pengumuman
     title: "Announcement"
     # Isi pengumuman
-    content: "Welcome to my blog!"
+    content: "Welcome to my digital garden!"
     # Izinkan pengguna menutup pengumuman
     closable: true
     # Konfigurasi tautan

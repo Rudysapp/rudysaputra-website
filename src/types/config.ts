@@ -15,7 +15,7 @@ import type { SupportedLanguage } from "@i18n/language";
  * 
  */
 
-// Analytics 配置
+// Pengaturan analytics
 export type AnalyticsConfig = {
     enabled: boolean;
     platform: "umami";
@@ -30,7 +30,7 @@ export type AnalyticsConfig = {
  * 
  */
 
-// Favicon 配置
+// Pengaturan favicon
 export type Favicon = {
     src: string;
     theme?: "light" | "dark";
@@ -38,65 +38,65 @@ export type Favicon = {
 };
 
 
-// 加载页配置
+// Pengaturan layar loading
 export type LoadingOverlayConfig = {
-    // 是否启用加载页
+    // Aktifkan layar loading atau tidak
     enable: boolean;
-    // 揭开加载页前是否等待字体加载完成
+    // Tunggu font selesai dimuat sebelum layar loading ditutup
     waitForFonts: boolean;
-    // 揭开加载页前是否等待首屏图片解码完成
+    // Tunggu gambar pertama selesai diproses sebelum layar loading ditutup
     waitForImages: boolean;
-    // 加载页最长等待时间 (s)
+    // Batas waktu loading maksimal (detik)
     maxWait: number;
-    // 加载标题配置
+    // Pengaturan judul loading
     title: {
-        // 是否启用加载标题
+        // Tampilkan judul loading atau tidak
         enable: boolean;
-        // 加载标题文本
+        // Teks judul loading
         content: string;
-        // 动画周期 (s)
+        // Durasi animasi (detik)
         interval: number;
     };
-    // 加载动画配置
+    // Pengaturan animasi loading
     spinner: {
-        // 是否启用加载动画
+        // Aktifkan animasi loading atau tidak
         enable: boolean;
-        // 动画周期 (s)
+        // Durasi animasi (detik)
         interval: number;
     };
 };
 
 
-// 站点配置
+// Pengaturan website
 export type SiteConfig = {
-    // 站点 URL (以斜杠结尾) 
+    // URL website (diakhiri garis miring /) 
     siteURL: string;
-    // 站点标题
+    // Judul website
     title: string;
-    // 站点副标题
+    // Subjudul website
     subtitle: string;
-    // 站点关键词，用于生成 <meta name="keywords">
+    // Kata kunci website untuk membuat <meta name="keywords">
     keywords?: string[];
-    // 语言配置
+    // Pengaturan bahasa
     lang: SupportedLanguage;
-    // 翻译配置
+    // Pengaturan terjemahan
     translate?: {
-        // 启用翻译功能
+        // Aktifkan fitur terjemahan
         enable: boolean;
-        // 翻译服务类型，如 'client.edge'
+        // Jenis layanan terjemahan, misalnya 'client.edge'
         service?: string;
-        // 显示语言选择下拉框
+        // Tampilkan dropdown pilihan bahasa
         showSelectTag?: boolean;
-        // 自动识别用户语言
+        // Deteksi bahasa pengguna secara otomatis
         autoDiscriminate?: boolean;
-        // 翻译时忽略的 CSS 类名
+        // Class CSS yang dilewati saat menerjemahkan
         ignoreClasses?: string[];
-        // 翻译时忽略的 HTML 标签
+        // Tag HTML yang dilewati saat menerjemahkan
         ignoreTags?: string[];
     };
-    // 时区配置
+    // Pengaturan zona waktu
     timeZone: -12 | -11 | -10 | -9 | -8 | -7 | -6 | -5 | -4 | -3 | -2 | -1 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-    // 字体配置
+    // Pengaturan font
     font: {
         [key: string]: {
             // Font Source (Font CSS Link | Font File Path)
@@ -105,102 +105,102 @@ export type SiteConfig = {
             family: string;
         };
     };
-    // 主题色配置
+    // Pengaturan warna tema
     themeColor: {
-        // 主题色的默认色相 (0-360)
+        // Hue default warna tema (0–360)
         hue: number;
     };
-    // 默认主题
+    // Tema default
     defaultTheme: "system" | "light" | "dark";
-    // 壁纸配置
+    // Pengaturan wallpaper
     wallpaper: {
-        // 模式
+        // Mode
         mode: "fullscreen" | "banner" | "none";
-        src: // 图片源配置 (fullscreen 和 banner 模式共享) 
+        src: // Sumber gambar (dipakai mode fullscreen dan banner) 
         | string
         | string[]
         | {
             desktop?: string | string[];
             mobile?: string | string[];
         };
-        // 壁纸位置，等同于 object-position
+        // Posisi wallpaper, sama seperti object-position
         position?: "top" | "center" | "bottom";
-        // 轮播配置 (fullscreen 和 banner 模式共享)
+        // Pengaturan slideshow (untuk mode fullscreen dan banner)
         carousel?: {
-            // 为多张图片启用轮播，否则随机显示一张图片
+            // Aktifkan slideshow untuk beberapa gambar; kalau tidak, tampilkan satu gambar secara acak
             enable: boolean;
-            // 轮播间隔时间 (s) 
+            // Jeda antar gambar (detik) 
             interval: number;
-            // 启用 Ken Burns 效果
+            // Aktifkan efek Ken Burns
             kenBurns?: boolean;
         };
-        // Banner 模式专属配置
+        // Pengaturan khusus mode banner
         banner?: {
             homeText?: {
-                // 在主页显示文本
+                // Tampilkan teks di halaman utama
                 enable: boolean;
-                // 主标题
+                // Judul utama
                 title?: string;
-                // 副标题
-                subtitle?: string | string[]; // 支持单个字符串或字符串数组
-                // 副标题打字机效果
+                // Subjudul
+                subtitle?: string | string[]; // Bisa berupa satu teks atau daftar teks
+                // Efek mengetik pada subjudul
                 typewriter?: {
-                    // 启用副标题打字机效果
+                    // Aktifkan efek mengetik pada subjudul
                     enable: boolean;
-                    // 打字速度 (ms)
+                    // Kecepatan mengetik (ms)
                     speed: number;
-                    // 删除速度 (ms)
+                    // Kecepatan menghapus teks (ms)
                     deleteSpeed: number;
-                    // 完全显示后的暂停时间 (ms)
+                    // Jeda setelah teks tampil penuh (ms)
                     pauseTime: number;
                 };
             };
-            // 横幅图片来源文本
+            // Keterangan sumber gambar banner
             credit?: {
-                // 显示横幅图片来源文本
+                // Tampilkan keterangan sumber gambar banner
                 enable: boolean;
-                // 要显示的来源文本
+                // Teks sumber yang ditampilkan
                 text: string;
-                // (可选) 原始艺术品或艺术家页面的 URL 链接
+                // Opsional: URL karya asli atau halaman kreatornya
                 url?: string;
             };
-            // 导航栏配置
+            // Pengaturan navbar
             navbar?: {
-                // 导航栏透明模式
+                // Mode transparansi navbar
                 transparentMode?: "semi" | "full" | "semifull";
             };
-            // 水波纹效果配置
+            // Pengaturan efek gelombang air
             waves?: {
-                // 启用水波纹效果
+                // Aktifkan efek gelombang air
                 enable: boolean;
-                // 启用性能模式 (简化波浪效果以提升性能)
+                // Aktifkan mode ringan (efek gelombang disederhanakan agar lebih lancar)
                 performanceMode?: boolean;
             };
         };
-        // Fullscreen 模式专属配置
+        // Pengaturan khusus mode fullscreen
         fullscreen?: {
-            // 层级
+            // Urutan lapisan
             zIndex?: number;
-            // 壁纸透明度，0-1 之间
+            // Tingkat transparansi wallpaper (0–1)
             opacity?: number;
-            // 背景模糊程度 (px)
+            // Tingkat blur latar belakang (px)
             blur?: number;
-            // 导航栏透明模式
+            // Mode transparansi navbar
             navbar?: {
                 transparentMode?: "semi" | "full" | "semifull";
             };
         };
     };
-    // 加载页配置
+    // Pengaturan layar loading
     loadingOverlay?: LoadingOverlayConfig;
-    // Favicon 配置
+    // Pengaturan favicon
     favicon: Favicon[];
-    // bangumi 配置
+    // Pengaturan Bangumi
     bangumi?: {
-        // 用户 ID
+        // ID pengguna
         userId?: string;
     };
-    // OpenGraph 配置
+    // Pengaturan OpenGraph
     generateOgImages: boolean;
 };
 
@@ -253,10 +253,10 @@ export type NavbarLink = {
 };
 
 
-// 导航栏配置
+// Pengaturan navbar
 export type NavbarConfig = {
-    // 链接配置
-    links: (NavbarLink | LinkPreset)[]; // 支持多级菜单
+    // Pengaturan tautan
+    links: (NavbarLink | LinkPreset)[]; // Mendukung menu bertingkat
 };
 
 /**
@@ -275,42 +275,42 @@ export type WidgetComponentType =
 
 
 export type WidgetComponentConfig = {
-    // 组件类型
+    // Jenis komponen
     type: WidgetComponentType;
-    // 启用该组件
+    // Aktifkan komponen ini
     enable: boolean;
-    // 组件位置
-    position: "top" | "sticky"; // 顶部固定区域或粘性区域
-    // 自定义内联样式
+    // Posisi komponen
+    position: "top" | "sticky"; // Area atas atau area sticky
+    // Style inline khusus
     style?: string;
-    // 页面可见性配置
+    // Pengaturan tampil atau tidaknya di halaman
     visibility?: {
-        // 匹配模式：'include' (包含), 'exclude' (排除)
+        // Mode pencocokan: 'include' (sertakan), 'exclude' (kecualikan)
         mode: "include" | "exclude";
-        // 页面路径匹配规则列表 (支持正则字符串)
+        // Daftar aturan path halaman (mendukung regex)
         paths: string[];
     };
-    // 响应式配置
+    // Pengaturan responsif
     responsive?: {
-        // 在指定设备上隐藏
+        // Sembunyikan di perangkat tertentu
         hidden?: ("mobile" | "tablet" | "desktop")[];
-        // 折叠阈值
+        // Batas untuk menciutkan tampilan
         collapseThreshold?: number;
     };
-    // 目录深度 (仅用于 toc 和 categories 组件)
+    // Kedalaman daftar (khusus komponen toc dan categories)
     depth?: number;
 };
 
 
-// 资料配置
+// Pengaturan profil
 export type ProfileConfig = {
-    // 头像配置
+    // Pengaturan foto profil
     avatar?: string;
-    // 信息配置
+    // Pengaturan informasi
     name: string;
-    // 简介配置
+    // Pengaturan bio
     bio?: string;
-    // 链接配置
+    // Pengaturan tautan
     links: {
         name: string;
         url: string;
@@ -319,35 +319,35 @@ export type ProfileConfig = {
 };
 
 
-// 公告配置
+// Pengaturan pengumuman
 export type AnnouncementConfig = {
-    // 公告标题
+    // Judul pengumuman
     title?: string;
-    // 公告内容
+    // Isi pengumuman
     content: string;
-    // 公告类型
+    // Jenis pengumuman
     type?: "info" | "warning" | "success" | "error";
-    // 公告栏图标
+    // Ikon pengumuman
     icon?: string;
-    // 允许用户关闭公告
+    // Izinkan pengguna menutup pengumuman
     closable?: boolean;
-    // 链接配置
+    // Pengaturan tautan
     link?: {
-        // 启用链接
+        // Aktifkan tautan
         enable: boolean;
-        // 链接文本
+        // Teks tautan
         text: string;
-        // 链接 URL
+        // URL tautan
         url: string;
-        // 是否外部链接
+        // Apakah tautan eksternal
         external?: boolean;
     };
 };
 
 
-// 侧边栏配置
+// Pengaturan sidebar
 export type SidebarConfig = {
-    // 侧边栏组件配置列表
+    // Daftar komponen sidebar
     components: {
         left: WidgetComponentConfig[];
         right: WidgetComponentConfig[];
@@ -359,44 +359,44 @@ export type SidebarConfig = {
  */
 
 
-// 评论服务提供商
+// Penyedia layanan komentar
 export type CommentProvider = "" |"";
 
-// 文章配置
+// Pengaturan artikel
 export type PostConfig = {
-    // 文章卡片配置
+    // Pengaturan kartu artikel
     card: {
-        // 封面配置
+        // Pengaturan cover
         cover: {
-            // 封面位置 ("left" | "right")
+            // Posisi cover ("left" atau "right")
             side: "left" | "right";
-            // 封面宽度
+            // Lebar cover
             width: string;
-            // 封面上是否显示文字 (标题、标签、摘要)
+            // Tampilkan teks di cover (judul, tag, ringkasan)
             showContent: boolean;
-            // 无指定封面时是否显示默认封面
+            // Tampilkan cover default jika belum ada cover
             showDefaultCover: boolean;
         };
-        // 标题大小 (Tailwind 文本大小类，例如 "text-3xl")
+        // Ukuran judul (class teks Tailwind, misalnya "text-3xl")
         titleSize: string;
     };
-    // 显示"上次编辑"卡片
+    // Tampilkan kartu "terakhir diedit"
     showLastModified: boolean;
-    // 代码高亮配置
+    // Pengaturan highlight kode
     expressiveCode: {
-        // 主题
+        // Tema
         theme: string;
     };
-    // 许可证配置
+    // Pengaturan lisensi
     license: {
-        // 启用许可证
+        // Aktifkan lisensi
         enable: boolean;
-        // 许可证名称
+        // Nama lisensi
         name: string;
-        // 许可证链接
+        // Tautan lisensi
         url: string;
     };
-    // 评论配置
+    // Pengaturan komentar
     comment?: undefined; // tidak ada provider komentar
     
 };
@@ -405,11 +405,11 @@ export type PostConfig = {
  * 
  */
 
-// 页脚配置
+// Pengaturan footer
 export type FooterConfig = {
-    // 是否启用 Footer HTML 注入功能
+    // Aktifkan penyisipan HTML di footer
     enable: boolean;
-    // 自定义 HTML 内容，用于添加备案号等信息
+    // HTML khusus untuk menambahkan nomor registrasi dan info lainnya
     customHtml?: string;
 };
 
@@ -417,50 +417,50 @@ export type FooterConfig = {
  * 
  */
 
-// 粒子特效配置
+// Pengaturan efek partikel
 export type ParticleConfig = {
-    // 启用粒子特效
+    // Aktifkan efek partikel
     enable: boolean;
-    // 粒子数量
+    // Jumlah partikel
     particleNum: number;
-    // 粒子越界限制次数，-1为无限循环
+    // Batas partikel keluar area; -1 berarti berulang tanpa batas
     limitTimes: number;
-    // 粒子尺寸配置
+    // Pengaturan ukuran partikel
     size: {
-        // 粒子最小尺寸倍数
+        // Pengali ukuran partikel minimum
         min: number;
-        // 粒子最大尺寸倍数
+        // Pengali ukuran partikel maksimum
         max: number;
     };
-    // 粒子透明度配置
+    // Pengaturan transparansi partikel
     opacity: {
-        // 粒子最小不透明度
+        // Opasitas minimum partikel
         min: number;
-        // 粒子最大不透明度
+        // Opasitas maksimum partikel
         max: number;
     };
-    // 粒子移动速度配置
+    // Pengaturan kecepatan gerak partikel
     speed: {
-        // 水平移动速度
+        // Kecepatan gerak horizontal
         horizontal: {
-            // 最小值
+            // Nilai minimum
             min: number;
-            // 最大值
+            // Nilai maksimum
             max: number;
         };
-        // 垂直移动速度
+        // Kecepatan gerak vertikal
         vertical: {
-            // 最小值
+            // Nilai minimum
             min: number;
-            // 最大值
+            // Nilai maksimum
             max: number;
         };
-        // 旋转速度
+        // Kecepatan rotasi
         rotation: number;
-        // 消失速度
+        // Kecepatan memudar
         fadeSpeed: number;
     };
-    // 粒子层级
+    // Urutan lapisan partikel
     zIndex: number;
 };
 
@@ -469,46 +469,46 @@ export type ParticleConfig = {
  */
 
 export type MusicPlayerTrack = {
-    // 序号
+    // Nomor urut
     id: number | string;
-    // 标题
+    // Judul
     title: string;
-    // 作者
+    // Pembuat
     artist: string;
-    // 封面
+    // Cover
     cover: string;
-    // 路径
+    // Path file
     url: string;
-    // 歌词
+    // Lirik
     lrc?: string;
-    // 时长
+    // Durasi
     duration: number;
 };
 
 
-// 音乐播放器配置
+// Pengaturan pemutar musik
 export type MusicPlayerConfig = {
-    // 启用音乐播放器功能
+    // Aktifkan pemutar musik
     enable: boolean;
-    // 默认模式
+    // Mode default
     mode: "meting" | "local";
-    // meting 模式专属配置
+    // Pengaturan khusus mode meting
     meting: {
-        // Meting API 地址
+        // Alamat API Meting
         meting_api: string;
-        // 音乐平台
+        // Platform musik
         server: "netease" | "tencent" | "kugou" | "baidu" | "kuwo";
-        // 类型
+        // Jenis
         type: "playlist" | "album" | "artist" | "song" | "search";
-        // 资源 ID
+        // ID sumber
         id: string;
     };
-    // local 模式专属配置
+    // Pengaturan khusus mode local
     local: {
-        // 播放列表
+        // Playlist
         playlist: MusicPlayerTrack[];
     };
-    // 是否自动播放
+    // Putar otomatis atau tidak
     autoplay?: boolean;
 };
 
@@ -516,43 +516,43 @@ export type MusicPlayerConfig = {
  * 
  */
 
-// 看板娘配置
+// Pengaturan karakter asisten layar
 export type PioConfig = {
-    // 启用看板娘
+    // Aktifkan karakter asisten layar
     enable: boolean;
-    // 模型文件路径
+    // Path file model
     models?: string[];
-    // 看板娘位置
+    // Posisi karakter asisten
     position?: "left" | "right";
-    // 看板娘宽度
+    // Lebar karakter asisten
     width?: number;
-    // 看板娘高度
+    // Tinggi karakter asisten
     height?: number;
-    // 展现模式
+    // Mode tampilan
     mode?: "static" | "fixed" | "draggable";
-    // 是否在移动设备上隐藏
+    // Sembunyikan di perangkat mobile
     hiddenOnMobile?: boolean;
-    // 对话框配置
+    // Pengaturan dialog
     dialog?: {
-        // 欢迎词
+        // Ucapan selamat datang
         welcome?: string | string[];
-        // 触摸提示
+        // Pesan saat disentuh
         touch?: string | string[];
-        // 首页提示
+        // Pesan di halaman utama
         home?: string;
-        // 换装提示
-        skin?: [string, string]; // [切换前, 切换后]
-        // 关闭提示
+        // Pesan saat mengganti tampilan
+        skin?: [string, string]; // [sebelum diganti, setelah diganti]
+        // Pesan saat ditutup
         close?: string;
-        // 关于链接
+        // Tautan halaman tentang
         link?: string;
-        // 自定义属性
+        // Properti khusus
         custom?: Array<{
-            // CSS选择器
+            // Selector CSS
             selector: string;
-            // 类型
+            // Jenis
             type: "read" | "link";
-            // 自定义文本
+            // Teks khusus
             text?: string;
         }>;
     };
