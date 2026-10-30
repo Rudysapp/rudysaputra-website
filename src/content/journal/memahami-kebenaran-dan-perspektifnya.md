@@ -7,6 +7,7 @@ cover: ""
 coverInContent: false
 tags: [Kebenaran, Perspektif, Filsafat, Logika]
 featured: false
+author: ""
 category: Thinking
 draft: false
 ---

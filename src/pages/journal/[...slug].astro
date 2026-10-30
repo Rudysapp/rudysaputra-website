@@ -20,6 +20,7 @@ import PostMetadata from "@components/post/postMeta.astro";
 // import comment dihapus karena website tidak menggunakan fitur komentar
 import CopyProtection from "@components/copyProtection.astro";
 import GridLayout from "@layouts/grid.astro";
+import { ACTION_ERROR_CODES } from "astro:actions";
 
 
 export async function getStaticPaths() {
@@ -97,9 +98,10 @@ const jsonLd = {
     keywords: entry.data.tags,
     author: {
         "@type": "Person",
-        name: profileConfig.name,
-        url: Astro.site,
+        name: entry.data.author?.trim() || profileConfig.name,
+        ...(entry.data.author?.trim() ? {} : { url: Astro.site }),
     },
+
     datePublished: formatDateToYYYYMMDD(entry.data.published!),
     inLanguage: entry.data.lang
         ? entry.data.lang.replace("_", "-")
