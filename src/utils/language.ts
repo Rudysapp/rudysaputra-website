@@ -213,7 +213,6 @@ export async function loadAndInitTranslate(): Promise<void> {
         // 检查是否已经加载
         if (!(window as any).translate) {
             // 使用动态导入，Vite 会自动处理代码分割
-            // @ts-expect-error Legacy JavaScript plugin has no TypeScript declaration.
             await import("@/plugins/translate");
             (window as any).translateScriptLoaded = true;
         }

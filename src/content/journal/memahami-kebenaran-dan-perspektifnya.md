@@ -6,7 +6,8 @@ description: "Mendalami bagaimana menilai dan menentukan cara pandang terhadap s
 cover: ""
 coverInContent: false
 tags: [Kebenaran, Perspektif, Filsafat, Logika]
-featured: false
+featured: true
+featuredOrder: 1
 author: ""
 category: Thinking
 draft: false

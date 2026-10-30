@@ -9,6 +9,7 @@ tags: [Pilihan Hidup, Keputusan, Refleksi, Kehidupan]
 author: ""
 pinned: false
 featured: false
+featuredOrder: 0
 draft: false
 ---
 

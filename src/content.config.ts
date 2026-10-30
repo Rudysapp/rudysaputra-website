@@ -42,6 +42,7 @@ const journalCollection = defineCollection({
         comment: z.boolean().optional().default(true),
         draft: z.boolean().optional().default(false),
         featured: z.boolean().optional().default(false),
+        featuredOrder: z.number().int().min(0).optional().default(0),
 
         /* Page encryption fields */
         encrypted: z.boolean().optional().default(false),

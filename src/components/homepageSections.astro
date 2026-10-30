@@ -1,17 +1,10 @@
 ---
 // Milestone 2A: replace dummy content/assets below with approved real content.
 // Hero and Possibilities are locked; Navbar/Footer belong to Milestone 2B.
-const selectedThoughts = [
-  {
-    title: "Memahami Kebenaran dan Perspektifnya: Kebenaran Absolut vs Kebenaran Relatif",
-    category: "Thinking",
-    readTime: "11 menit baca",
-    date: "2020-05-14",
-    dateLabel: "14 MEI  2020",
-    excerpt: "Mendalami bagaimana menilai dan menentukan cara pandang terhadap sebuah kebenaran.",
-    href: "/journal/memahami-kebenaran-dan-perspektifnya/",
-  },
-];
+import { getFeaturedPosts } from "@utils/featured";
+import { getPostUrl } from "@utils/url";
+const selectedThoughts = await getFeaturedPosts(3);
+const dateFormatter = new Intl.DateTimeFormat("id-ID", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
 
 // DUMMY SNAPSHOT: these are examples, not confirmed personal learning claims.
 const learningSnapshot = [
@@ -228,24 +221,24 @@ const networkSelection = [
 
       <div class="flex justify-between gap-6 border-t border-[rgba(28,27,24,0.12)] dark:border-[rgba(236,234,238,0.14)] pt-4 text-[0.68rem] font-semibold tracking-[0.12em] uppercase text-[#737067] dark:text-[#a09d98]">
         <span>RDS</span>
-        <span>SELECTED THOUGHTS</span>
+        <span>SELECTED THOUGHTS FROM JOURNAL</span>
       </div>
 
       <!-- Editorial placeholders. Replace the shared illustration and excerpts with real articles. -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 mt-20 max-md:mt-15">
         {selectedThoughts.map((thought) => (
           <a
-         href={thought.href}
+         href={getPostUrl(thought)}
          class="group min-w-0 flex flex-col text-inherit no-underline"
          >
             <div class="aspect-[16/10] overflow-hidden bg-[#e6e0d4] dark:bg-[#282622]">
-              <img src="/assets/images/person-writing.png" alt="" width="400" height="400" loading="lazy" decoding="async" class="w-full h-full object-contain motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:scale-[1.025]" />
+              <div class="w-full h-full flex items-center justify-center text-sm opacity-50">Journal</div>
             </div>
-            <p class="mt-6 mb-3 text-[0.7rem] tracking-[0.05em] text-[#737067] dark:text-[#a09d98]">{thought.category} · {thought.readTime}</p>
-            <h3 class="m-0 font-sans text-[clamp(1.35rem,2.3vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em]">{thought.title}</h3>
-            <p class="mt-4 mb-6 text-[0.95rem] leading-[1.65] opacity-80 line-clamp-3">{thought.excerpt}</p>
+            <p class="mt-6 mb-3 text-[0.7rem] tracking-[0.05em] text-[#737067] dark:text-[#a09d98]">{thought.data.category || "Journal"}</p>
+            <h3 class="m-0 font-sans text-[clamp(1.35rem,2.3vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em]">{thought.data.title}</h3>
+            <p class="mt-4 mb-6 text-[0.95rem] leading-[1.65] opacity-80 line-clamp-3">{thought.data.description}</p>
             <div class="mt-auto flex justify-between items-center gap-4 border-t border-[rgba(28,27,24,0.12)] dark:border-[rgba(236,234,238,0.14)] pt-4">
-              <time datetime={thought.date} class="text-[0.7rem] tracking-[0.05em] text-[#737067] dark:text-[#a09d98]">{thought.dateLabel}</time>
+              <time datetime={new Date(thought.data.published).toISOString()} class="text-[0.7rem] tracking-[0.05em] text-[#737067] dark:text-[#a09d98]">{dateFormatter.format(new Date(thought.data.published))}</time>
               <span aria-hidden="true" class="motion-safe:transition-transform motion-safe:duration-200 motion-safe:group-hover:translate-x-1">→</span>
             </div>
           </a>

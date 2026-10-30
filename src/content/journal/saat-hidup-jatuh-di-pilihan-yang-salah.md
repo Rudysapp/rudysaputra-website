@@ -8,7 +8,8 @@ category: Thinking
 tags: [Pilihan Hidup, Keputusan, Refleksi, Kehidupan]
 author: ""
 pinned: false
-featured: false
+featured: true
+featuredOrder: 2
 draft: false
 ---
 
